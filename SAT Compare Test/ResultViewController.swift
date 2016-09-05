@@ -17,11 +17,11 @@ class ResultViewController: UIViewController {
     // this image view is at the right and is for the positioning of the student label
     @IBOutlet weak var studentSATImageView: UIView!
     
+    var backgroundSlider: UISlider! = UISlider()
+    var universitySlider: UISlider! = UISlider()
     var twentyFivePercentileLabel: UILabel! = UILabel()
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
-    var backgroundSlider: UISlider! = UISlider()
-    var universitySlider: UISlider! = UISlider()
 
     var studentSAT:String?
     var resultViewControllerSelectedUniversity:UniversityData!
@@ -42,6 +42,7 @@ class ResultViewController: UIViewController {
         self.setUniversitySlider()
         self.setTwentyFivePercentileLabel()
         self.setSeventyFivePercentileLabel()
+        self.fadeInGeneral()
         
         // we test if the student wrote a correct SAT score
         let studentSATInt:Int? = Int(studentSAT!)
@@ -159,11 +160,11 @@ class ResultViewController: UIViewController {
         // set properties and make slider parts invisible, except for the center
         self.universitySlider.minimumValue = 400
         self.universitySlider.maximumValue = 1600
-        self.universitySlider.hidden = true
         self.universitySlider.userInteractionEnabled = false
         self.universitySlider.thumbTintColor = UIColor.clearColor()
         self.universitySlider.minimumTrackTintColor = UIColor.cyanColor()
         self.universitySlider.maximumTrackTintColor = UIColor.cyanColor()
+        self.universitySlider.alpha = 0.0
         
         // set constraints
         self.universitySlider.translatesAutoresizingMaskIntoConstraints = false
@@ -187,7 +188,7 @@ class ResultViewController: UIViewController {
         
         // set properties
         self.twentyFivePercentileLabel.text = "400"
-        self.twentyFivePercentileLabel.hidden = true
+        self.twentyFivePercentileLabel.alpha = 0
         
         // set constraints; make it so that the horizontal constraint centers the label on the trailing/right margin of the low SAT view
         self.twentyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -206,7 +207,7 @@ class ResultViewController: UIViewController {
         
         // set properties
         self.seventyFivePercentileLabel.text = "1600"
-        self.seventyFivePercentileLabel.hidden = true
+        self.seventyFivePercentileLabel.alpha = 0.0
         
         // set constraints; make it so that the horizontal constraint centers the label on the leading/left margin of the high SAT view
         self.seventyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -250,9 +251,6 @@ class ResultViewController: UIViewController {
         
         // put in the slider/label values and unhide them
         self.backgroundSlider.hidden = false
-        self.universitySlider.hidden = false
-        self.twentyFivePercentileLabel.hidden = false
-        self.seventyFivePercentileLabel.hidden = false
         self.studentSATLabel.hidden = false
         self.twentyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.TwentyFivePercentile)
         self.seventyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.SeventyFivePercentile)
@@ -271,6 +269,21 @@ class ResultViewController: UIViewController {
             self.resultViewControllerImageView.addConstraint(studentSATImageViewWidthConstraint)
             
         }
+    }
+    
+    func fadeInGeneral () {
+        self.resultViewControllerLabel.alpha = 0.0
+        
+        // set animation so that non-student-related items gradually fade in
+        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.resultViewControllerLabel.alpha = 1.0
+            self.twentyFivePercentileLabel.alpha = 1.0
+            self.seventyFivePercentileLabel.alpha = 1.0
+            self.universitySlider.alpha = 1.0
+            }, completion: nil)
+        
+        
+        
     }
     
     /*
