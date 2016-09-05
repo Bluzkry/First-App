@@ -1,0 +1,29 @@
+ [{
+  "name": "Harvard",
+  "中文名字": "大学一",
+  "25PercentReading": 200,
+  "25PercentMath": 200,
+  "75PercentReading": 800,
+  "75PercentMath": 800
+  }, {
+  "name": "Yale",
+  "中文名字": "大学二",
+  "25PercentReading": 500,
+  "25PercentMath": 500,
+  "75PercentReading": 750,
+  "75PercentMath": 750
+  }, {
+  "name": "Princeton",
+  "中文名字": "大学三",
+  "25PercentReading": 700,
+  "25PercentMath": 750,
+  "75PercentReading": 800,
+  "75PercentMath": 800
+  }, {
+  "name": "Stanford",
+  "中文名字": "大学四",
+  "25PercentReading": 0,
+  "25PercentMath": 0,
+  "75PercentReading": 0,
+  "75PercentMath": 0
+  }]

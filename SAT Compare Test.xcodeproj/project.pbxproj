@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5113E8E1D79E05700364C47 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
+		A5113E8F1D79E05700364C47 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
+		A5113E901D79E05A00364C47 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
+		A5113E911D79E05A00364C47 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
+		A5140E641D75930A00500482 /* BetweenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* BetweenViewController.swift */; };
+		A5140E651D75930A00500482 /* BetweenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* BetweenViewController.swift */; };
+		A5140E661D75930A00500482 /* BetweenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* BetweenViewController.swift */; };
+		A528FD0A1D6A099B00FD012D /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
+		A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
+		A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */ = {isa = PBXBuildFile; fileRef = A528FD0D1D6A09C100FD012D /* University Dataset.json */; };
 		A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
-		A589E0261D69E5C100DEAD84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0251D69E5C100DEAD84 /* ViewController.swift */; };
 		A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
 		A589E02C1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */; };
 		A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
 		A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
 		A589E03C1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E03B1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift */; };
 		A589E0471D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0461D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift */; };
+		A589E0551D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
+		A589E0561D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
+		A589E0571D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
+		A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
+		A5BFB9271D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
+		A5BFB9281D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5140E631D75930A00500482 /* BetweenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetweenViewController.swift; sourceTree = "<group>"; };
+		A528FD091D6A099B00FD012D /* UniversityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
+		A528FD0B1D6A09B900FD012D /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
+		A528FD0D1D6A09C100FD012D /* University Dataset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "University Dataset.json"; sourceTree = "<group>"; };
 		A589E0201D69E5C100DEAD84 /* SAT Compare Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAT Compare Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A589E0231D69E5C100DEAD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A589E0251D69E5C100DEAD84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A589E0281D69E5C100DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A589E02B1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAT_Compare_Test.xcdatamodel; sourceTree = "<group>"; };
 		A589E02D1D69E5C200DEAD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +67,8 @@
 		A589E0421D69E5C200DEAD84 /* SAT Compare TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A589E0461D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_TestUITests.swift; sourceTree = "<group>"; };
 		A589E0481D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitySearchTableViewController.swift; sourceTree = "<group>"; };
+		A5BFB9251D76C88D004F62AC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				A589E0231D69E5C100DEAD84 /* AppDelegate.swift */,
-				A589E0251D69E5C100DEAD84 /* ViewController.swift */,
 				A589E0271D69E5C100DEAD84 /* Main.storyboard */,
+				A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */,
+				A5140E631D75930A00500482 /* BetweenViewController.swift */,
+				A5BFB9251D76C88D004F62AC /* ResultViewController.swift */,
+				A528FD091D6A099B00FD012D /* UniversityData.swift */,
+				A528FD0B1D6A09B900FD012D /* UniversityModel.swift */,
+				A528FD0D1D6A09C100FD012D /* University Dataset.json */,
 				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
 				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
 				A589E0321D69E5C200DEAD84 /* Info.plist */,
@@ -238,6 +263,7 @@
 				A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */,
 				A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */,
 				A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */,
+				A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A589E0261D69E5C100DEAD84 /* ViewController.swift in Sources */,
+				A589E0551D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
 				A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */,
+				A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */,
+				A5140E641D75930A00500482 /* BetweenViewController.swift in Sources */,
 				A589E02C1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld in Sources */,
+				A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */,
+				A528FD0A1D6A099B00FD012D /* UniversityData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5113E8E1D79E05700364C47 /* UniversityData.swift in Sources */,
+				A5113E901D79E05A00364C47 /* UniversityModel.swift in Sources */,
 				A589E03C1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift in Sources */,
+				A589E0561D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
+				A5140E651D75930A00500482 /* BetweenViewController.swift in Sources */,
+				A5BFB9271D76C88D004F62AC /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +315,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5113E8F1D79E05700364C47 /* UniversityData.swift in Sources */,
+				A5113E911D79E05A00364C47 /* UniversityModel.swift in Sources */,
 				A589E0471D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift in Sources */,
+				A589E0571D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
+				A5140E661D75930A00500482 /* BetweenViewController.swift in Sources */,
+				A5BFB9281D76C88D004F62AC /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +531,7 @@
 				A589E04D1D69E5C200DEAD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +540,7 @@
 				A589E0501D69E5C200DEAD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +549,7 @@
 				A589E0531D69E5C200DEAD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
