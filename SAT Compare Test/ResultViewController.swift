@@ -29,6 +29,8 @@ class ResultViewController: UIViewController {
     // this is needed at top for determining the student SAT percentile
     var studentSATPercentile:Int?
     
+    var backgroundSliderVerticalConstraint:NSLayoutConstraint = NSLayoutConstraint()
+    
     override func viewDidLoad() {
     ////
     ////
@@ -37,12 +39,11 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // set sliders and labels
+        self.setUniversitySlider()
         self.setBackgroundSlider()
         self.setSATImageViews()
-        self.setUniversitySlider()
         self.setTwentyFivePercentileLabel()
         self.setSeventyFivePercentileLabel()
-        self.fadeInGeneral()
         
         // we test if the student wrote a correct SAT score
         let studentSATInt:Int? = Int(studentSAT!)
@@ -54,8 +55,10 @@ class ResultViewController: UIViewController {
             // successfully converted studentSAT to integer
             
             // change many things
-            self.SATScoreChangeManyThings()
             self.setStudentSATLabel()
+            self.SATScoreChangeManyThings()
+            // fade in comes after we set the studentSATlabel
+            self.fadeInGeneral()
 
             // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
             if studentSATInt < resultViewControllerSelectedUniversity.TwentyFivePercentile {
@@ -87,6 +90,13 @@ class ResultViewController: UIViewController {
     
     ////
     ////
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // we need to set a previous point where the background slider is, before we can set the animation, and we set it to the top-right outside the view
+        self.backgroundSlider.center.x += studentSATImageView.bounds.width
+        self.backgroundSlider.center.y -= 150
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,6 +134,35 @@ class ResultViewController: UIViewController {
         
     }
 
+    func setUniversitySlider() {
+        // add it to the view
+        resultViewControllerImageView.addSubview(universitySlider)
+        
+        // set properties and make slider parts invisible, except for the center
+        self.universitySlider.minimumValue = 400
+        self.universitySlider.maximumValue = 1600
+        self.universitySlider.userInteractionEnabled = false
+        self.universitySlider.thumbTintColor = UIColor.clearColor()
+        self.universitySlider.minimumTrackTintColor = UIColor.cyanColor()
+        self.universitySlider.maximumTrackTintColor = UIColor.cyanColor()
+        self.universitySlider.alpha = 0
+        
+        // set constraints
+        self.universitySlider.translatesAutoresizingMaskIntoConstraints = false
+        
+        // this puts the constraints so that they match the ends of the low and high SAT views (so that the size of the slider is the same as the size of the university SAT's)
+        
+        let universitySliderRightMargin = NSLayoutConstraint(item: highSATImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        self.resultViewControllerImageView.addConstraint(universitySliderRightMargin)
+        
+        let universitySliderLeftMargin = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        self.resultViewControllerImageView.addConstraint(universitySliderLeftMargin)
+        
+        let universitySliderVerticalConstraint = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 200)
+        self.resultViewControllerImageView.addConstraint(universitySliderVerticalConstraint)
+        
+    }
+    
     func setBackgroundSlider() {
         // add it to the view
         resultViewControllerImageView.addSubview(backgroundSlider)
@@ -143,42 +182,12 @@ class ResultViewController: UIViewController {
         let backgroundSliderHorizontalConstraint = NSLayoutConstraint(item: backgroundSlider, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(backgroundSliderHorizontalConstraint)
         
-        // when this is changed, remember to change the university slider and label constraints as well; note that the label vertical constant is thirty more than this constraint
-        let backgroundSliderVerticalConstraint = NSLayoutConstraint(item: backgroundSlider, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 200)
+        backgroundSliderVerticalConstraint = NSLayoutConstraint(item: backgroundSlider, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(backgroundSliderVerticalConstraint)
         
         // this sets the width as a percentage (75%) of the whole view, but expand it to 80% so that it appears that the label is on the center of the scroll
         let backgroundSliderWidthConstraint = NSLayoutConstraint(item: backgroundSlider, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Width, multiplier: 0.8, constant: 0)
         self.resultViewControllerImageView.addConstraint(backgroundSliderWidthConstraint)
-        
-    }
-    
-    func setUniversitySlider() {
-        // add it to the view
-        resultViewControllerImageView.addSubview(universitySlider)
-        
-        // set properties and make slider parts invisible, except for the center
-        self.universitySlider.minimumValue = 400
-        self.universitySlider.maximumValue = 1600
-        self.universitySlider.userInteractionEnabled = false
-        self.universitySlider.thumbTintColor = UIColor.clearColor()
-        self.universitySlider.minimumTrackTintColor = UIColor.cyanColor()
-        self.universitySlider.maximumTrackTintColor = UIColor.cyanColor()
-        self.universitySlider.alpha = 0.0
-        
-        // set constraints
-        self.universitySlider.translatesAutoresizingMaskIntoConstraints = false
-        
-        // this puts the constraints so that they match the ends of the low and high SAT views (so that the size of the slider is the same as the size of the university SAT's)
-        
-        let universitySliderRightMargin = NSLayoutConstraint(item: highSATImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        self.resultViewControllerImageView.addConstraint(universitySliderRightMargin)
-        
-        let universitySliderLeftMargin = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        self.resultViewControllerImageView.addConstraint(universitySliderLeftMargin)
-        
-        let universitySliderVerticalConstraint = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 200)
-        self.resultViewControllerImageView.addConstraint(universitySliderVerticalConstraint)
         
     }
     
@@ -196,7 +205,7 @@ class ResultViewController: UIViewController {
         let twentyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelHorizontalConstraint)
         
-        let twentyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 230)
+        let twentyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 25)
         self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelVerticalConstraint)
         
     }
@@ -207,7 +216,7 @@ class ResultViewController: UIViewController {
         
         // set properties
         self.seventyFivePercentileLabel.text = "1600"
-        self.seventyFivePercentileLabel.alpha = 0.0
+        self.seventyFivePercentileLabel.alpha = 0
         
         // set constraints; make it so that the horizontal constraint centers the label on the leading/left margin of the high SAT view
         self.seventyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -215,7 +224,7 @@ class ResultViewController: UIViewController {
         let seventyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: highSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(seventyFivePercentileLabelHorizontalConstraint)
         
-        let seventyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 230)
+        let seventyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 25)
         self.resultViewControllerImageView.addConstraint(seventyFivePercentileLabelVerticalConstraint)
         
     }
@@ -232,26 +241,22 @@ class ResultViewController: UIViewController {
         } else {
             self.studentSATLabel.text = studentSAT!
         }
+        self.studentSATLabel.alpha = 0
         
         // set constraints
         self.studentSATLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        /*let studentSATLabelHorizontalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
-        resultViewControllerImageView.addConstraint(studentSATLabelHorizontalConstraint)*/
-        
         let studentSATLabelHorizontalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: studentSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(studentSATLabelHorizontalConstraint)
         
-        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 170)
+        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -30)
         self.resultViewControllerImageView.addConstraint(studentSATLabelVerticalConstraint)
         
     }
     
     func SATScoreChangeManyThings() {
-        
-        // put in the slider/label values and unhide them
+        // put in the slider/label values and unhide background slider
         self.backgroundSlider.hidden = false
-        self.studentSATLabel.hidden = false
         self.twentyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.TwentyFivePercentile)
         self.seventyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.SeventyFivePercentile)
         
@@ -272,17 +277,44 @@ class ResultViewController: UIViewController {
     }
     
     func fadeInGeneral () {
-        self.resultViewControllerLabel.alpha = 0.0
+        self.resultViewControllerLabel.alpha = 0
         
         // set animation so that non-student-related items gradually fade in
-        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.resultViewControllerLabel.alpha = 1.0
-            self.twentyFivePercentileLabel.alpha = 1.0
-            self.seventyFivePercentileLabel.alpha = 1.0
-            self.universitySlider.alpha = 1.0
+        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.resultViewControllerLabel.alpha = 1
+            self.twentyFivePercentileLabel.alpha = 1
+            self.seventyFivePercentileLabel.alpha = 1
+            self.universitySlider.alpha = 1
             }, completion: nil)
         
+        // set animation so that the background thumb image moves to the student score
+        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.backgroundSlider.center.x -= self.resultViewControllerImageView.bounds.width
+            self.backgroundSlider.center.y += 150
+            }) { (Bool) in
+                // when the image finishes animating, make the student-related items fade in
+                UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.studentSATLabel.alpha = 1
+                    }, completion: nil)
+        }
         
+        /*UIView.animateKeyframesWithDuration(2, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: {
+            let keyFrameAnimation = CAKeyframeAnimation(keyPath: "position")
+            let mutablePath = CGPathCreateMutable()
+            CGPathMoveToPoint(mutablePath, nil, 50, 100)
+            //CGPathMoveToPoint(<#T##path: CGMutablePath?##CGMutablePath?#>, <#T##m: UnsafePointer<CGAffineTransform>##UnsafePointer<CGAffineTransform>#>, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>)
+            CGPathAddQuadCurveToPoint(mutablePath, nil, 150, 100, 250, 200)
+            //CGPathAddQuadCurveToPoint(mutablePath, nil, <#T##cpx: CGFloat##CGFloat#>, <#T##cpy: CGFloat##CGFloat#>, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>)
+            keyFrameAnimation.path = mutablePath
+            keyFrameAnimation.duration = 2.0
+            keyFrameAnimation.fillMode = kCAFillModeForwards
+            keyFrameAnimation.removedOnCompletion = false
+            }) { (Bool) in
+                // when the image finishes animating, make the student-related items fade in
+                UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.studentSATLabel.alpha = 1
+                    }, completion: nil)
+        }*/
         
     }
     
