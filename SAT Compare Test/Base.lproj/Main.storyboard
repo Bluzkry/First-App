@@ -51,46 +51,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
-                                <rect key="frame" x="276" y="527" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="48n-6P-vU6"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What university are your interested in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
-                                <rect key="frame" x="154" y="240" width="293" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Compare" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAv-Jc-41K" userLabel="Title">
+                                <rect key="frame" x="198" y="100" width="205" height="40"/>
+                                <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="36"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kn-Jv-Ebg" userLabel="Student SAT Text Field">
-                                <rect key="frame" x="220" y="432" width="160" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What is your SAT score?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
-                                <rect key="frame" x="207" y="403" width="186" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-f2-Xxy" userLabel="University Search Text Field">
-                                <rect key="frame" x="252" y="285" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="universitySearchTextField:" destination="ziS-gR-eeH" eventType="touchDown" id="8C0-RS-oKg"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-8P-QEn">
-                                <rect key="frame" x="276" y="550" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="e5n-98-rGd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hav-Hg-McX" userLabel="Submit Stack View">
+                                <rect key="frame" x="258" y="440" width="85" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="36"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Vep-r6-R8V"/>
+                                            <constraint firstAttribute="width" constant="85" id="x3P-MW-acj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="48n-6P-vU6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-8P-QEn">
+                                        <rect key="frame" x="0.0" y="44" width="85" height="36"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="6ib-y0-89w"/>
+                                            <constraint firstAttribute="width" constant="85" id="JpJ-dP-1p6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="e5n-98-rGd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PNY-8P-QEn" firstAttribute="top" secondItem="Usn-NC-UjQ" secondAttribute="bottom" constant="8" id="zyP-q6-zD9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vYI-BT-15X" userLabel="SAT Stack View">
+                                <rect key="frame" x="202" y="331" width="197" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kn-Jv-Ebg" userLabel="Student SAT Text Field">
+                                        <rect key="frame" x="0.0" y="29" width="197" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Kn-Jv-Ebg" firstAttribute="top" secondItem="hb3-ir-EeN" secondAttribute="bottom" constant="8" id="emp-gj-DsH"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-Aw-VIb" userLabel="University Stack View">
+                                <rect key="frame" x="146" y="211" width="308" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are your interested in?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-f2-Xxy" userLabel="University Search Text Field">
+                                        <rect key="frame" x="0.0" y="29" width="308" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="universitySearchTextField:" destination="ziS-gR-eeH" eventType="touchDown" id="8C0-RS-oKg"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bBa-f2-Xxy" firstAttribute="top" secondItem="hDv-4d-qlb" secondAttribute="bottom" constant="8" id="Nq2-r9-CCk"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp" userLabel="Info Button">
                                 <rect key="frame" x="558" y="558" width="22" height="22"/>
                                 <connections>
                                     <segue destination="7wv-u4-ik7" kind="presentation" id="G5d-U1-q5j"/>
@@ -100,20 +146,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Un0-wb-fKp" firstAttribute="trailing" secondItem="pwe-7y-ZqJ" secondAttribute="trailingMargin" id="2hG-j4-BjM"/>
-                            <constraint firstItem="Usn-NC-UjQ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="9GT-Dt-OwK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0Kn-Jv-Ebg" secondAttribute="trailing" constant="25" id="PTl-EE-JY4"/>
-                            <constraint firstItem="bBa-f2-Xxy" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="PoB-p6-mjQ"/>
-                            <constraint firstItem="hDv-4d-qlb" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="Rwh-Zt-35t"/>
-                            <constraint firstItem="hb3-ir-EeN" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="Wu1-bn-MnK"/>
-                            <constraint firstItem="Usn-NC-UjQ" firstAttribute="top" secondItem="0Kn-Jv-Ebg" secondAttribute="bottom" constant="25" id="Zy6-Ol-cQc"/>
-                            <constraint firstItem="PNY-8P-QEn" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="fsh-sP-oVe"/>
-                            <constraint firstItem="0Kn-Jv-Ebg" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leadingMargin" constant="25" id="hUa-Rf-LkS"/>
-                            <constraint firstItem="PNY-8P-QEn" firstAttribute="top" secondItem="Usn-NC-UjQ" secondAttribute="bottom" id="lud-fh-QSi"/>
+                            <constraint firstItem="r6W-Aw-VIb" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.8" id="4FJ-kw-YLb"/>
+                            <constraint firstItem="hav-Hg-McX" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="9cD-wm-XoL"/>
+                            <constraint firstItem="vYI-BT-15X" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.2" id="FYM-O9-hdc"/>
+                            <constraint firstItem="r6W-Aw-VIb" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="GZ7-Ug-Qcc"/>
+                            <constraint firstItem="hav-Hg-McX" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="IGg-cf-hlF"/>
+                            <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.4" id="gwk-fq-P6I"/>
+                            <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
+                            <constraint firstItem="vYI-BT-15X" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="rPb-qo-9Uy"/>
                             <constraint firstItem="nIl-DR-GEh" firstAttribute="top" secondItem="Un0-wb-fKp" secondAttribute="bottom" constant="20" id="zy8-8p-2G3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GQd-i5-jH8"/>
                     <connections>
+                        <outlet property="cancelButton" destination="PNY-8P-QEn" id="2PT-nD-gcX"/>
                         <outlet property="studentSATSubmitButton" destination="Usn-NC-UjQ" id="ptF-4e-7WP"/>
                         <outlet property="studentSATTextField" destination="0Kn-Jv-Ebg" id="ZSQ-eS-79O"/>
                         <outlet property="universitySearchTextField" destination="bBa-f2-Xxy" id="PIM-1f-WRf"/>
@@ -140,8 +186,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-wi-2Db">
                                 <rect key="frame" x="20" y="-6" width="560" height="606"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-2i-O6d" userLabel="Text">
-                                        <rect key="frame" x="0.0" y="28" width="544" height="733"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-2i-O6d" userLabel="Text">
+                                        <rect key="frame" x="0.0" y="27" width="540" height="1225"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Suggestions for the App, bugs found in the App? Looking for a developer or college application advice for your child? E-mail:  ">
                                                 <attributes>
@@ -282,11 +328,10 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </view>
                     <navigationItem key="navigationItem" id="Up9-UJ-uty">
                         <barButtonItem key="leftBarButtonItem" id="Z5W-bg-jyy">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sEY-MT-TpF">
-                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="sEY-MT-TpF" userLabel="Back">
+                                <rect key="frame" x="20" y="7" width="29" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Return"/>
+                                <state key="normal" backgroundImage="Back Icon"/>
                                 <connections>
                                     <segue destination="MX8-YE-azr" kind="presentation" id="bPc-xE-6BA"/>
                                 </connections>
@@ -300,7 +345,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtW-m0-vDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3358" y="1399"/>
+            <point key="canvasLocation" x="2554" y="1619"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="QlL-cj-tq8">
@@ -384,7 +429,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFc-aW-KWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="-399"/>
+            <point key="canvasLocation" x="2554" y="-437"/>
         </scene>
         <!--Navigation to Result View Controller-->
         <scene sceneID="hXE-Vf-35A">
@@ -438,9 +483,12 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVV-bw-LvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="1399"/>
+            <point key="canvasLocation" x="2554" y="949"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back Icon" width="29" height="29"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bPc-xE-6BA"/>
     </inferredMetricsTieBreakers>

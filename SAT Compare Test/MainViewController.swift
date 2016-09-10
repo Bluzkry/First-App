@@ -13,7 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var universitySearchTextField: UITextField!
     @IBOutlet weak var studentSATTextField: UITextField!
     @IBOutlet weak var studentSATSubmitButton: UIButton!
-
+    @IBOutlet weak var cancelButton: UIButton!
+    
     // this is needed to transfer the university data to the next view
     var mainViewControllerSelectedUniversity:UniversityData?
     var mainViewControllerStudentSAT:String?
@@ -22,6 +23,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        // make the button corners rounded
+        self.studentSATSubmitButton.layer.cornerRadius = 4
+        self.cancelButton.layer.cornerRadius = 4
         
         // hide navigation bar
         self.navigationController!.setNavigationBarHidden(true, animated: true)
