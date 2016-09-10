@@ -1,5 +1,5 @@
 //
-//  UniversitySearchTableViewController.swift
+//  UniversitySearchController.swift
 //  SAT Compare Test
 //
 //  Created by Alexander Zou on 8/21/16.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class UniversitySearchTableViewController: UITableViewController, UISearchResultsUpdating {
+class UniversitySearchController: UITableViewController, UISearchResultsUpdating {
 
     let model:UniversityModel = UniversityModel()
     var totalData:[UniversityData] = [UniversityData]()
     
+    // we need this for any SAT score data passed by the main view controller
+    var searchControllerStudentSAT: String?
+    
     // this indicates the search result
     var filteredUniversities = [UniversityData]()
-    var universitySearchViewControllerSelectedUniversity: UniversityData?
+    var searchControllerSelectedUniversity: UniversityData?
 
     // we need to set up these foundations for the search
-    var universitySearchController: UISearchController!
-    var universityResultsController = UITableViewController()
+    var searchcontroller: UISearchController!
+    var searchResultsController = UITableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +31,12 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
         self.totalData = self.model.getData()
         
         // set up the search controller
-        self.universitySearchController = UISearchController(searchResultsController: self.universityResultsController)
-        self.tableView.tableHeaderView = self.universitySearchController.searchBar
-        self.universitySearchController.searchResultsUpdater = self
-        self.universityResultsController.tableView.dataSource = self
-        self.universityResultsController.tableView.delegate = self
-        self.universitySearchController.dimsBackgroundDuringPresentation = false
+        self.searchcontroller = UISearchController(searchResultsController: self.searchResultsController)
+        self.tableView.tableHeaderView = self.searchcontroller.searchBar
+        self.searchcontroller.searchResultsUpdater = self
+        self.searchResultsController.tableView.dataSource = self
+        self.searchResultsController.tableView.delegate = self
+        self.searchcontroller.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         
         // Uncomment the following line to preserve selection between presentations
@@ -48,18 +51,18 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
         
         // filter through the universities
         self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            return data.UniversityName.lowercaseString.containsString(self.universitySearchController.searchBar.text!.lowercaseString)
-            // 以后需要加中文 return data.中文名字.containsString(self.universitySearchController.searchBar.text!)
+            return data.UniversityName.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString)
+            // 以后需要加中文 return data.中文名字.containsString(self.searchcontroller.searchBar.text!)
         })
         
         // update the results table view
-        self.universityResultsController.tableView.reloadData()
+        self.searchResultsController.tableView.reloadData()
         
         /* OPTION 2: let totalDataUniversityString = String(totalData)
         
         // filter through the universities
         self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            if totalDataUniversityString.lowercaseString.containsString(self.universitySearchController.searchBar.text!.lowercaseString) == true {
+            if totalDataUniversityString.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString) == true {
                 return true
             } else {
                 return false
@@ -67,7 +70,7 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
         }) */
         
         /* self.filteredUniversities = self.totalData.filter { (data:UniversityData) -> Bool in
-            if totalData.lowercaseString.containsString(self.universitySearchController.searchBar.text!.lowercaseString) {
+            if totalData.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString) {
                 return true
             } else {
                 return false
@@ -91,7 +94,7 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
     
     // this gives the number of rows
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if universitySearchController.active && universitySearchController.searchBar.text != "" {
+        if searchcontroller.active && searchcontroller.searchBar.text != "" {
             // if we search, the rows is the number of rows in our filtered universities
             return self.filteredUniversities.count
         } else {
@@ -105,7 +108,7 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
         let cell = UITableViewCell()
         let data:UniversityData
         
-        if universitySearchController.active && universitySearchController.searchBar.text != "" {
+        if searchcontroller.active && searchcontroller.searchBar.text != "" {
             // if we search, what's in the table is the filtered universities
             data = filteredUniversities[indexPath.row]
         } else {
@@ -119,22 +122,23 @@ class UniversitySearchTableViewController: UITableViewController, UISearchResult
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
-        universitySearchViewControllerSelectedUniversity = filteredUniversities[indexPath.row]
+        searchControllerSelectedUniversity = filteredUniversities[indexPath.row]
         
         // trigger the segue to go to the next view
-        self.performSegueWithIdentifier("segueToNavigationControllerTwo", sender: self)
+        self.performSegueWithIdentifier("segueToMainViewController", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "segueToNavigationControllerTwo"{
+        if segue.identifier == "segueToMainViewController"{
             
             // get the new view controller using segue.destinationViewController.
-            let DestinationNavigationViewControllerTwo = segue.destinationViewController as! UINavigationController
-            let targetBetweenViewController = DestinationNavigationViewControllerTwo.topViewController as! BetweenViewController
+            let DestinationMainViewController = segue.destinationViewController as! UINavigationController
+            let targetMainViewController = DestinationMainViewController.topViewController as! MainViewController
             
             // Pass the selected university object to the new view controller
-            targetBetweenViewController.betweenViewControllerSelectedUniversity = universitySearchViewControllerSelectedUniversity
+            targetMainViewController.mainViewControllerSelectedUniversity = searchControllerSelectedUniversity
+            targetMainViewController.mainViewControllerStudentSAT = searchControllerStudentSAT
         }
         
     }

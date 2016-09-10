@@ -23,14 +23,13 @@ class ResultViewController: UIViewController {
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
 
-    var studentSAT:String?
-    var resultViewControllerSelectedUniversity:UniversityData!
+    var studentSAT:Int!
+    var selectedUniversity:UniversityData!
 
     // this is needed at top for determining the student SAT percentile
     var studentSATPercentile:Int?
     
     override func viewDidLoad() {
-    ////
     ////
         
         super.viewDidLoad()
@@ -43,50 +42,34 @@ class ResultViewController: UIViewController {
         self.setTwentyFivePercentileLabel()
         self.setSeventyFivePercentileLabel()
         
-        // we test if the student wrote a correct SAT score
-        let studentSATInt:Int? = Int(studentSAT!)
-        let selectedUniversityName = resultViewControllerSelectedUniversity.UniversityName
+        // change many things
+        self.setStudentSATLabel()
+        self.SATScoreChangeManyThings()
         
-        if (studentSATInt != nil) && (studentSATInt <= 1600) && (studentSATInt >= 400) {
-        ////
+        // fade in comes after we set the studentSATlabel
+        self.fadeInGeneral()
+        
+        // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
+        let selectedUniversityName = selectedUniversity.UniversityName
+        if studentSAT < selectedUniversity.TwentyFivePercentile {
+            // student SAT low
             
-            // successfully converted studentSAT to integer
-            
-            // change many things
-            self.setStudentSATLabel()
-            self.SATScoreChangeManyThings()
-            // fade in comes after we set the studentSATlabel
-            self.fadeInGeneral()
-
-            // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
-            if studentSATInt < resultViewControllerSelectedUniversity.TwentyFivePercentile {
-                // student SAT low
+            self.resultViewControllerLabel.text = "Your SAT score places you below the 25th percentile of students accepted or matriculated? to \(selectedUniversityName)"
                 
-                self.resultViewControllerLabel.text = "Your SAT score places you below the 25th percentile of students accepted or matriculated? to \(selectedUniversityName)"
+        } else if studentSAT > selectedUniversity.SeventyFivePercentile {
+            // student SAT high
                 
-            } else if studentSATInt > resultViewControllerSelectedUniversity.SeventyFivePercentile {
-                // student SAT high
+            self.resultViewControllerLabel.text = "Your SAT score places you above the 75th percentile of students accepted or matriculated? to \(selectedUniversityName)"
                 
-                self.resultViewControllerLabel.text = "Your SAT score places you above the 75th percentile of students accepted or matriculated? to \(selectedUniversityName)"
-                
-            } else {
-                // student SAT in-between
-                
-                // determine student percentile
-                self.determineStudentPercentile()
-                self.resultViewControllerLabel.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students accepted or matriculated? to \(selectedUniversityName)."
-                
-            }
-            
-        ////
         } else {
-            // student incorrectly entered information
-            self.resultViewControllerLabel.text = "You did not enter an SAT score between 400 and 1600. Please try again and enter an SAT score between 400 and 1600."
-        
-        ////
+            // student SAT in-between
+                
+            // determine student percentile
+            self.determineStudentPercentile()
+            self.resultViewControllerLabel.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students accepted or matriculated? to \(selectedUniversityName)."
+                
         }
-    
-    ////
+
     ////
     }
     
@@ -98,20 +81,16 @@ class ResultViewController: UIViewController {
     func determineStudentPercentile() {
         // we determine student percentile according to the equation (student score - 0th percentile)/(100th percentile - 0th percentile); you have to convert to a float midway through and then unconvert
         
-        let studentSATInt:Int? = Int(studentSAT!)
-        // we test if the student wrote a correct SAT score
-        if (studentSATInt != nil) {
-        let studentSATPercentileTopEquation = Float(studentSATInt! - resultViewControllerSelectedUniversity.ZeroPercentile)
-        let studentSATPercentileBottomEquation = Float(resultViewControllerSelectedUniversity.HundredPercentile - resultViewControllerSelectedUniversity.ZeroPercentile)
+        let studentSATPercentileTopEquation = Float(studentSAT - selectedUniversity.ZeroPercentile)
+        let studentSATPercentileBottomEquation = Float(selectedUniversity.HundredPercentile - selectedUniversity.ZeroPercentile)
         studentSATPercentile = Int((studentSATPercentileTopEquation/studentSATPercentileBottomEquation)*100)
-        }
     }
 
     func setSATImageViews() {
         
         // these image view constraints must be set AS MULTIPLIERS so that they depend on the university SAT according to the following equation: low SAT view = (low SAT-200)/1600; high SAT view = (1800-SAT)/1600 as MULTIPLIERS; you have to convert to a float midway through
-        let lowSATImageViewMultiplier = CGFloat(Float(resultViewControllerSelectedUniversity.TwentyFivePercentile - 200)/Float(1600))
-        let highSATImageViewMultiplier = CGFloat(Float(1800 - resultViewControllerSelectedUniversity.SeventyFivePercentile)/Float(1600))
+        let lowSATImageViewMultiplier = CGFloat(Float(selectedUniversity.TwentyFivePercentile - 200)/Float(1600))
+        let highSATImageViewMultiplier = CGFloat(Float(1800 - selectedUniversity.SeventyFivePercentile)/Float(1600))
         
         // in order to set university slider and label constraints, must first set left and right image view constraints and then match the university slider and label horizontal constraints so that they are at the edges of the image view constraints
         self.lowSATImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -221,12 +200,11 @@ class ResultViewController: UIViewController {
         resultViewControllerImageView.addSubview(studentSATLabel)
         
         // set properties
-        let studentSATInt:Int? = Int(studentSAT!)
-        if studentSATInt < 1000 {
+        if studentSAT < 1000 {
             // this is so the scroll appears on the center
             self.studentSATLabel.text = " \(studentSAT!)"
         } else {
-            self.studentSATLabel.text = studentSAT!
+            self.studentSATLabel.text = String(studentSAT!)
         }
         self.studentSATLabel.alpha = 0
         
@@ -244,22 +222,18 @@ class ResultViewController: UIViewController {
     func SATScoreChangeManyThings() {
         // put in the slider/label values and unhide background slider
         self.backgroundSlider.hidden = false
-        self.twentyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.TwentyFivePercentile)
-        self.seventyFivePercentileLabel.text = String(resultViewControllerSelectedUniversity.SeventyFivePercentile)
-        
-        let studentSATInt:Int? = Int(studentSAT!)
-        if (studentSATInt != nil) && (studentSATInt <= 1600) && (studentSATInt >= 400) {
+        self.twentyFivePercentileLabel.text = String(selectedUniversity.TwentyFivePercentile)
+        self.seventyFivePercentileLabel.text = String(selectedUniversity.SeventyFivePercentile)
             
-            // change student SAT width so that the left side matches the student SAT score, so we can use this in the future to place the location of the student SAT label
+        // change student SAT width so that the left side matches the student SAT score, so we can use this in the future to place the location of the student SAT label
             
-            self.studentSATImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.studentSATImageView.translatesAutoresizingMaskIntoConstraints = false
             
-            let studentSATImageViewMultiplier = CGFloat(Float(1800 - studentSATInt!)/Float(1600))
+        let studentSATImageViewMultiplier = CGFloat(Float(1800 - studentSAT)/Float(1600))
             
-            let studentSATImageViewWidthConstraint = NSLayoutConstraint(item: studentSATImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Width, multiplier: studentSATImageViewMultiplier, constant: 0)
-            self.resultViewControllerImageView.addConstraint(studentSATImageViewWidthConstraint)
-            
-        }
+        let studentSATImageViewWidthConstraint = NSLayoutConstraint(item: studentSATImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Width, multiplier: studentSATImageViewMultiplier, constant: 0)
+        self.resultViewControllerImageView.addConstraint(studentSATImageViewWidthConstraint)
+
     }
     
     func fadeInGeneral () {
@@ -268,7 +242,7 @@ class ResultViewController: UIViewController {
         self.resultViewControllerLabel.alpha = 0
         
         // set animation so that non-student-related items gradually fade in
-        UIView.animateWithDuration(1.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
         ////
             
             self.resultViewControllerLabel.alpha = 1
@@ -279,7 +253,7 @@ class ResultViewController: UIViewController {
         ////
             
             // after animation is complete, make the thumb of the slider slide into the slider in a non-linear manner
-            UIView.animateKeyframesWithDuration(1.5, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: {
+            UIView.animateKeyframesWithDuration(1, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: {
                 
                 // in order to do that, we need to know what point of the slider the thumb will hit; this equation solves this through multiplier = (low SAT-200)/1600 * width of the overall image view
                 let studentSATFloat:Float? = Float(self.studentSAT!)
@@ -297,7 +271,7 @@ class ResultViewController: UIViewController {
                 
                 keyFrameAnimation.path = mutablePath
                 // actually the timer is this; the arguments don't have any effect
-                keyFrameAnimation.duration = 1.5
+                keyFrameAnimation.duration = 1
                 keyFrameAnimation.fillMode = kCAFillModeForwards
                 keyFrameAnimation.removedOnCompletion = false
                 
@@ -306,7 +280,7 @@ class ResultViewController: UIViewController {
                 }, completion: nil)
             
             // when the image loads, also make the student SAT score fade-in (after the slider thumb lands)
-            UIView.animateWithDuration(2, delay: 1.5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            UIView.animateWithDuration(1, delay: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 self.studentSATLabel.alpha = 1
                 }, completion: nil)
             
@@ -316,16 +290,6 @@ class ResultViewController: UIViewController {
     ////
     ////
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
             
