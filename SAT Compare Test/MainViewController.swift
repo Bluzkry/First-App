@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
         mainViewControllerStudentSAT = studentSATTextField.text
 
         // check if university has been selected
-        if let existingMainViewControllerSelectedUniversity = mainViewControllerSelectedUniversity {
+        if mainViewControllerSelectedUniversity != nil {
         ////
         ////
             

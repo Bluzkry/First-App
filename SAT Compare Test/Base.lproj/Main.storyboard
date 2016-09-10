@@ -359,8 +359,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGZ-iW-rae">
-                                <rect key="frame" x="70" y="288" width="460" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your SAT score places you in the Xth percentile of students enrolled at Y." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGZ-iW-rae">
+                                <rect key="frame" x="70" y="396" width="460" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -377,12 +377,35 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <rect key="frame" x="329" y="1" width="271" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-dc-m3u" userLabel="Title">
+                                <rect key="frame" x="92" y="100" width="416" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="SAT Compare: X University">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="36" name="Palatino-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="400" maxValue="1600" translatesAutoresizingMaskIntoConstraints="NO" id="H6z-Pd-PwV" userLabel="University Slider">
+                                <rect key="frame" x="-2" y="255" width="604" height="16"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="AIR-ww-drP"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bbr-KQ-JiW" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="3KZ-Co-3Dk"/>
                             <constraint firstItem="nGZ-iW-rae" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leadingMargin" constant="50" id="Be6-p7-4QS"/>
-                            <constraint firstItem="nGZ-iW-rae" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" id="CA8-p3-UQj"/>
+                            <constraint firstItem="nGZ-iW-rae" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="1.4" id="CA8-p3-UQj"/>
+                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerX" secondItem="Csy-bo-JZM" secondAttribute="centerX" id="EgY-GD-LO8"/>
                             <constraint firstItem="0EG-V3-fWS" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leading" id="JO7-XV-88B"/>
                             <constraint firstItem="ooa-ju-7gv" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="KPB-JE-AO4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nGZ-iW-rae" secondAttribute="trailing" constant="50" id="N2X-ys-h9C"/>
@@ -392,6 +415,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             <constraint firstAttribute="trailing" secondItem="ooa-ju-7gv" secondAttribute="trailing" id="VFG-Iz-SvF"/>
                             <constraint firstItem="0EG-V3-fWS" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="gIi-ky-2Wd"/>
                             <constraint firstAttribute="trailing" secondItem="bbr-KQ-JiW" secondAttribute="trailing" id="h7R-xV-zRl"/>
+                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.4" id="j70-CH-oMY"/>
+                            <constraint firstItem="H6z-Pd-PwV" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.9" id="vyt-6m-Dl0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dcw-Cs-XXR">
@@ -407,6 +432,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <outlet property="resultViewControllerImageView" destination="Csy-bo-JZM" id="Lli-5n-p8i"/>
                         <outlet property="resultViewControllerLabel" destination="nGZ-iW-rae" id="U87-k3-i2h"/>
                         <outlet property="studentSATImageView" destination="bbr-KQ-JiW" id="pdg-BG-nny"/>
+                        <outlet property="titleLabel" destination="Woa-dc-m3u" id="L7z-zR-Ny3"/>
+                        <outlet property="universitySlider" destination="H6z-Pd-PwV" id="zS3-uc-BCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMd-1g-hO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,6 +517,6 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="Back Icon" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bPc-xE-6BA"/>
+        <segue reference="qea-EH-xQm"/>
     </inferredMetricsTieBreakers>
 </document>

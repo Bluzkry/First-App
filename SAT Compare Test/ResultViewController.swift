@@ -17,8 +17,9 @@ class ResultViewController: UIViewController {
     // this image view is at the right and is for the positioning of the student label
     @IBOutlet weak var studentSATImageView: UIView!
     
+    @IBOutlet weak var universitySlider: UISlider!
+    @IBOutlet weak var titleLabel: UILabel!
     var backgroundSlider: UISlider! = UISlider()
-    var universitySlider: UISlider! = UISlider()
     var twentyFivePercentileLabel: UILabel! = UILabel()
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
@@ -51,22 +52,23 @@ class ResultViewController: UIViewController {
         
         // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
         let selectedUniversityName = selectedUniversity.UniversityName
+        self.titleLabel.text = "SAT Compare: \(selectedUniversityName)"
         if studentSAT < selectedUniversity.TwentyFivePercentile {
             // student SAT low
             
-            self.resultViewControllerLabel.text = "Your SAT score places you below the 25th percentile of students accepted or matriculated? to \(selectedUniversityName)"
+            self.resultViewControllerLabel.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
                 
         } else if studentSAT > selectedUniversity.SeventyFivePercentile {
             // student SAT high
                 
-            self.resultViewControllerLabel.text = "Your SAT score places you above the 75th percentile of students accepted or matriculated? to \(selectedUniversityName)"
+            self.resultViewControllerLabel.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
                 
         } else {
             // student SAT in-between
                 
             // determine student percentile
             self.determineStudentPercentile()
-            self.resultViewControllerLabel.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students accepted or matriculated? to \(selectedUniversityName)."
+            self.resultViewControllerLabel.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students enrolled at \(selectedUniversityName)."
                 
         }
 
@@ -109,13 +111,12 @@ class ResultViewController: UIViewController {
         resultViewControllerImageView.addSubview(universitySlider)
         
         // set properties and make slider parts invisible, except for the center
-        self.universitySlider.minimumValue = 400
-        self.universitySlider.maximumValue = 1600
-        self.universitySlider.userInteractionEnabled = false
         self.universitySlider.thumbTintColor = UIColor.clearColor()
-        self.universitySlider.minimumTrackTintColor = UIColor.cyanColor()
-        self.universitySlider.maximumTrackTintColor = UIColor.cyanColor()
+        self.universitySlider.layer.cornerRadius = 4
         self.universitySlider.alpha = 0
+        
+        // set images for slider
+        // this will actually be quite difficult; you have to customize the size of the insets according to the slider size
         
         // set constraints
         self.universitySlider.translatesAutoresizingMaskIntoConstraints = false
@@ -127,9 +128,6 @@ class ResultViewController: UIViewController {
         
         let universitySliderLeftMargin = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(universitySliderLeftMargin)
-        
-        let universitySliderVerticalConstraint = NSLayoutConstraint(item: universitySlider, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 200)
-        self.resultViewControllerImageView.addConstraint(universitySliderVerticalConstraint)
         
     }
     
@@ -147,6 +145,10 @@ class ResultViewController: UIViewController {
         self.backgroundSlider.userInteractionEnabled = false
         self.backgroundSlider.minimumTrackTintColor = UIColor.clearColor()
         self.backgroundSlider.maximumTrackTintColor = UIColor.clearColor()
+        
+        // set image
+        let thumbImage = UIImage(named: "Score-Spotlight-40")
+        self.backgroundSlider.setThumbImage(thumbImage, forState: UIControlState.Normal)
         
         // set constraints
         backgroundSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -214,7 +216,7 @@ class ResultViewController: UIViewController {
         let studentSATLabelHorizontalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: studentSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(studentSATLabelHorizontalConstraint)
         
-        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -30)
+        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -35)
         self.resultViewControllerImageView.addConstraint(studentSATLabelVerticalConstraint)
         
     }
