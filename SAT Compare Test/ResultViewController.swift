@@ -10,14 +10,16 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var textBackground: UIView!
     @IBOutlet var resultViewControllerImageView: UIView!
-    @IBOutlet weak var resultViewControllerLabel: UILabel!
+    @IBOutlet weak var resultViewControllerText: UILabel!
     @IBOutlet weak var lowSATImageView: UIView!
     @IBOutlet weak var highSATImageView: UIView!
     // this image view is at the right and is for the positioning of the student label
     @IBOutlet weak var studentSATImageView: UIView!
     
     @IBOutlet weak var universitySlider: UISlider!
+    @IBOutlet weak var sliderBackground: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     var backgroundSlider: UISlider! = UISlider()
     var twentyFivePercentileLabel: UILabel! = UILabel()
@@ -56,19 +58,19 @@ class ResultViewController: UIViewController {
         if studentSAT < selectedUniversity.TwentyFivePercentile {
             // student SAT low
             
-            self.resultViewControllerLabel.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
                 
         } else if studentSAT > selectedUniversity.SeventyFivePercentile {
             // student SAT high
                 
-            self.resultViewControllerLabel.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
                 
         } else {
             // student SAT in-between
                 
             // determine student percentile
             self.determineStudentPercentile()
-            self.resultViewControllerLabel.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students enrolled at \(selectedUniversityName)."
+            self.resultViewControllerText.text = "Your SAT score places you on the \(studentSATPercentile!)th percentile of students enrolled at \(selectedUniversityName)."
                 
         }
 
@@ -112,8 +114,10 @@ class ResultViewController: UIViewController {
         
         // set properties and make slider parts invisible, except for the center
         self.universitySlider.thumbTintColor = UIColor.clearColor()
-        self.universitySlider.layer.cornerRadius = 4
+        self.universitySlider.layer.cornerRadius = 8
         self.universitySlider.alpha = 0
+        self.sliderBackground.layer.cornerRadius = 6
+        self.sliderBackground.alpha = 0
         
         // set images for slider
         // this will actually be quite difficult; you have to customize the size of the insets according to the slider size
@@ -147,8 +151,9 @@ class ResultViewController: UIViewController {
         self.backgroundSlider.maximumTrackTintColor = UIColor.clearColor()
         
         // set image
-        let thumbImage = UIImage(named: "Score-Spotlight-40")
+        let thumbImage = UIImage(named: "SAT Score")
         self.backgroundSlider.setThumbImage(thumbImage, forState: UIControlState.Normal)
+        self.backgroundSlider.layer.cornerRadius = 4
         
         // set constraints
         backgroundSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -166,11 +171,12 @@ class ResultViewController: UIViewController {
         // set properties
         self.twentyFivePercentileLabel.text = "400"
         self.twentyFivePercentileLabel.alpha = 0
+        self.twentyFivePercentileLabel.font = twentyFivePercentileLabel.font.fontWithSize(12)
         
         // set constraints; make it so that the horizontal constraint centers the label on the trailing/right margin of the low SAT view
         self.twentyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let twentyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        let twentyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelHorizontalConstraint)
         
         let twentyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 25)
@@ -185,11 +191,12 @@ class ResultViewController: UIViewController {
         // set properties
         self.seventyFivePercentileLabel.text = "1600"
         self.seventyFivePercentileLabel.alpha = 0
+        self.seventyFivePercentileLabel.font = seventyFivePercentileLabel.font.fontWithSize(12)
         
         // set constraints; make it so that the horizontal constraint centers the label on the leading/left margin of the high SAT view
         self.seventyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let seventyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: highSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        let seventyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: highSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(seventyFivePercentileLabelHorizontalConstraint)
         
         let seventyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 25)
@@ -200,6 +207,7 @@ class ResultViewController: UIViewController {
     func setStudentSATLabel() {
         // add it to the view
         resultViewControllerImageView.addSubview(studentSATLabel)
+        self.studentSATLabel.font = studentSATLabel.font.fontWithSize(12)
         
         // set properties
         if studentSAT < 1000 {
@@ -216,7 +224,7 @@ class ResultViewController: UIViewController {
         let studentSATLabelHorizontalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: studentSATImageView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(studentSATLabelHorizontalConstraint)
         
-        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -35)
+        let studentSATLabelVerticalConstraint = NSLayoutConstraint(item: studentSATLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -25)
         self.resultViewControllerImageView.addConstraint(studentSATLabelVerticalConstraint)
         
     }
@@ -241,15 +249,16 @@ class ResultViewController: UIViewController {
     func fadeInGeneral () {
     ////
     ////
-        self.resultViewControllerLabel.alpha = 0
         
         // set animation so that non-student-related items gradually fade in
         UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
         ////
             
-            self.resultViewControllerLabel.alpha = 1
+            self.textBackground.alpha = 1
+            self.resultViewControllerText.alpha = 1
             self.twentyFivePercentileLabel.alpha = 1
             self.seventyFivePercentileLabel.alpha = 1
+            self.sliderBackground.alpha = 1
             self.universitySlider.alpha = 1
         }) { (Bool) in
         ////

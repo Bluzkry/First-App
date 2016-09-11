@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Score-Spotlight-40.png",
+      "filename" : "UCBerkeleyCampus.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Score-Spotlight-40@2x.png",
+      "filename" : "UCBerkeleyCampus@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Score-Spotlight-40@3x.png",
+      "filename" : "UCBerkeleyCampus@3x.jpg",
       "scale" : "3x"
     }
   ],
