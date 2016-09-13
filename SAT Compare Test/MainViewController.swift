@@ -8,6 +8,9 @@
 
 import UIKit
 
+var studentSAT:String?
+var selectedUniversity:UniversityData?
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var universitySearchBackground: UIView!
@@ -17,10 +20,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var studentSATSubmitButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-    
-    // this is needed to transfer the university data to the next view
-    var mainViewControllerSelectedUniversity:UniversityData?
-    var mainViewControllerStudentSAT:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +37,13 @@ class MainViewController: UIViewController {
         self.navigationController!.setNavigationBarHidden(true, animated: true)
         
         // put the text for the university name (if it exists from the university search) and adjust the size
-        if let existingMainViewControllerSelectedUniversity = mainViewControllerSelectedUniversity {
-            universitySearchTextField.text = existingMainViewControllerSelectedUniversity.UniversityName
+        if let existingSelectedUniversity = selectedUniversity {
+            universitySearchTextField.text = existingSelectedUniversity.UniversityName
         }
         
         // put the text for the university SAT score (if it has already been input)
-        if let existingMainViewControllerStudentSAT = mainViewControllerStudentSAT {
-            studentSATTextField.text = existingMainViewControllerStudentSAT
+        if let existingStudentSAT = studentSAT {
+            studentSATTextField.text = String(existingStudentSAT)
         }
         
     }
@@ -75,21 +74,21 @@ class MainViewController: UIViewController {
         incorrectAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
         
         // we first have to make the student SAT the number input in the text field
-        mainViewControllerStudentSAT = studentSATTextField.text
+        let studentSAT = studentSATTextField.text
 
         // check if university has been selected
-        if mainViewControllerSelectedUniversity != nil {
+        if selectedUniversity != nil {
         ////
         ////
             
             // check if SAT score has been input
-            if let existingMainViewControllerStudentSAT = mainViewControllerStudentSAT {
+            if let existingStudentSAT = studentSAT {
             ////
             
-                let existingMainViewControllerStudentSATInt:Int? = Int(existingMainViewControllerStudentSAT)
+                let existingStudentSATInt:Int? = Int(existingStudentSAT)
                 
                 // check if SAT score between 400 and 1600
-                if (existingMainViewControllerStudentSATInt <= 1600) && (existingMainViewControllerStudentSATInt >= 400) {
+                if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
                     
                     // perform segue
                     self.performSegueWithIdentifier("segueToResultViewController", sender: self)
@@ -125,33 +124,18 @@ class MainViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         universitySearchTextField.text = ""
+        selectedUniversity = nil
         studentSATTextField.text = ""
+        studentSAT = nil
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "segueToResultViewController" {
-            
-            // get the new view controller using segue.destinationViewController.
-            let destinationResultViewController = segue.destinationViewController as! UINavigationController
-            let targetResultViewController = destinationResultViewController.topViewController as! ResultViewController
-            
-            // pass the selected studentSAT and university objects to the new view controller.
-            let existingMainViewControllerStudentSATInt:Int? = Int(mainViewControllerStudentSAT!)
-            targetResultViewController.studentSAT = existingMainViewControllerStudentSATInt
-            targetResultViewController.selectedUniversity = mainViewControllerSelectedUniversity
-        }
-        
-        if segue.identifier == "segueToSearchController" {
-            
-            // get the new view controller using segue.destinationViewController.
-            let destinationSearchController = segue.destinationViewController as! UINavigationController
-            let targetSearchController = destinationSearchController.topViewController as! UniversitySearchController
-            
-            // pass the selected studentSAT objects to the new view controller (if it exists)
-            targetSearchController.searchControllerStudentSAT = studentSATTextField.text
+        // when we segue, the student SAT is the number that's in the student SAT text field
+        if segue.identifier == "segueToResultViewController" || segue.identifier == "segueToSearchController" || segue.identifier == "segueToInfoViewController" {
+            studentSAT = studentSATTextField.text
         }
         
     }
+
     
 }

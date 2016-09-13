@@ -18,7 +18,6 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     
     // this indicates the search result
     var filteredUniversities = [UniversityData]()
-    var searchControllerSelectedUniversity: UniversityData?
 
     // we need to set up these foundations for the search
     var searchcontroller: UISearchController!
@@ -122,33 +121,11 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
-        searchControllerSelectedUniversity = filteredUniversities[indexPath.row]
+        selectedUniversity = filteredUniversities[indexPath.row]
         
         // trigger the segue to go to the next view
         self.performSegueWithIdentifier("segueToMainViewController", sender: self)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "segueToMainViewController"{
-            
-            // get the new view controller using segue.destinationViewController.
-            let DestinationMainViewController = segue.destinationViewController as! UINavigationController
-            let targetMainViewController = DestinationMainViewController.topViewController as! MainViewController
-            
-            // Pass the selected university object to the new view controller
-            targetMainViewController.mainViewControllerSelectedUniversity = searchControllerSelectedUniversity
-            targetMainViewController.mainViewControllerStudentSAT = searchControllerStudentSAT
-        }
-        
-    }
-    
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // this is where you have to put any changes before the next view appears
- 
-    }*/
-    
 
     /*
     // Override to support conditional editing of the table view.

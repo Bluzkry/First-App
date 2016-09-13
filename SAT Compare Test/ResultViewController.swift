@@ -21,19 +21,22 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var universitySlider: UISlider!
     @IBOutlet weak var sliderBackground: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     var backgroundSlider: UISlider! = UISlider()
     var twentyFivePercentileLabel: UILabel! = UILabel()
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
 
-    var studentSAT:Int!
-    var selectedUniversity:UniversityData!
-
     // this is needed at top for determining the student SAT percentile
-    var studentSATPercentile:Int?
+    var studentSATPercentile:Int!
+    
+    // this is for changing things if this comes from the data controller
+    var fromData:Bool = false
     
     override func viewDidLoad() {
     ////
+        
+        let studentSATInt:Int = Int(studentSAT!)!
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -53,14 +56,14 @@ class ResultViewController: UIViewController {
         self.fadeInGeneral()
         
         // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
-        let selectedUniversityName = selectedUniversity.UniversityName
+        let selectedUniversityName = selectedUniversity!.UniversityName
         self.titleLabel.text = "SAT Compare: \(selectedUniversityName)"
-        if studentSAT < selectedUniversity.TwentyFivePercentile {
+        if studentSATInt < selectedUniversity!.TwentyFivePercentile {
             // student SAT low
             
             self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
                 
-        } else if studentSAT > selectedUniversity.SeventyFivePercentile {
+        } else if studentSATInt > selectedUniversity!.SeventyFivePercentile {
             // student SAT high
                 
             self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
@@ -84,17 +87,17 @@ class ResultViewController: UIViewController {
     
     func determineStudentPercentile() {
         // we determine student percentile according to the equation (student score - 0th percentile)/(100th percentile - 0th percentile); you have to convert to a float midway through and then unconvert
-        
-        let studentSATPercentileTopEquation = Float(studentSAT - selectedUniversity.ZeroPercentile)
-        let studentSATPercentileBottomEquation = Float(selectedUniversity.HundredPercentile - selectedUniversity.ZeroPercentile)
+        let studentSATInt:Int = Int(studentSAT!)!
+        let studentSATPercentileTopEquation = Float(studentSATInt - selectedUniversity!.ZeroPercentile)
+        let studentSATPercentileBottomEquation = Float(selectedUniversity!.HundredPercentile - selectedUniversity!.ZeroPercentile)
         studentSATPercentile = Int((studentSATPercentileTopEquation/studentSATPercentileBottomEquation)*100)
     }
 
     func setSATImageViews() {
         
         // these image view constraints must be set AS MULTIPLIERS so that they depend on the university SAT according to the following equation: low SAT view = (low SAT-200)/1600; high SAT view = (1800-SAT)/1600 as MULTIPLIERS; you have to convert to a float midway through
-        let lowSATImageViewMultiplier = CGFloat(Float(selectedUniversity.TwentyFivePercentile - 200)/Float(1600))
-        let highSATImageViewMultiplier = CGFloat(Float(1800 - selectedUniversity.SeventyFivePercentile)/Float(1600))
+        let lowSATImageViewMultiplier = CGFloat(Float(selectedUniversity!.TwentyFivePercentile - 200)/Float(1600))
+        let highSATImageViewMultiplier = CGFloat(Float(1800 - selectedUniversity!.SeventyFivePercentile)/Float(1600))
         
         // in order to set university slider and label constraints, must first set left and right image view constraints and then match the university slider and label horizontal constraints so that they are at the edges of the image view constraints
         self.lowSATImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +129,6 @@ class ResultViewController: UIViewController {
         self.universitySlider.translatesAutoresizingMaskIntoConstraints = false
         
         // this puts the constraints so that they match the ends of the low and high SAT views (so that the size of the slider is about the same as the size of the university SAT's)
-        
         let universitySliderRightMargin = NSLayoutConstraint(item: highSATImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: universitySlider, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         self.resultViewControllerImageView.addConstraint(universitySliderRightMargin)
         
@@ -143,8 +145,6 @@ class ResultViewController: UIViewController {
         self.backgroundSlider.minimumValue = 400
         self.backgroundSlider.maximumValue = 1600
         self.backgroundSlider.value = 1000
-        // this might be needed later for saving data
-//        self.backgroundSlider.value = Float(self.studentSAT!)!
         self.backgroundSlider.hidden = true
         self.backgroundSlider.userInteractionEnabled = false
         self.backgroundSlider.minimumTrackTintColor = UIColor.clearColor()
@@ -210,11 +210,12 @@ class ResultViewController: UIViewController {
         self.studentSATLabel.font = studentSATLabel.font.fontWithSize(12)
         
         // set properties
-        if studentSAT < 1000 {
-            // this is so the scroll appears on the center
+        let studentSATInt:Int = Int(studentSAT!)!
+        if studentSATInt < 1000 {
+        // this is so the scroll appears on the center
             self.studentSATLabel.text = " \(studentSAT!)"
         } else {
-            self.studentSATLabel.text = String(studentSAT!)
+            self.studentSATLabel.text = "\(studentSAT!)"
         }
         self.studentSATLabel.alpha = 0
         
@@ -232,14 +233,15 @@ class ResultViewController: UIViewController {
     func SATScoreChangeManyThings() {
         // put in the slider/label values and unhide background slider
         self.backgroundSlider.hidden = false
-        self.twentyFivePercentileLabel.text = String(selectedUniversity.TwentyFivePercentile)
-        self.seventyFivePercentileLabel.text = String(selectedUniversity.SeventyFivePercentile)
+        self.twentyFivePercentileLabel.text = String(selectedUniversity!.TwentyFivePercentile)
+        self.seventyFivePercentileLabel.text = String(selectedUniversity!.SeventyFivePercentile)
             
         // change student SAT width so that the left side matches the student SAT score, so we can use this in the future to place the location of the student SAT label
-            
         self.studentSATImageView.translatesAutoresizingMaskIntoConstraints = false
             
-        let studentSATImageViewMultiplier = CGFloat(Float(1800 - studentSAT)/Float(1600))
+        let studentSATInt:Int = Int(studentSAT!)!
+        
+        let studentSATImageViewMultiplier = CGFloat(Float(1800 - studentSATInt)/Float(1600))
             
         let studentSATImageViewWidthConstraint = NSLayoutConstraint(item: studentSATImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: resultViewControllerImageView, attribute: NSLayoutAttribute.Width, multiplier: studentSATImageViewMultiplier, constant: 0)
         self.resultViewControllerImageView.addConstraint(studentSATImageViewWidthConstraint)
@@ -249,57 +251,124 @@ class ResultViewController: UIViewController {
     func fadeInGeneral () {
     ////
     ////
+    ////
         
-        // set animation so that non-student-related items gradually fade in
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        // if it's from a normal search
+        if fromData == false {
+        ////
         ////
             
+            // set animation so that non-student-related items gradually fade in
+            UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                ////
+                
+                self.textBackground.alpha = 1
+                self.resultViewControllerText.alpha = 1
+                self.twentyFivePercentileLabel.alpha = 1
+                self.seventyFivePercentileLabel.alpha = 1
+                self.sliderBackground.alpha = 1
+                self.universitySlider.alpha = 1
+            }) { (Bool) in
+                ////
+                
+                // after animation is complete, make the thumb of the slider slide into the slider in a non-linear manner
+                UIView.animateKeyframesWithDuration(1, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: {
+                    
+                    // in order to do that, we need to know what point of the slider the thumb will hit; this equation solves this through multiplier = (low SAT-200)/1600 * width of the overall image view
+                    let studentSATInt:Int = Int(studentSAT!)!
+                    let studentSATFloat:Float? = Float(studentSATInt)
+                    let pathXVariable:CGFloat = CGFloat( ((Float(studentSATFloat!) - 200)/Float(1600)) * Float(self.resultViewControllerImageView.bounds.width) )
+                    
+                    // we do some magic with keyframes, which I don't understand
+                    let keyFrameAnimation = CAKeyframeAnimation(keyPath: "position")
+                    let mutablePath = CGPathCreateMutable()
+                    
+                    // this is the starting point (we set the x value as -50 behind the view, the y-value is the university slider's y-value)
+                    CGPathMoveToPoint(mutablePath, nil, -50, self.universitySlider.center.y)
+                    
+                    // then we set it to curve; the first two values pathXVariable/2 and 50 are the values which set the curve point, the last two values are the values which the thumb lands on, and pathXVariable is determined by the equationa above, whereas they-value is the university slider's y-value
+                    CGPathAddQuadCurveToPoint(mutablePath, nil, pathXVariable/2, 50, pathXVariable, self.universitySlider.center.y)
+                    
+                    keyFrameAnimation.path = mutablePath
+                    // actually the timer is this; the arguments don't have any effect
+                    keyFrameAnimation.duration = 1
+                    keyFrameAnimation.fillMode = kCAFillModeForwards
+                    keyFrameAnimation.removedOnCompletion = false
+                    
+                    // this type of animation needs to add a layer in which the background slider is the object
+                    self.backgroundSlider.layer.addAnimation(keyFrameAnimation, forKey: "animation")
+                    }, completion: nil)
+                
+                // when the image loads, also make the student SAT score fade-in (after the slider thumb lands)
+                UIView.animateWithDuration(1, delay: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.studentSATLabel.alpha = 1
+                    }, completion: nil)
+                
+            ////
+            }
+        
+        ////
+        //// if it's from the data table
+        } else {
+            
+            // if it's from the data table, we don't do any animations
             self.textBackground.alpha = 1
             self.resultViewControllerText.alpha = 1
             self.twentyFivePercentileLabel.alpha = 1
             self.seventyFivePercentileLabel.alpha = 1
             self.sliderBackground.alpha = 1
             self.universitySlider.alpha = 1
-        }) { (Bool) in
+            
+            // we also hide and disable the button
+            saveButton.hidden = true
+            saveButton.enabled = false
+            
         ////
-            
-            // after animation is complete, make the thumb of the slider slide into the slider in a non-linear manner
-            UIView.animateKeyframesWithDuration(1, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeCubic, animations: {
-                
-                // in order to do that, we need to know what point of the slider the thumb will hit; this equation solves this through multiplier = (low SAT-200)/1600 * width of the overall image view
-                let studentSATFloat:Float? = Float(self.studentSAT!)
-                let pathXVariable:CGFloat = CGFloat( ((Float(studentSATFloat!) - 200)/Float(1600)) * Float(self.resultViewControllerImageView.bounds.width) )
-                
-                // we do some magic with keyframes, which I don't understand
-                let keyFrameAnimation = CAKeyframeAnimation(keyPath: "position")
-                let mutablePath = CGPathCreateMutable()
-                
-                // this is the starting point (we set the x value as -50 behind the view, the y-value is the university slider's y-value)
-                CGPathMoveToPoint(mutablePath, nil, -50, self.universitySlider.center.y)
-                
-                // then we set it to curve; the first two values pathXVariable/2 and 50 are the values which set the curve point, the last two values are the values which the thumb lands on, and pathXVariable is determined by the equationa above, whereas they-value is the university slider's y-value
-                CGPathAddQuadCurveToPoint(mutablePath, nil, pathXVariable/2, 50, pathXVariable, self.universitySlider.center.y)
-                
-                keyFrameAnimation.path = mutablePath
-                // actually the timer is this; the arguments don't have any effect
-                keyFrameAnimation.duration = 1
-                keyFrameAnimation.fillMode = kCAFillModeForwards
-                keyFrameAnimation.removedOnCompletion = false
-                
-                // this type of animation needs to add a layer in which the background slider is the object
-                self.backgroundSlider.layer.addAnimation(keyFrameAnimation, forKey: "animation")
-                }, completion: nil)
-            
-            // when the image loads, also make the student SAT score fade-in (after the slider thumb lands)
-            UIView.animateWithDuration(1, delay: 1, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.studentSATLabel.alpha = 1
-                }, completion: nil)
-            
         ////
         }
+        
+    ////
+    ////
+    ////
+    }
+    
+    @IBAction func saveUniversity(sender: AnyObject) {
+    ////
+        
+        // create an alert to tell students if data is missing
+        let savedAlertController = UIAlertController(title: "Notice:", message: "Your university has been saved.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        savedAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) in
+            
+            // after dismissing the alert, we add the user data to the saved array global variables
+            savedUniversities?.append(selectedUniversity!)
+            savedSAT?.append(studentSAT!)
+            
+            // note that the percentile differs based on the three factors below
+            let studentSATInt:Int = Int(studentSAT!)!
+            if studentSATInt < selectedUniversity!.TwentyFivePercentile {
+                savedPercentile?.append("<25%")
+            } else if studentSATInt > selectedUniversity!.SeventyFivePercentile {
+                savedPercentile?.append(">75%")
+            } else {
+                savedPercentile?.append("\(self.studentSATPercentile)%")
+            }
+            
+        })
+        )
+        
+        // present
+        self.presentViewController(savedAlertController, animated: true, completion: nil)
     
     ////
-    ////
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueSearchDone" {
+            // we reset the global variables when we're done
+            studentSAT = nil
+            selectedUniversity = nil
+        }
     }
 
 }

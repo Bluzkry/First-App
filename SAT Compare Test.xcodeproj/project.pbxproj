@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A506D8811D88642F00196A6B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
+		A506D8821D88642F00196A6B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
+		A506D8831D88642F00196A6B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
+		A506D8861D88654C00196A6B /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
+		A506D8871D88654C00196A6B /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
+		A506D8881D88654C00196A6B /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
+		A506D8891D88654C00196A6B /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
+		A506D88A1D88654C00196A6B /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
+		A506D88B1D88654C00196A6B /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
+		A50E4C741D85C7F100328716 /* DataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50E4C701D85C7F100328716 /* DataTableViewController.xib */; };
+		A50E4C751D85C7F100328716 /* DataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50E4C701D85C7F100328716 /* DataTableViewController.xib */; };
+		A50E4C761D85C7F100328716 /* DataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50E4C701D85C7F100328716 /* DataTableViewController.xib */; };
 		A5113E8E1D79E05700364C47 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
 		A5113E8F1D79E05700364C47 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
 		A5113E901D79E05A00364C47 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
@@ -53,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A506D8801D88642F00196A6B /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
+		A506D8841D88654C00196A6B /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		A506D8851D88654C00196A6B /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
+		A50E4C701D85C7F100328716 /* DataTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewController.xib; sourceTree = "<group>"; };
 		A5140E631D75930A00500482 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A528FD091D6A099B00FD012D /* UniversityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
 		A528FD0B1D6A09B900FD012D /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
@@ -125,12 +141,16 @@
 			children = (
 				A589E0231D69E5C100DEAD84 /* AppDelegate.swift */,
 				A589E0271D69E5C100DEAD84 /* Main.storyboard */,
+				A54CAE351D83417F00C4673F /* InfoViewController.swift */,
 				A5140E631D75930A00500482 /* MainViewController.swift */,
 				A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */,
 				A5BFB9251D76C88D004F62AC /* ResultViewController.swift */,
-				A54CAE351D83417F00C4673F /* InfoViewController.swift */,
+				A506D8801D88642F00196A6B /* DataTableViewController.swift */,
+				A506D8841D88654C00196A6B /* DataTableViewCell.swift */,
 				A528FD091D6A099B00FD012D /* UniversityData.swift */,
 				A528FD0B1D6A09B900FD012D /* UniversityModel.swift */,
+				A506D8851D88654C00196A6B /* DataTableViewCell.xib */,
+				A50E4C701D85C7F100328716 /* DataTableViewController.xib */,
 				A528FD0D1D6A09C100FD012D /* University Dataset.json */,
 				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
 				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
@@ -269,6 +289,8 @@
 				A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */,
 				A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */,
 				A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */,
+				A506D8891D88654C00196A6B /* DataTableViewCell.xib in Resources */,
+				A50E4C741D85C7F100328716 /* DataTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A506D88A1D88654C00196A6B /* DataTableViewCell.xib in Resources */,
+				A50E4C751D85C7F100328716 /* DataTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A506D88B1D88654C00196A6B /* DataTableViewCell.xib in Resources */,
+				A50E4C761D85C7F100328716 /* DataTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +323,10 @@
 				A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */,
 				A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */,
 				A5140E641D75930A00500482 /* MainViewController.swift in Sources */,
+				A506D8811D88642F00196A6B /* DataTableViewController.swift in Sources */,
 				A589E02C1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld in Sources */,
 				A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */,
+				A506D8861D88654C00196A6B /* DataTableViewCell.swift in Sources */,
 				A54CAE361D83417F00C4673F /* InfoViewController.swift in Sources */,
 				A528FD0A1D6A099B00FD012D /* UniversityData.swift in Sources */,
 			);
@@ -309,8 +337,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5113E8E1D79E05700364C47 /* UniversityData.swift in Sources */,
+				A506D8821D88642F00196A6B /* DataTableViewController.swift in Sources */,
 				A5113E901D79E05A00364C47 /* UniversityModel.swift in Sources */,
 				A589E03C1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift in Sources */,
+				A506D8871D88654C00196A6B /* DataTableViewCell.swift in Sources */,
 				A54CAE371D83417F00C4673F /* InfoViewController.swift in Sources */,
 				A589E0561D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
 				A5140E651D75930A00500482 /* MainViewController.swift in Sources */,
@@ -323,8 +353,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5113E8F1D79E05700364C47 /* UniversityData.swift in Sources */,
+				A506D8831D88642F00196A6B /* DataTableViewController.swift in Sources */,
 				A5113E911D79E05A00364C47 /* UniversityModel.swift in Sources */,
 				A589E0471D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift in Sources */,
+				A506D8881D88654C00196A6B /* DataTableViewCell.swift in Sources */,
 				A54CAE381D83417F00C4673F /* InfoViewController.swift in Sources */,
 				A589E0571D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
 				A5140E661D75930A00500482 /* MainViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MX8-YE-azr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-md-h5N">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -32,12 +32,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ifm-Qo-anS"/>
                     <connections>
-                        <segue destination="MX8-YE-azr" kind="presentation" identifier="segueToMainViewController" id="hbR-Fn-xf8"/>
+                        <segue destination="hfx-md-h5N" kind="presentation" identifier="segueToMainViewController" id="e3d-1r-xHz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qE3-9o-lsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="-1121"/>
+            <point key="canvasLocation" x="2710" y="-1057"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="OBw-xk-jO1">
@@ -70,7 +70,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-f2-Xxy" userLabel="University Search Text Field">
@@ -108,7 +108,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="21"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kn-Jv-Ebg" userLabel="Student SAT Text Field">
@@ -173,10 +173,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp" userLabel="Info Button">
-                                <rect key="frame" x="558" y="558" width="22" height="22"/>
+                                <rect key="frame" x="558" y="521" width="22" height="22"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="7wv-u4-ik7" kind="presentation" id="G5d-U1-q5j"/>
+                                    <segue destination="7wv-u4-ik7" kind="presentation" identifier="segueToInfoViewController" id="G5d-U1-q5j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -195,7 +195,7 @@
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.4" id="gwk-fq-P6I"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
-                            <constraint firstItem="nIl-DR-GEh" firstAttribute="top" secondItem="Un0-wb-fKp" secondAttribute="bottom" constant="20" id="zy8-8p-2G3"/>
+                            <constraint firstItem="nIl-DR-GEh" firstAttribute="top" secondItem="Un0-wb-fKp" secondAttribute="bottom" constant="8" id="zy8-8p-2G3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GQd-i5-jH8"/>
@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dq-ix-xkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="273"/>
+            <point key="canvasLocation" x="3366" y="273"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="VD6-wl-4Qh">
@@ -262,9 +262,9 @@ Cgo
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -304,8 +304,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </mutableString>
+                                                <string key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -328,7 +328,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             <fragment>
                                                 <string key="content">.  Additionally, some universities, such as the University of Rochester, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare.  </string>
                                                 <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -377,7 +377,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Back Icon"/>
                                 <connections>
-                                    <segue destination="MX8-YE-azr" kind="presentation" id="bPc-xE-6BA"/>
+                                    <segue destination="hfx-md-h5N" kind="presentation" identifier="segueToMainViewController" id="C9f-pr-z0e"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -389,12 +389,12 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtW-m0-vDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="1619"/>
+            <point key="canvasLocation" x="2710" y="1613"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="QlL-cj-tq8">
             <objects>
-                <viewController id="WN5-Tq-43G" customClass="ResultViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="WN5-Tq-43G" customClass="ResultViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9pc-e7-OoP"/>
                         <viewControllerLayoutGuide type="bottom" id="uqc-HY-mKL"/>
@@ -403,7 +403,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UCBerkeleyCampus" translatesAutoresizingMaskIntoConstraints="NO" id="G59-Tp-rul" userLabel="Background">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="UCBerkeleyCampus" translatesAutoresizingMaskIntoConstraints="NO" id="G59-Tp-rul" userLabel="Background">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-dc-m3u" userLabel="Title">
@@ -421,7 +421,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtP-YV-63l" userLabel="Slider Background">
                                 <rect key="frame" x="20" y="233" width="560" height="75"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="xEO-mA-21D"/>
                                 </constraints>
@@ -473,9 +473,17 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-dC-LFw" userLabel="Save University">
+                                <rect key="frame" x="474" y="550" width="106" height="30"/>
+                                <state key="normal" title="Save University"/>
+                                <connections>
+                                    <action selector="saveUniversity:" destination="WN5-Tq-43G" eventType="touchUpInside" id="i9G-bc-Fcf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uqc-HY-mKL" firstAttribute="top" secondItem="0eL-dC-LFw" secondAttribute="bottom" constant="20" id="01F-Db-5Rc"/>
                             <constraint firstItem="GtP-YV-63l" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.9" id="1LY-bb-xki"/>
                             <constraint firstItem="uqc-HY-mKL" firstAttribute="top" secondItem="G59-Tp-rul" secondAttribute="bottom" id="38H-mo-okl"/>
                             <constraint firstItem="bbr-KQ-JiW" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="3KZ-Co-3Dk"/>
@@ -499,22 +507,26 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             <constraint firstAttribute="trailing" secondItem="bbr-KQ-JiW" secondAttribute="trailing" id="h7R-xV-zRl"/>
                             <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.5" id="j70-CH-oMY"/>
                             <constraint firstItem="Woa-dc-m3u" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leadingMargin" constant="8" id="lMd-fp-XQx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0eL-dC-LFw" secondAttribute="trailing" id="p17-6s-pKo"/>
                             <constraint firstAttribute="trailing" secondItem="GtP-YV-63l" secondAttribute="trailing" constant="20" id="sEx-Rf-Pfk"/>
                             <constraint firstItem="H6z-Pd-PwV" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.9" id="vyt-6m-Dl0"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="dcw-Cs-XXR">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="Uh8-fl-W9h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Uh8-fl-W9h">
                             <connections>
-                                <segue destination="MX8-YE-azr" kind="presentation" id="qea-EH-xQm"/>
+                                <segue destination="hfx-md-h5N" kind="presentation" identifier="segueSearchDone" id="tkD-xh-fFL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="highSATImageView" destination="ooa-ju-7gv" id="RPZ-QF-oxV"/>
                         <outlet property="lowSATImageView" destination="0EG-V3-fWS" id="RBm-BE-qnd"/>
                         <outlet property="resultViewControllerImageView" destination="Csy-bo-JZM" id="Lli-5n-p8i"/>
                         <outlet property="resultViewControllerText" destination="nGZ-iW-rae" id="U87-k3-i2h"/>
+                        <outlet property="saveButton" destination="0eL-dC-LFw" id="G0n-D2-tdF"/>
                         <outlet property="sliderBackground" destination="GtP-YV-63l" id="Kfk-Sy-Xpz"/>
                         <outlet property="studentSATImageView" destination="bbr-KQ-JiW" id="pdg-BG-nny"/>
                         <outlet property="textBackground" destination="Nwl-AU-dan" id="15t-mE-3Li"/>
@@ -524,7 +536,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMd-1g-hO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3844" y="273"/>
+            <point key="canvasLocation" x="4656" y="273"/>
         </scene>
         <!--Navigation to Search View Controller-->
         <scene sceneID="I8D-a7-e9S">
@@ -542,7 +554,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFc-aW-KWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="-437"/>
+            <point key="canvasLocation" x="2710" y="-393"/>
         </scene>
         <!--Navigation to Result View Controller-->
         <scene sceneID="hXE-Vf-35A">
@@ -560,12 +572,31 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWl-e5-ssf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3197" y="273"/>
+            <point key="canvasLocation" x="4009" y="273"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Uza-lE-cC1">
+            <objects>
+                <tabBarController id="hfx-md-h5N" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="lVh-hO-dqY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MX8-YE-azr" kind="relationship" relationship="viewControllers" id="QBF-Jw-QDU"/>
+                        <segue destination="Ixv-6M-iYZ" kind="relationship" relationship="viewControllers" id="SZz-MA-QLu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHz-bD-5gG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2051" y="273"/>
         </scene>
         <!--Navigation to Main View Controller-->
         <scene sceneID="KGF-FG-sba">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="I1F-5J-qet"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7Z-rm-B7K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -578,12 +609,12 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mva-j6-kwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="273"/>
+            <point key="canvasLocation" x="2710" y="273"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation to Info View Controller-->
         <scene sceneID="anc-yX-IYl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wv-u4-ik7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wv-u4-ik7" userLabel="Navigation to Info View Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ybE-DD-cYD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -596,7 +627,75 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVV-bw-LvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="949"/>
+            <point key="canvasLocation" x="2710" y="945"/>
+        </scene>
+        <!--Data Table View Controller-->
+        <scene sceneID="YOm-zP-m8l">
+            <objects>
+                <tableViewController id="mYh-Pe-7l1" customClass="DataTableViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ms-ki-esc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataTableViewCell" id="D2x-v8-yMg" customClass="DataTableViewCell" customModule="SAT_Compare_Test" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D2x-v8-yMg" id="X6u-du-RWx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq">
+                                            <rect key="frame" x="16" y="16" width="568" height="67"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Qic-CE-eHq" secondAttribute="trailing" constant="8" id="0Qd-YM-gTs"/>
+                                        <constraint firstItem="Qic-CE-eHq" firstAttribute="top" secondItem="X6u-du-RWx" secondAttribute="topMargin" constant="8" id="HW6-4u-PGC"/>
+                                        <constraint firstItem="Qic-CE-eHq" firstAttribute="leading" secondItem="X6u-du-RWx" secondAttribute="leadingMargin" constant="8" id="jIV-QX-XxF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Qic-CE-eHq" secondAttribute="bottom" constant="8" id="paD-kR-6rB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dataLabel" destination="Qic-CE-eHq" id="5CL-3Y-gr9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mYh-Pe-7l1" id="azq-Ke-6jP"/>
+                            <outlet property="delegate" destination="mYh-Pe-7l1" id="Iqk-f2-g96"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="O4y-Bm-anD"/>
+                    <connections>
+                        <segue destination="WN5-Tq-43G" kind="show" identifier="segueFromDataTableViewController" animates="NO" id="GUp-pz-sNf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zg-gK-1BQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701" y="273"/>
+        </scene>
+        <!--Navigation to Data Table View Controller-->
+        <scene sceneID="csi-sp-Qj4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CXg-PC-OfS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I93-5F-LA1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mYh-Pe-7l1" kind="relationship" relationship="rootViewController" id="31A-Rr-JzK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmJ-uu-JF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="273"/>
         </scene>
     </scenes>
     <resources>
@@ -605,6 +704,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="UCBerkeleyCampus" width="341" height="222"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qea-EH-xQm"/>
+        <segue reference="tkD-xh-fFL"/>
+        <segue reference="GUp-pz-sNf"/>
     </inferredMetricsTieBreakers>
 </document>
