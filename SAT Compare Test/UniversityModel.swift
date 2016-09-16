@@ -21,12 +21,13 @@ class UniversityModel: NSObject {
         let jsonObjects:[NSDictionary] = self.getLocalJsonFile()
         
         // loop through each dictionary and assign values to our UniversityData objects
-        var index: Int
-        for index = 0; index < jsonObjects.count; index += 1 {
+//        var index: Int
+//        for i in index = 0; index < jsonObjects.count; index += 1
+        for i in 0...(jsonObjects.count-1) {
         ////
             
             // current JSON dictionary
-            let jsonDictionary:NSDictionary = jsonObjects[index]
+            let jsonDictionary:NSDictionary = jsonObjects[i]
             
             // create an UniversityData object
             let oneUniversity:UniversityData = UniversityData()
@@ -57,16 +58,16 @@ class UniversityModel: NSObject {
     ////
         
         // get an NSURL object pointing to the json file in our app bundle
-        let appBundlePath:String? = NSBundle.mainBundle().pathForResource("University Dataset", ofType: "json")
+        let appBundlePath:String? = Bundle.main.path(forResource: "University Dataset", ofType: "json")
         if let actualBundlePath = appBundlePath {
         ////
             
-            let urlPath:NSURL = NSURL.fileURLWithPath(actualBundlePath)
-            let jsonData:NSData? = NSData(contentsOfURL: urlPath)
+            let urlPath:URL = URL(fileURLWithPath: actualBundlePath)
+            let jsonData:Data? = try? Data(contentsOf: urlPath)
             if let actualJsonData = jsonData {
                 // NSData exists, use the NSJSONSerialization classes to parse the data and create the dictionaries
                 do {
-                    let arrayOfDictionaries:[NSDictionary] = try NSJSONSerialization.JSONObjectWithData(actualJsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                    let arrayOfDictionaries:[NSDictionary] = try JSONSerialization.jsonObject(with: actualJsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [NSDictionary]
                     return arrayOfDictionaries
                 } catch {
                 // there was an error parsing the json file

@@ -45,12 +45,12 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
     ////
         
         // filter through the universities
         self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            return data.UniversityName.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString)
+            return data.UniversityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())
             // 以后需要加中文 return data.中文名字.containsString(self.searchcontroller.searchBar.text!)
         })
         
@@ -86,14 +86,14 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     // MARK: - Table view data source
 
     // number of sections is 1
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     // this gives the number of rows
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchcontroller.active && searchcontroller.searchBar.text != "" {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchcontroller.isActive && searchcontroller.searchBar.text != "" {
             // if we search, the rows is the number of rows in our filtered universities
             return self.filteredUniversities.count
         } else {
@@ -103,13 +103,13 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     }
     
     // what's in the table (kinda confused on this one)
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let data:UniversityData
         
-        if searchcontroller.active && searchcontroller.searchBar.text != "" {
+        if searchcontroller.isActive && searchcontroller.searchBar.text != "" {
             // if we search, what's in the table is the filtered universities
-            data = filteredUniversities[indexPath.row]
+            data = filteredUniversities[(indexPath as NSIndexPath).row]
         } else {
             // otherwise it's nothing
             data = UniversityData()
@@ -119,12 +119,12 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
-        selectedUniversity = filteredUniversities[indexPath.row]
+        selectedUniversity = filteredUniversities[(indexPath as NSIndexPath).row]
         
         // trigger the segue to go to the next view
-        self.performSegueWithIdentifier("segueToMainViewController", sender: self)
+        self.performSegue(withIdentifier: "segueToMainViewController", sender: self)
     }
 
     /*

@@ -24,6 +24,24 @@ class DataTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // add a background view to the table view
+        let backgroundImage = UIImage(named: "Background Data")
+        let imageView = UIImageView(image:backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        // no lines where there aren't cells
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        // center and scale background image
+        imageView.contentMode = .scaleAspectFill
+        
+        // low alpha
+        imageView.alpha = 0.5
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,61 +49,65 @@ class DataTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let existingSavedUniversities = savedUniversities {
             // if the user has saved data, the rows are the count
             return existingSavedUniversities.count
         } else {
-            // otherwise it's one
-            return 1
+            // otherwise it's zero
+            return 0
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // table view cells are reused and should be dequered using a cell identifier
+    // translucent cell backgrounds so we can see the image but still easily read the contents
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.75)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    ////
+    
+        // table view cells are reused and should be dequeued using a cell identifier
         let cellIdentifier = "DataTableViewCell"
-        let dataCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DataTableViewCell
+        let dataCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DataTableViewCell
         
         // check if the user has saved data
         if let existingSavedUniversities = savedUniversities {
             
             // fetches the appropriate university and SAT for the table cell
-            let savedSingleUniversity = existingSavedUniversities[indexPath.row]
-            let savedSingleSAT = savedSAT![indexPath.row]
-            let savedSinglePercentile = savedPercentile![indexPath.row]
+            let savedSingleUniversity = existingSavedUniversities[(indexPath as NSIndexPath).row]
+            let savedSingleSAT = savedSAT![(indexPath as NSIndexPath).row]
+            let savedSinglePercentile = savedPercentile![(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
             dataCell.dataLabel.text = "\(savedSingleUniversity.UniversityName) \nScore: \(savedSingleSAT), Percentile: \(savedSinglePercentile)"
             
-        } else {
-            // otherwise we say there's no saved data
-            dataCell.dataLabel.textAlignment = NSTextAlignment.Center
-            dataCell.dataLabel.font = dataCell.dataLabel.font.fontWithSize(24)
-            dataCell.dataLabel.text = "You have no saved university."
         }
         
         // Configure the cell...
         return dataCell
+    
+    ////
     }
     
     // override to support conditional editing of the table view. i.e. deletion
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
     // override to support editing the table view. i.e. deletion
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            savedUniversities?.removeAtIndex(indexPath.row)
-            savedSAT?.removeAtIndex(indexPath.row)
-            savedPercentile?.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            savedUniversities?.remove(at: (indexPath as NSIndexPath).row)
+            savedSAT?.remove(at: (indexPath as NSIndexPath).row)
+            savedPercentile?.remove(at: (indexPath as NSIndexPath).row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
@@ -106,31 +128,27 @@ class DataTableViewController: UITableViewController {
     */
     
     // if user clicks a row
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
-        if let existingSavedUniversities = savedUniversities {
-            selectedUniversity = existingSavedUniversities[indexPath.row]
-            studentSAT = savedSAT![indexPath.row]
-            // trigger the segue to go to the next view
-            self.performSegueWithIdentifier("segueFromDataTableViewController", sender: self)
-        }
         
+        if let existingSavedUniversities = savedUniversities {
+            selectedUniversity = existingSavedUniversities[(indexPath as NSIndexPath).row]
+            studentSAT = savedSAT![(indexPath as NSIndexPath).row]
+            // trigger the segue to go to the next view
+            self.performSegue(withIdentifier: "segueFromDataTableViewController", sender: self)
+            
+        }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if segue.identifier == "segueFromDataTableViewController" {
             // get the new view controller using segue.destinationViewController.
-//            let destinationResultController = segue.destinationViewController as! UINavigationController
-//            let targetResultController = destinationResultController.topViewController as! ResultViewController
-//                
-//            // make the view controller's data variable true
-//            targetResultController.fromData = true
-            
-            // get the new view controller using segue.destinationViewController.
-            let destinationResultController = segue.destinationViewController as! ResultViewController
+            let destinationResultController = segue.destination as! UINavigationController
+            let targetResultController = destinationResultController.topViewController as! ResultViewController
             
             // make the view controller's data variable true
-            destinationResultController.fromData = true
+            targetResultController.fromData = true
         }
     }
 

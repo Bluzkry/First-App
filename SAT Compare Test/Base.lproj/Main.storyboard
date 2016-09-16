@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-md-h5N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfx-md-h5N">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--University Search Controller-->
@@ -12,15 +13,15 @@
             <objects>
                 <tableViewController id="N0h-ZW-C36" customClass="UniversitySearchController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EOq-76-pIO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="1" id="56o-7R-1WG">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56o-7R-1WG" id="lLH-QF-Ekd">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <frame key="frameInset" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -48,33 +49,26 @@
                         <viewControllerLayoutGuide type="bottom" id="nIl-DR-GEh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pwe-7y-ZqJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main View Background" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-oj-wZM" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Main" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-oj-wZM" userLabel="Background"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Compare" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAv-Jc-41K" userLabel="Title">
-                                <rect key="frame" x="190" y="100" width="220" height="40"/>
                                 <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="36"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-h0-mMZ" userLabel="University Stack View Background">
-                                <rect key="frame" x="137" y="202" width="327" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-Aw-VIb" userLabel="University Stack View">
-                                        <rect key="frame" x="8" y="8" width="311" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are your interested in?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
-                                                <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-f2-Xxy" userLabel="University Search Text Field">
-                                                <rect key="frame" x="0.0" y="29" width="311" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -82,7 +76,7 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="bBa-f2-Xxy" firstAttribute="centerX" secondItem="r6W-Aw-VIb" secondAttribute="centerX" id="8h9-SP-iOD"/>
                                             <constraint firstItem="bBa-f2-Xxy" firstAttribute="top" secondItem="hDv-4d-qlb" secondAttribute="bottom" constant="8" id="Nq2-r9-CCk"/>
@@ -90,7 +84,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="r6W-Aw-VIb" firstAttribute="centerX" secondItem="ElU-h0-mMZ" secondAttribute="centerX" id="27S-hz-qVE"/>
                                     <constraint firstAttribute="width" secondItem="r6W-Aw-VIb" secondAttribute="width" multiplier="1.05" id="8rT-jQ-iCX"/>
@@ -99,33 +93,27 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-3U-bCw" userLabel="SAT Stack View Background">
-                                <rect key="frame" x="197" y="322" width="206" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vYI-BT-15X" userLabel="SAT Stack View">
-                                        <rect key="frame" x="5" y="9" width="197" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="21"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kn-Jv-Ebg" userLabel="Student SAT Text Field">
-                                                <rect key="frame" x="0.0" y="29" width="197" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="0Kn-Jv-Ebg" firstAttribute="centerX" secondItem="vYI-BT-15X" secondAttribute="centerX" id="H1e-Bs-204"/>
                                             <constraint firstItem="0Kn-Jv-Ebg" firstAttribute="top" secondItem="hb3-ir-EeN" secondAttribute="bottom" constant="8" id="emp-gj-DsH"/>
-                                            <constraint firstItem="hb3-ir-EeN" firstAttribute="centerX" secondItem="vYI-BT-15X" secondAttribute="centerX" id="teQ-Sf-wxd"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="vYI-BT-15X" secondAttribute="height" multiplier="1.3" id="THg-AX-oRs"/>
                                     <constraint firstItem="vYI-BT-15X" firstAttribute="centerY" secondItem="X3s-3U-bCw" secondAttribute="centerY" id="joY-s0-OgG"/>
@@ -134,66 +122,62 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hav-Hg-McX" userLabel="Submit Stack View">
-                                <rect key="frame" x="258" y="440" width="85" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="36"/>
-                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Vep-r6-R8V"/>
                                             <constraint firstAttribute="width" constant="85" id="x3P-MW-acj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Submit">
-                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="submitButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="48n-6P-vU6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-8P-QEn">
-                                        <rect key="frame" x="0.0" y="44" width="85" height="36"/>
-                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="6ib-y0-89w"/>
                                             <constraint firstAttribute="width" constant="85" id="JpJ-dP-1p6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="e5n-98-rGd"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="PNY-8P-QEn" firstAttribute="top" secondItem="Usn-NC-UjQ" secondAttribute="bottom" constant="8" id="zyP-q6-zD9"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp" userLabel="Info Button">
-                                <rect key="frame" x="558" y="521" width="22" height="22"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="7wv-u4-ik7" kind="presentation" identifier="segueToInfoViewController" id="G5d-U1-q5j"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Un0-wb-fKp" firstAttribute="trailing" secondItem="pwe-7y-ZqJ" secondAttribute="trailingMargin" id="2hG-j4-BjM"/>
                             <constraint firstAttribute="bottom" secondItem="f0m-oj-wZM" secondAttribute="bottom" id="7ot-Vc-wap"/>
                             <constraint firstItem="hav-Hg-McX" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="9cD-wm-XoL"/>
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="top" secondItem="pwe-7y-ZqJ" secondAttribute="top" id="ATe-6g-b8E"/>
-                            <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.8" id="F9c-2s-SYb"/>
+                            <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.7" id="F9c-2s-SYb"/>
                             <constraint firstAttribute="trailing" secondItem="f0m-oj-wZM" secondAttribute="trailing" id="H09-Xl-DVY"/>
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leading" id="HEi-i8-hi8"/>
                             <constraint firstItem="hav-Hg-McX" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="IGg-cf-hlF"/>
-                            <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.2" id="Iu4-W9-5dJ"/>
+                            <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.1" id="Iu4-W9-5dJ"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="LAZ-Ul-3pj"/>
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
-                            <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.4" id="gwk-fq-P6I"/>
+                            <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.35" id="gwk-fq-P6I"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
                             <constraint firstItem="nIl-DR-GEh" firstAttribute="top" secondItem="Un0-wb-fKp" secondAttribute="bottom" constant="8" id="zy8-8p-2G3"/>
                         </constraints>
@@ -224,14 +208,12 @@
                         <viewControllerLayoutGuide type="bottom" id="7z6-Dg-hJt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KJ5-QI-bPL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-wi-2Db">
-                                <rect key="frame" x="20" y="-6" width="560" height="606"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-2i-O6d" userLabel="Text">
-                                        <rect key="frame" x="0.0" y="27" width="540" height="1225"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Suggestions for the App, bugs found in the App? Looking for a developer or college application advice for your child? E-mail:  ">
                                                 <attributes>
@@ -241,7 +223,7 @@
                                             </fragment>
                                             <fragment content="zou.alexander@gmail.com">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -262,9 +244,9 @@ Cgo
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
+                                                <mutableString key="content">
 
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </string>
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -272,7 +254,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             </fragment>
                                             <fragment content="http://opa.berkeley.edu/sites/default/files/uc_berkeley_cds_2015-16_8-3-2016.pdf">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -298,14 +280,14 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             </fragment>
                                             <fragment content="Why do you focus on the SAT? Aren't other factors, such as GPA, more important, than the SAT?">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </string>
+                                                <mutableString key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </mutableString>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -313,7 +295,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             </fragment>
                                             <fragment content="The university I'm interested in isn't on SAT Compare. Why not?">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -326,9 +308,9 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">.  Additionally, some universities, such as the University of Rochester, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare.  </string>
+                                                <mutableString key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (although information for the above two universities have been taken from data published elsewhere).  </mutableString>
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -336,7 +318,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             <fragment>
                                                 <string key="content">Isn't assuming a linear distribution unreliable? If SAT Compare only has data for enrolled students, rather than accepted students, isn't that also unreliable?  </string>
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -344,7 +326,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             <fragment>
                                                 <string key="content">These are factors you will have to take into consideration in utilizing SAT Compare. Data such as this is simply not provided (or perhaps not even collected in the first place) by universities.</string>
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
@@ -361,7 +343,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fWl-wi-2Db" firstAttribute="leading" secondItem="KJ5-QI-bPL" secondAttribute="leadingMargin" id="2ju-3r-JJI"/>
                             <constraint firstItem="7z6-Dg-hJt" firstAttribute="top" secondItem="fWl-wi-2Db" secondAttribute="bottom" id="9FF-Oq-8Zg"/>
@@ -373,7 +355,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     <navigationItem key="navigationItem" id="Up9-UJ-uty">
                         <barButtonItem key="leftBarButtonItem" id="Z5W-bg-jyy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="sEY-MT-TpF" userLabel="Back">
-                                <rect key="frame" x="20" y="7" width="29" height="29"/>
+                                <rect key="frame" x="16" y="7" width="29" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Back Icon"/>
                                 <connections>
@@ -400,18 +382,15 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <viewControllerLayoutGuide type="bottom" id="uqc-HY-mKL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Csy-bo-JZM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="UCBerkeleyCampus" translatesAutoresizingMaskIntoConstraints="NO" id="G59-Tp-rul" userLabel="Background">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Result" translatesAutoresizingMaskIntoConstraints="NO" id="G59-Tp-rul" userLabel="Background"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-dc-m3u" userLabel="Title">
-                                <rect key="frame" x="28" y="130" width="544" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SAT Compare: X University">
                                         <attributes>
-                                            <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="36" name="Palatino-BoldItalic"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -420,21 +399,18 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtP-YV-63l" userLabel="Slider Background">
-                                <rect key="frame" x="20" y="233" width="560" height="75"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="xEO-mA-21D"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwl-AU-dan" userLabel="Label Background">
-                                <rect key="frame" x="70" y="419" width="460" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGZ-iW-rae">
-                                        <rect key="frame" x="12" y="7" width="437" height="48"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Your SAT score places you in the Xth percentile of students enrolled at Y.">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -443,7 +419,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nGZ-iW-rae" firstAttribute="width" secondItem="Nwl-AU-dan" secondAttribute="width" multiplier="0.95" id="9MN-ae-6xp"/>
                                     <constraint firstItem="nGZ-iW-rae" firstAttribute="centerY" secondItem="Nwl-AU-dan" secondAttribute="centerY" id="Wm1-Rt-jSN"/>
@@ -452,36 +428,42 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EG-V3-fWS" userLabel="Left View">
-                                <rect key="frame" x="0.0" y="0.0" width="271" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" width="271" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbr-KQ-JiW" userLabel="Student View">
-                                <rect key="frame" x="151" y="3" width="297" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" minX="151" minY="3" width="297" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooa-ju-7gv" userLabel="Right View">
-                                <rect key="frame" x="329" y="1" width="271" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" minX="329" minY="1" width="271" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="400" maxValue="1600" translatesAutoresizingMaskIntoConstraints="NO" id="H6z-Pd-PwV" userLabel="University Slider">
-                                <rect key="frame" x="-2" y="257" width="604" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <frame key="frameInset" minX="-2" minY="257" width="604" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="AIR-ww-drP"/>
                                 </constraints>
-                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-dC-LFw" userLabel="Save University">
-                                <rect key="frame" x="474" y="550" width="106" height="30"/>
-                                <state key="normal" title="Save University"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-dC-LFw" userLabel="Save University">
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="7ea-Hk-M3z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saveUniversity:" destination="WN5-Tq-43G" eventType="touchUpInside" id="i9G-bc-Fcf"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uqc-HY-mKL" firstAttribute="top" secondItem="0eL-dC-LFw" secondAttribute="bottom" constant="20" id="01F-Db-5Rc"/>
                             <constraint firstItem="GtP-YV-63l" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.9" id="1LY-bb-xki"/>
@@ -505,7 +487,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             <constraint firstItem="G59-Tp-rul" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leading" id="cTk-SD-oEu"/>
                             <constraint firstItem="0EG-V3-fWS" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="gIi-ky-2Wd"/>
                             <constraint firstAttribute="trailing" secondItem="bbr-KQ-JiW" secondAttribute="trailing" id="h7R-xV-zRl"/>
-                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.5" id="j70-CH-oMY"/>
+                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.45" id="j70-CH-oMY"/>
                             <constraint firstItem="Woa-dc-m3u" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leadingMargin" constant="8" id="lMd-fp-XQx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0eL-dC-LFw" secondAttribute="trailing" id="p17-6s-pKo"/>
                             <constraint firstAttribute="trailing" secondItem="GtP-YV-63l" secondAttribute="trailing" constant="20" id="sEx-Rf-Pfk"/>
@@ -514,6 +496,16 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dcw-Cs-XXR">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="Kkb-lf-U77">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="84b-9x-rwo">
+                                <rect key="frame" x="16" y="7" width="83" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Back Icon"/>
+                                <connections>
+                                    <action selector="backToData:" destination="WN5-Tq-43G" eventType="touchUpInside" id="X04-63-bw4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Uh8-fl-W9h">
                             <connections>
                                 <segue destination="hfx-md-h5N" kind="presentation" identifier="segueSearchDone" id="tkD-xh-fFL"/>
@@ -522,6 +514,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backToData" destination="84b-9x-rwo" id="gX9-eq-7Ys"/>
                         <outlet property="highSATImageView" destination="ooa-ju-7gv" id="RPZ-QF-oxV"/>
                         <outlet property="lowSATImageView" destination="0EG-V3-fWS" id="RBm-BE-qnd"/>
                         <outlet property="resultViewControllerImageView" destination="Csy-bo-JZM" id="Lli-5n-p8i"/>
@@ -532,11 +525,12 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <outlet property="textBackground" destination="Nwl-AU-dan" id="15t-mE-3Li"/>
                         <outlet property="titleLabel" destination="Woa-dc-m3u" id="L7z-zR-Ny3"/>
                         <outlet property="universitySlider" destination="H6z-Pd-PwV" id="zS3-uc-BCB"/>
+                        <segue destination="hfx-md-h5N" kind="presentation" identifier="segueBackToData" id="60k-dO-Rfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMd-1g-hO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4656" y="273"/>
+            <point key="canvasLocation" x="4678" y="271"/>
         </scene>
         <!--Navigation to Search View Controller-->
         <scene sceneID="I8D-a7-e9S">
@@ -572,7 +566,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWl-e5-ssf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4009" y="273"/>
+            <point key="canvasLocation" x="4014" y="271"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uza-lE-cC1">
@@ -581,7 +575,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lVh-hO-dqY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="MX8-YE-azr" kind="relationship" relationship="viewControllers" id="QBF-Jw-QDU"/>
@@ -590,13 +584,13 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHz-bD-5gG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2051" y="273"/>
+            <point key="canvasLocation" x="2039" y="272"/>
         </scene>
         <!--Navigation to Main View Controller-->
         <scene sceneID="KGF-FG-sba">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="I1F-5J-qet"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="Tab Main" selectedImage="Tab Main" id="I1F-5J-qet"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7Z-rm-B7K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -634,19 +628,18 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
             <objects>
                 <tableViewController id="mYh-Pe-7l1" customClass="DataTableViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ms-ki-esc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataTableViewCell" id="D2x-v8-yMg" customClass="DataTableViewCell" customModule="SAT_Compare_Test" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D2x-v8-yMg" id="X6u-du-RWx">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                    <frame key="frameInset" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq">
-                                            <rect key="frame" x="16" y="16" width="568" height="67"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -671,7 +664,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </tableView>
                     <navigationItem key="navigationItem" id="O4y-Bm-anD"/>
                     <connections>
-                        <segue destination="WN5-Tq-43G" kind="show" identifier="segueFromDataTableViewController" animates="NO" id="GUp-pz-sNf"/>
+                        <segue destination="ToN-qs-1Ys" kind="presentation" identifier="segueFromDataTableViewController" id="CuJ-GI-HnN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zg-gK-1BQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,7 +675,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <scene sceneID="csi-sp-Qj4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CXg-PC-OfS"/>
+                    <tabBarItem key="tabBarItem" title="Saved Universities" image="Tab Saved" selectedImage="Tab Saved" id="CXg-PC-OfS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I93-5F-LA1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -700,11 +693,13 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
     </scenes>
     <resources>
         <image name="Back Icon" width="29" height="29"/>
-        <image name="Main View Background" width="510" height="342"/>
-        <image name="UCBerkeleyCampus" width="341" height="222"/>
+        <image name="Background Main" width="510" height="342"/>
+        <image name="Background Result" width="341" height="222"/>
+        <image name="Tab Main" width="25" height="25"/>
+        <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tkD-xh-fFL"/>
-        <segue reference="GUp-pz-sNf"/>
+        <segue reference="60k-dO-Rfa"/>
+        <segue reference="hIS-tf-tb5"/>
     </inferredMetricsTieBreakers>
 </document>

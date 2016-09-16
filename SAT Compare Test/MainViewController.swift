@@ -11,7 +11,7 @@ import UIKit
 var studentSAT:String?
 var selectedUniversity:UniversityData?
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var universitySearchBackground: UIView!
     @IBOutlet weak var SATBackground: UIView!
@@ -33,6 +33,8 @@ class MainViewController: UIViewController {
         self.SATBackground.layer.cornerRadius = 6
         self.infoButton.layer.cornerRadius = 10
         
+        setStudentSATTextField()
+        
         // hide navigation bar
         self.navigationController!.setNavigationBarHidden(true, animated: true)
         
@@ -53,25 +55,28 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "segueToResultView") {
-            let resultVC:UINavigationController = segue.destinationViewController as! UINavigationController;
-            resultVC.studentSAT = studentSATTextField.text
-        }
-    }*/
-    
-    @IBAction func universitySearchTextField(sender: AnyObject) {
-        self.performSegueWithIdentifier("segueToSearchController", sender: self)
+    func setStudentSATTextField() {
+        studentSATTextField.delegate = self
+        studentSATTextField.returnKeyType = UIReturnKeyType.done
     }
     
-    @IBAction func submitButtonPressed(sender: AnyObject) {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func universitySearchTextField(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "segueToSearchController", sender: self)
+    }
+    
+    @IBAction func submitButtonPressed(_ sender: AnyObject) {
     ////
     ////
     ////
         
         // create an alert to tell students if data is missing
-        let incorrectAlertController = UIAlertController(title: "Notice:", message: "Please select a university or input an SAT score between 400 and 1600.", preferredStyle: UIAlertControllerStyle.Alert)
-        incorrectAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+        let incorrectAlertController = UIAlertController(title: "Notice:", message: "Please select a university or input an SAT score between 400 and 1600.", preferredStyle: UIAlertControllerStyle.alert)
+        incorrectAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         
         // we first have to make the student SAT the number input in the text field
         let studentSAT = studentSATTextField.text
@@ -85,24 +90,24 @@ class MainViewController: UIViewController {
             if let existingStudentSAT = studentSAT {
             ////
             
-                let existingStudentSATInt:Int? = Int(existingStudentSAT)
+                let existingStudentSATInt:Int = Int(existingStudentSAT)!
                 
                 // check if SAT score between 400 and 1600
                 if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
                     
                     // perform segue
-                    self.performSegueWithIdentifier("segueToResultViewController", sender: self)
+                    self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
                     
                 } else {
                     // error alert
-                    self.presentViewController(incorrectAlertController, animated: true, completion: nil)
+                    self.present(incorrectAlertController, animated: true, completion: nil)
                 }
                 // SAT score check
                 
             ////
             } else {
                 // error alert
-                self.presentViewController(incorrectAlertController, animated: true, completion: nil)
+                self.present(incorrectAlertController, animated: true, completion: nil)
                 
             ////
             }// SAT score input check
@@ -111,7 +116,7 @@ class MainViewController: UIViewController {
         ////
         } else {
             // error alert
-            self.presentViewController(incorrectAlertController, animated: true, completion: nil)
+            self.present(incorrectAlertController, animated: true, completion: nil)
         
         ////
         ////
@@ -122,14 +127,14 @@ class MainViewController: UIViewController {
     ////
     } // end function
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         universitySearchTextField.text = ""
         selectedUniversity = nil
         studentSATTextField.text = ""
         studentSAT = nil
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // when we segue, the student SAT is the number that's in the student SAT text field
         if segue.identifier == "segueToResultViewController" || segue.identifier == "segueToSearchController" || segue.identifier == "segueToInfoViewController" {
             studentSAT = studentSATTextField.text
