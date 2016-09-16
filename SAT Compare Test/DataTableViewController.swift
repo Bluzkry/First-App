@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 var savedUniversities:Array? = [UniversityData]()
-var savedSAT:Array? = [String]()
-var savedPercentile:Array? = [String]()
+var savedSAT:Array? = [NSObject]()
+var savedPercentile:Array? = [NSObject]()
 
 class DataTableViewController: UITableViewController {
     
@@ -25,7 +26,26 @@ class DataTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+//        // LOAD CORE DATA
+//        // get a managed object context through an application delegate
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let managedContext = appDelegate.managedObjectContext
+//        
+//        // use NSFetchRequest to fetch from core data
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
+//        
+//        // hand fetch request over to managed object context
+//        do {
+//            let results = try managedContext.execute(fetchRequest)
+//            savedSAT = results.value(forKey: "savedSATCore") as? [NSManagedObject]
+//            savedPercentile = results.value(forKey: "savedPercentileCore") as? [NSManagedObject]
+//        } catch let error as NSError {
+//            print ("Could not fetch \(error), \(error.userInfo)")
+//        }
+        
+        // BACKGROUND VIEW
         // add a background view to the table view
         let backgroundImage = UIImage(named: "Background Data")
         let imageView = UIImageView(image:backgroundImage)
@@ -54,9 +74,9 @@ class DataTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let existingSavedUniversities = savedUniversities {
+        if let existingSavedSAT = savedSAT {
             // if the user has saved data, the rows are the count
-            return existingSavedUniversities.count
+            return existingSavedSAT.count
         } else {
             // otherwise it's zero
             return 0
@@ -76,16 +96,16 @@ class DataTableViewController: UITableViewController {
         let dataCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DataTableViewCell
         
         // check if the user has saved data
-        if let existingSavedUniversities = savedUniversities {
+        if let existingSavedSAT = savedSAT {
             
             // fetches the appropriate university and SAT for the table cell
-            let savedSingleUniversity = existingSavedUniversities[(indexPath as NSIndexPath).row]
-            let savedSingleSAT = savedSAT![(indexPath as NSIndexPath).row]
+            let savedSingleUniversity = savedUniversities?[(indexPath as NSIndexPath).row]
+            let savedSingleSAT = existingSavedSAT[(indexPath as NSIndexPath).row]
             let savedSinglePercentile = savedPercentile![(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
-            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity.UniversityName)"
-            dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT), Percentile: \(savedSinglePercentile)"
+            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity?.UniversityName)"
+            dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT.value(forKey: "savedSATCore") as! String), Percentile: \(savedSinglePercentile.value(forKey: "savedPercentileCore") as! String)"
             
             
         }
@@ -117,11 +137,11 @@ class DataTableViewController: UITableViewController {
     // override to support rearranging the table view, especially the values
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // check if the user has saved data
-        if let existingSavedUniversities = savedUniversities {
+        if let existingSavedSAT = savedSAT {
             
             // fetches the appropriate university and SAT for the table cell
-            let savedSingleUniversity = existingSavedUniversities[sourceIndexPath.row]
-            let savedSingleSAT = savedSAT![sourceIndexPath.row]
+            let savedSingleUniversity = savedUniversities?[sourceIndexPath.row]
+            let savedSingleSAT = existingSavedSAT[sourceIndexPath.row]
             let savedSinglePercentile = savedPercentile![sourceIndexPath.row]
             
             // temporarily deletes them from the data
@@ -130,7 +150,7 @@ class DataTableViewController: UITableViewController {
             savedPercentile?.remove(at: sourceIndexPath.row)
             
             // inserts them at the place where the data is moved
-            savedUniversities?.insert(savedSingleUniversity, at: destinationIndexPath.row)
+            savedUniversities?.insert(savedSingleUniversity!, at: destinationIndexPath.row)
             savedSAT?.insert(savedSingleSAT, at: destinationIndexPath.row)
             savedPercentile?.insert(savedSinglePercentile, at: destinationIndexPath.row)
             
@@ -158,9 +178,9 @@ class DataTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
         
-        if let existingSavedUniversities = savedUniversities {
-            selectedUniversity = existingSavedUniversities[(indexPath as NSIndexPath).row]
-            studentSAT = savedSAT![(indexPath as NSIndexPath).row]
+        if let existingSavedSAT = savedSAT {
+            selectedUniversity = savedUniversities?[(indexPath as NSIndexPath).row]
+            studentSAT = existingSavedSAT[(indexPath as NSIndexPath).row] as? String
             // trigger the segue to go to the next view
             self.performSegue(withIdentifier: "segueFromDataTableViewController", sender: self)
             

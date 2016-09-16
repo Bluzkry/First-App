@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ResultViewController: UIViewController {
 
@@ -353,16 +354,15 @@ class ResultViewController: UIViewController {
             
             // after dismissing the alert, we add the user data to the saved array global variables
             savedUniversities?.append(selectedUniversity!)
-            savedSAT?.append(studentSAT!)
             
             // note that the percentile differs based on the three factors below
             let studentSATInt:Int = Int(studentSAT!)!
             if studentSATInt < selectedUniversity!.TwentyFivePercentile {
-                savedPercentile?.append("<25%")
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "<25%")
             } else if studentSATInt > selectedUniversity!.SeventyFivePercentile {
-                savedPercentile?.append(">75%")
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: ">75%")
             } else {
-                savedPercentile?.append("\(self.studentSATPercentile)%")
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "\(self.studentSATPercentile)%")
             }
             
         })
@@ -372,6 +372,36 @@ class ResultViewController: UIViewController {
         self.present(savedAlertController, animated: true, completion: nil)
     
     ////
+    }
+    
+    // to persist data, we need to save as core data
+    func saveCoreData(dataSAT:String, dataPercentile: String) {
+        
+        // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // create a new managed object (savedDataObject) and insert into the managed object context
+        let savedDataEntity = NSEntityDescription.entity(forEntityName: "SavedData", in: managedContext)
+        let savedDataObjectStudentSAT = NSManagedObject(entity: savedDataEntity!, insertInto: managedContext)
+        let savedDataObjectStudentPercentile = NSManagedObject(entity: savedDataEntity!, insertInto: managedContext)
+        
+        // set SAT and percentile attributes using key-value coding
+        savedDataObjectStudentSAT.setValue(dataSAT, forKey: "savedSATCore")
+        savedDataObjectStudentPercentile.setValue(dataPercentile, forKey: "savedPercentileCore")
+        
+        // commit changes to the saved data object and save to disk
+        do {
+            try managedContext.save()
+            
+            // now the managed object is in the core data persistent store, but we still have to handle the possible
+            savedSAT?.append(savedDataObjectStudentSAT)
+            savedPercentile?.append(savedDataObjectStudentPercentile)
+            print(savedPercentile)
+        } catch let error as NSError {
+            print("could not save \(error), \(error.userInfo)")
+        }
+        
     }
     
     // segues back to the data view if we hit the back button

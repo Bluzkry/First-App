@@ -45,6 +45,8 @@
 		A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
 		A5BFB9271D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
 		A5BFB9281D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
+		A5D3BDE81D8BFDC500F960E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
+		A5D3BDE91D8BFDC600F960E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +349,7 @@
 				A54CAE371D83417F00C4673F /* InfoViewController.swift in Sources */,
 				A589E0561D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
 				A5140E651D75930A00500482 /* MainViewController.swift in Sources */,
+				A5D3BDE81D8BFDC500F960E2 /* AppDelegate.swift in Sources */,
 				A5BFB9271D76C88D004F62AC /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +366,7 @@
 				A54CAE381D83417F00C4673F /* InfoViewController.swift in Sources */,
 				A589E0571D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */,
 				A5140E661D75930A00500482 /* MainViewController.swift in Sources */,
+				A5D3BDE91D8BFDC600F960E2 /* AppDelegate.swift in Sources */,
 				A5BFB9281D76C88D004F62AC /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

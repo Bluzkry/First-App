@@ -12,7 +12,7 @@ var studentSAT:String?
 var selectedUniversity:UniversityData?
 
 class MainViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var universitySearchBackground: UIView!
     @IBOutlet weak var SATBackground: UIView!
     @IBOutlet weak var universitySearchTextField: UITextField!
