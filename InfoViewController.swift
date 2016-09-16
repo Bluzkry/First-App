@@ -9,9 +9,6 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
-    @IBOutlet weak var infoviewText: UIScrollView!
-    @IBOutlet weak var infoViewScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

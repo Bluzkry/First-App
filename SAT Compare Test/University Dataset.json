@@ -1,12 +1,12 @@
  [{
-  "name": "a",
+  "name": "Harvard University",
   "中文名字": "大学一",
   "25PercentReading": 200,
   "25PercentMath": 200,
   "75PercentReading": 800,
   "75PercentMath": 800
   }, {
-  "name": "ab",
+  "name": "Yale University",
   "中文名字": "大学二",
   "25PercentReading": 500,
   "25PercentMath": 500,

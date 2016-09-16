@@ -21,7 +21,7 @@ class DataTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +84,9 @@ class DataTableViewController: UITableViewController {
             let savedSinglePercentile = savedPercentile![(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
-            dataCell.dataLabel.text = "\(savedSingleUniversity.UniversityName) \nScore: \(savedSingleSAT), Percentile: \(savedSinglePercentile)"
+            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity.UniversityName)"
+            dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT), Percentile: \(savedSinglePercentile)"
+            
             
         }
         
@@ -112,20 +114,45 @@ class DataTableViewController: UITableViewController {
         }    
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    // override to support rearranging the table view, especially the values
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // check if the user has saved data
+        if let existingSavedUniversities = savedUniversities {
+            
+            // fetches the appropriate university and SAT for the table cell
+            let savedSingleUniversity = existingSavedUniversities[sourceIndexPath.row]
+            let savedSingleSAT = savedSAT![sourceIndexPath.row]
+            let savedSinglePercentile = savedPercentile![sourceIndexPath.row]
+            
+            // temporarily deletes them from the data
+            savedUniversities?.remove(at: sourceIndexPath.row)
+            savedSAT?.remove(at: sourceIndexPath.row)
+            savedPercentile?.remove(at: sourceIndexPath.row)
+            
+            // inserts them at the place where the data is moved
+            savedUniversities?.insert(savedSingleUniversity, at: destinationIndexPath.row)
+            savedSAT?.insert(savedSingleSAT, at: destinationIndexPath.row)
+            savedPercentile?.insert(savedSinglePercentile, at: destinationIndexPath.row)
+            
+        }
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
+    // override to support conditional rearranging of the table view
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
+//    // override to support rearranging the table view.
+//    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+//
+//    }
+//
+//    // override to support conditional rearranging of the table view.
+//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        // Return false if you do not want the item to be re-orderable.
+//        return true
+//    }
     
     // if user clicks a row
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -10,7 +10,8 @@ import UIKit
 
 class DataTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var dataUniversityLabel: UILabel!
+    @IBOutlet weak var dataScoreLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

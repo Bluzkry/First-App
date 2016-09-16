@@ -13,15 +13,15 @@
             <objects>
                 <tableViewController id="N0h-ZW-C36" customClass="UniversitySearchController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EOq-76-pIO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="1" id="56o-7R-1WG">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56o-7R-1WG" id="lLH-QF-Ekd">
-                                    <frame key="frameInset" width="320" height="43"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -49,7 +49,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nIl-DR-GEh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pwe-7y-ZqJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Main" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-oj-wZM" userLabel="Background"/>
@@ -208,7 +208,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7z6-Dg-hJt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KJ5-QI-bPL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-wi-2Db">
@@ -244,9 +244,9 @@ Cgo
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -286,8 +286,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </mutableString>
+                                                <string key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -308,7 +308,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (although information for the above two universities have been taken from data published elsewhere).  </mutableString>
+                                                <string key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (although information for the above two universities have been taken from data published elsewhere).  </string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
@@ -364,10 +364,6 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="infoViewScrollView" destination="fWl-wi-2Db" id="kAE-Qa-qcm"/>
-                        <outlet property="infoviewText" destination="fWl-wi-2Db" id="6ZW-2e-7FB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtW-m0-vDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,7 +378,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                         <viewControllerLayoutGuide type="bottom" id="uqc-HY-mKL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Csy-bo-JZM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Result" translatesAutoresizingMaskIntoConstraints="NO" id="G59-Tp-rul" userLabel="Background"/>
@@ -628,32 +624,45 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
             <objects>
                 <tableViewController id="mYh-Pe-7l1" customClass="DataTableViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ms-ki-esc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataTableViewCell" id="D2x-v8-yMg" customClass="DataTableViewCell" customModule="SAT_Compare_Test" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D2x-v8-yMg" id="X6u-du-RWx">
-                                    <frame key="frameInset" width="320" height="99"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-xy-UKu">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq" userLabel="University">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: Percentile:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdw-zC-nnE" userLabel="Score: Percentile:">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Qic-CE-eHq" secondAttribute="trailing" constant="8" id="0Qd-YM-gTs"/>
-                                        <constraint firstItem="Qic-CE-eHq" firstAttribute="top" secondItem="X6u-du-RWx" secondAttribute="topMargin" constant="8" id="HW6-4u-PGC"/>
-                                        <constraint firstItem="Qic-CE-eHq" firstAttribute="leading" secondItem="X6u-du-RWx" secondAttribute="leadingMargin" constant="8" id="jIV-QX-XxF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Qic-CE-eHq" secondAttribute="bottom" constant="8" id="paD-kR-6rB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="NIm-xy-UKu" secondAttribute="bottom" constant="8" id="ETe-pt-2wA"/>
+                                        <constraint firstItem="NIm-xy-UKu" firstAttribute="top" secondItem="X6u-du-RWx" secondAttribute="topMargin" constant="8" id="IUh-iq-2D0"/>
+                                        <constraint firstItem="NIm-xy-UKu" firstAttribute="leading" secondItem="X6u-du-RWx" secondAttribute="leadingMargin" constant="8" id="WLS-tY-Dez"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="NIm-xy-UKu" secondAttribute="trailing" constant="8" id="bvk-b0-vBo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="NIm-xy-UKu" secondAttribute="height" multiplier="1.5" id="GxG-y9-XmW"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="dataLabel" destination="Qic-CE-eHq" id="5CL-3Y-gr9"/>
+                                    <outlet property="dataScoreLabel" destination="fdw-zC-nnE" id="aJX-kB-iXY"/>
+                                    <outlet property="dataUniversityLabel" destination="Qic-CE-eHq" id="5CL-3Y-gr9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -699,7 +708,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="60k-dO-Rfa"/>
+        <segue reference="tkD-xh-fFL"/>
         <segue reference="hIS-tf-tb5"/>
     </inferredMetricsTieBreakers>
 </document>
