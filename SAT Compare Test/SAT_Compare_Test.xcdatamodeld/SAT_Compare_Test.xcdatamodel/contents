@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="SavedData" syncable="YES">
+    <entity name="StudentInputData" syncable="YES">
         <attribute name="savedPercentileCore" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="savedSATCore" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SavedData" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="StudentInputData" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

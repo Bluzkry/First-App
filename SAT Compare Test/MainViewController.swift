@@ -79,13 +79,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -95,6 +88,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitButtonPressed(_ sender: AnyObject) {
+    ////
     ////
     ////
     ////
@@ -110,48 +104,47 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if selectedUniversity != nil {
         ////
         ////
-            
+        ////
             // check if SAT score has been input
             if studentSAT != nil && studentSAT != "" {
             ////
-            
+            ////
+                // check if it's an integer
                 if let existingStudentSATInt:Int = Int(studentSAT!) {
-                
+                ////
                     // check if SAT score between 400 and 1600
+                    
                     if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
-                        
                         // perform segue
                         self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
                         
                     } else {
                         // error alert
                         self.present(incorrectAlertController, animated: true, completion: nil)
+                    // SAT score betwen 400 and 1600 check
                     }
-                    
+                ////
                 } else {
-                    // error alert
                     self.present(incorrectAlertController, animated: true, completion: nil)
+                //// SAT score integre check
                 }
-                // SAT score check
-                
+            ////
             ////
             } else {
-                // error alert
                 self.present(incorrectAlertController, animated: true, completion: nil)
-                
             ////
-            }// SAT score input check
-        
+            //// SAT score input check
+            }
+        ////
         ////
         ////
         } else {
-            // error alert
             self.present(incorrectAlertController, animated: true, completion: nil)
-        
         ////
         ////
-        } // university check
-    
+        ////  university check
+        }
+    ////
     ////
     ////
     ////
@@ -169,7 +162,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "segueToResultViewController" || segue.identifier == "segueToSearchController" || segue.identifier == "segueToInfoViewController" {
             studentSAT = studentSATTextField.text
         }
-        
     }
 
     

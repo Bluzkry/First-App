@@ -382,22 +382,20 @@ class ResultViewController: UIViewController {
         let managedContext = appDelegate.managedObjectContext
         
         // create a new managed object (savedDataObject) and insert into the managed object context
-        let savedDataEntity = NSEntityDescription.entity(forEntityName: "SavedData", in: managedContext)
-        let savedDataObjectStudentSAT = NSManagedObject(entity: savedDataEntity!, insertInto: managedContext)
-        let savedDataObjectStudentPercentile = NSManagedObject(entity: savedDataEntity!, insertInto: managedContext)
+        let studentInputDataEntity = NSEntityDescription.entity(forEntityName: "StudentInputData", in: managedContext)
+        let studentInputDataObject = NSManagedObject(entity: studentInputDataEntity!, insertInto: managedContext)
         
         // set SAT and percentile attributes using key-value coding
-        savedDataObjectStudentSAT.setValue(dataSAT, forKey: "savedSATCore")
-        savedDataObjectStudentPercentile.setValue(dataPercentile, forKey: "savedPercentileCore")
+        studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
+        studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
         
         // commit changes to the saved data object and save to disk
         do {
             try managedContext.save()
             
             // now the managed object is in the core data persistent store, but we still have to handle the possible
-            savedSAT?.append(savedDataObjectStudentSAT)
-            savedPercentile?.append(savedDataObjectStudentPercentile)
-            print(savedPercentile)
+            savedSAT?.append(studentInputDataObject)
+            print(savedSAT)
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }

@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 
 var savedUniversities:Array? = [UniversityData]()
-var savedSAT:Array? = [NSObject]()
-var savedPercentile:Array? = [NSObject]()
+var savedSAT:Array? = [NSManagedObject]()
 
 class DataTableViewController: UITableViewController {
     
@@ -28,22 +27,21 @@ class DataTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        // LOAD CORE DATA
-//        // get a managed object context through an application delegate
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let managedContext = appDelegate.managedObjectContext
-//        
-//        // use NSFetchRequest to fetch from core data
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
-//        
-//        // hand fetch request over to managed object context
-//        do {
-//            let results = try managedContext.execute(fetchRequest)
-//            savedSAT = results.value(forKey: "savedSATCore") as? [NSManagedObject]
-//            savedPercentile = results.value(forKey: "savedPercentileCore") as? [NSManagedObject]
-//        } catch let error as NSError {
-//            print ("Could not fetch \(error), \(error.userInfo)")
-//        }
+        // LOAD CORE DATA
+        // get a managed object context through an application delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // use NSFetchRequest to fetch from core data
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StudentInputData")
+        
+        // hand fetch request over to managed object context
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            savedSAT = results as? [NSManagedObject]
+        } catch let error as NSError {
+            print ("Could not fetch \(error), \(error.userInfo)")
+        }
         
         // BACKGROUND VIEW
         // add a background view to the table view
@@ -101,11 +99,10 @@ class DataTableViewController: UITableViewController {
             // fetches the appropriate university and SAT for the table cell
             let savedSingleUniversity = savedUniversities?[(indexPath as NSIndexPath).row]
             let savedSingleSAT = existingSavedSAT[(indexPath as NSIndexPath).row]
-            let savedSinglePercentile = savedPercentile![(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
             dataCell.dataUniversityLabel.text = "\(savedSingleUniversity?.UniversityName)"
-            dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT.value(forKey: "savedSATCore") as! String), Percentile: \(savedSinglePercentile.value(forKey: "savedPercentileCore") as! String)"
+            dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT.value(forKey: "savedSATCore") as! String), Percentile: \(savedSingleSAT.value(forKey: "savedPercentileCore") as! String)"
             
             
         }
@@ -127,7 +124,6 @@ class DataTableViewController: UITableViewController {
         if editingStyle == .delete {
             savedUniversities?.remove(at: (indexPath as NSIndexPath).row)
             savedSAT?.remove(at: (indexPath as NSIndexPath).row)
-            savedPercentile?.remove(at: (indexPath as NSIndexPath).row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -142,17 +138,14 @@ class DataTableViewController: UITableViewController {
             // fetches the appropriate university and SAT for the table cell
             let savedSingleUniversity = savedUniversities?[sourceIndexPath.row]
             let savedSingleSAT = existingSavedSAT[sourceIndexPath.row]
-            let savedSinglePercentile = savedPercentile![sourceIndexPath.row]
             
             // temporarily deletes them from the data
             savedUniversities?.remove(at: sourceIndexPath.row)
             savedSAT?.remove(at: sourceIndexPath.row)
-            savedPercentile?.remove(at: sourceIndexPath.row)
             
             // inserts them at the place where the data is moved
             savedUniversities?.insert(savedSingleUniversity!, at: destinationIndexPath.row)
             savedSAT?.insert(savedSingleSAT, at: destinationIndexPath.row)
-            savedPercentile?.insert(savedSinglePercentile, at: destinationIndexPath.row)
             
         }
     }
@@ -180,7 +173,11 @@ class DataTableViewController: UITableViewController {
         
         if let existingSavedSAT = savedSAT {
             selectedUniversity = savedUniversities?[(indexPath as NSIndexPath).row]
-            studentSAT = existingSavedSAT[(indexPath as NSIndexPath).row] as? String
+            
+            let savedSATIndexRow = existingSavedSAT[(indexPath as NSIndexPath).row]
+            
+            studentSAT = savedSATIndexRow.value(forKey: "savedSATCore") as! String?
+            
             // trigger the segue to go to the next view
             self.performSegue(withIdentifier: "segueFromDataTableViewController", sender: self)
             
