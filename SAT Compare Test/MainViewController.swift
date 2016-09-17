@@ -112,16 +112,21 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         ////
             
             // check if SAT score has been input
-            if studentSAT != nil {
+            if studentSAT != nil && studentSAT != "" {
             ////
             
-                let existingStudentSATInt:Int = Int(studentSAT!)!
+                if let existingStudentSATInt:Int = Int(studentSAT!) {
                 
-                // check if SAT score between 400 and 1600
-                if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
-                    
-                    // perform segue
-                    self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
+                    // check if SAT score between 400 and 1600
+                    if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
+                        
+                        // perform segue
+                        self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
+                        
+                    } else {
+                        // error alert
+                        self.present(incorrectAlertController, animated: true, completion: nil)
+                    }
                     
                 } else {
                     // error alert
