@@ -52,7 +52,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Main" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-oj-wZM" userLabel="Background"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Main" translatesAutoresizingMaskIntoConstraints="NO" id="f0m-oj-wZM" userLabel="Background">
+                                <gestureRecognizers/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Compare" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAv-Jc-41K" userLabel="Title">
                                 <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="36"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,7 +66,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are your interested in?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -78,9 +80,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="bBa-f2-Xxy" firstAttribute="centerX" secondItem="r6W-Aw-VIb" secondAttribute="centerX" id="8h9-SP-iOD"/>
                                             <constraint firstItem="bBa-f2-Xxy" firstAttribute="top" secondItem="hDv-4d-qlb" secondAttribute="bottom" constant="8" id="Nq2-r9-CCk"/>
-                                            <constraint firstItem="hDv-4d-qlb" firstAttribute="centerX" secondItem="r6W-Aw-VIb" secondAttribute="centerX" id="YSK-Ba-A0W"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -98,13 +98,16 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kn-Jv-Ebg" userLabel="Student SAT Text Field">
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ziS-gR-eeH" id="WP8-IA-hqA"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,15 +124,21 @@
                                     <constraint firstAttribute="width" secondItem="vYI-BT-15X" secondAttribute="width" multiplier="1.05" id="r8T-2V-YB9"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hav-Hg-McX" userLabel="Submit Stack View">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp" userLabel="Info Button">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="7wv-u4-ik7" kind="presentation" identifier="segueToInfoViewController" id="G5d-U1-q5j"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-nP-qoe">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="Vep-r6-R8V"/>
-                                            <constraint firstAttribute="width" constant="85" id="x3P-MW-acj"/>
+                                            <constraint firstAttribute="height" constant="35" id="00O-7P-1Y3"/>
+                                            <constraint firstAttribute="width" constant="60" id="j0I-sT-mOG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -140,10 +149,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNY-8P-QEn">
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="6ib-y0-89w"/>
-                                            <constraint firstAttribute="width" constant="85" id="JpJ-dP-1p6"/>
+                                            <constraint firstAttribute="height" constant="35" id="fml-3U-97O"/>
+                                            <constraint firstAttribute="width" constant="60" id="jdQ-6m-vFa"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -152,33 +161,26 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="PNY-8P-QEn" firstAttribute="top" secondItem="Usn-NC-UjQ" secondAttribute="bottom" constant="8" id="zyP-q6-zD9"/>
+                                    <constraint firstAttribute="width" constant="150" id="piu-gl-UlT"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-wb-fKp" userLabel="Info Button">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="7wv-u4-ik7" kind="presentation" identifier="segueToInfoViewController" id="G5d-U1-q5j"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Un0-wb-fKp" firstAttribute="trailing" secondItem="pwe-7y-ZqJ" secondAttribute="trailingMargin" id="2hG-j4-BjM"/>
+                            <constraint firstItem="9QI-nP-qoe" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="7bU-DZ-oid"/>
                             <constraint firstAttribute="bottom" secondItem="f0m-oj-wZM" secondAttribute="bottom" id="7ot-Vc-wap"/>
-                            <constraint firstItem="hav-Hg-McX" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="9cD-wm-XoL"/>
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="top" secondItem="pwe-7y-ZqJ" secondAttribute="top" id="ATe-6g-b8E"/>
-                            <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.7" id="F9c-2s-SYb"/>
+                            <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.25" id="F9c-2s-SYb"/>
                             <constraint firstAttribute="trailing" secondItem="f0m-oj-wZM" secondAttribute="trailing" id="H09-Xl-DVY"/>
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leading" id="HEi-i8-hi8"/>
-                            <constraint firstItem="hav-Hg-McX" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="IGg-cf-hlF"/>
-                            <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.1" id="Iu4-W9-5dJ"/>
+                            <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.75" id="Iu4-W9-5dJ"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="LAZ-Ul-3pj"/>
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.35" id="gwk-fq-P6I"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
+                            <constraint firstItem="9QI-nP-qoe" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="lU9-Jg-Z3F"/>
                             <constraint firstItem="nIl-DR-GEh" firstAttribute="top" secondItem="Un0-wb-fKp" secondAttribute="bottom" constant="8" id="zy8-8p-2G3"/>
                         </constraints>
                     </view>
@@ -407,7 +409,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                             <fragment content="Your SAT score places you in the Xth percentile of students enrolled at Y.">
                                                 <attributes>
                                                     <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -448,9 +450,9 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-dC-LFw" userLabel="Save University">
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="7ea-Hk-M3z"/>
+                                    <constraint firstAttribute="width" constant="40" id="7ea-Hk-M3z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -637,13 +639,13 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-xy-UKu">
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq" userLabel="University">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq" userLabel="University">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: Percentile:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdw-zC-nnE" userLabel="Score: Percentile:">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -657,9 +659,6 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                         <constraint firstAttribute="trailingMargin" secondItem="NIm-xy-UKu" secondAttribute="trailing" constant="8" id="bvk-b0-vBo"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstAttribute="height" secondItem="NIm-xy-UKu" secondAttribute="height" multiplier="1.5" id="GxG-y9-XmW"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="dataScoreLabel" destination="fdw-zC-nnE" id="aJX-kB-iXY"/>
                                     <outlet property="dataUniversityLabel" destination="Qic-CE-eHq" id="5CL-3Y-gr9"/>
@@ -708,7 +707,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tkD-xh-fFL"/>
+        <segue reference="60k-dO-Rfa"/>
         <segue reference="hIS-tf-tb5"/>
     </inferredMetricsTieBreakers>
 </document>

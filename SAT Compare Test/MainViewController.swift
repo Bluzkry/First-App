@@ -56,8 +56,33 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setStudentSATTextField() {
-        studentSATTextField.delegate = self
+        // make keyboard have done
         studentSATTextField.returnKeyType = UIReturnKeyType.done
+        // hide keyboard if you click outside
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MainViewController.hideKeyboard))
+        tapGesture.cancelsTouchesInView = true
+        self.view.addGestureRecognizer(tapGesture)
+        
+        // hide keyboard if you swipe; 
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboardSwipe))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func hideKeyboardSwipe(swipe: Bool) {
+//        let swipedDown = swipe.direction.contains(UISwipeGestureRecognizerDirection.down)
+        view.endEditing(swipe)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -87,10 +112,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         ////
             
             // check if SAT score has been input
-            if let existingStudentSAT = studentSAT {
+            if studentSAT != nil {
             ////
             
-                let existingStudentSATInt:Int = Int(existingStudentSAT)!
+                let existingStudentSATInt:Int = Int(studentSAT!)!
                 
                 // check if SAT score between 400 and 1600
                 if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
