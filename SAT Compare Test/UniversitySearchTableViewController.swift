@@ -50,8 +50,8 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         
         // filter through the universities
         self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            return data.UniversityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())
-            // 以后需要加中文 return data.中文名字.containsString(self.searchcontroller.searchBar.text!)
+            return data.universityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())
+            // 以后需要加中文 return data.chineseName.containsString(self.searchcontroller.searchBar.text!)
         })
         
         // update the results table view
@@ -115,7 +115,7 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
             data = UniversityData()
         }
         
-        cell.textLabel!.text = data.UniversityName
+        cell.textLabel!.text = data.universityName
         return cell
     }
     

@@ -30,6 +30,21 @@ class ResultViewController: UIViewController {
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
 
+    
+    // get these numbers for later equations in the result view
+    // average
+    let MedianPercentile:Int = (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    
+    let TwentyFivePercentile:Int = selectedUniversity!.bottomReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue
+    
+    let SeventyFivePercentile:Int = selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.topMathPercentile.intValue
+    
+    // 25th percentile minus difference between 25th percentile and median
+    let ZeroPercentile:Int = 2*(selectedUniversity!.bottomReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue) - (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    
+    // 75th percentile plus difference between 75th percentile and median
+    let HundredPercentile:Int = 2*(selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.topMathPercentile.intValue) - (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    
     // this is needed at top for determining the student SAT percentile
     var studentSATPercentile:Int = 0
     
@@ -60,14 +75,14 @@ class ResultViewController: UIViewController {
         self.comesFromMainView()
         
         // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
-        let selectedUniversityName = selectedUniversity!.UniversityName
+        let selectedUniversityName = selectedUniversity!.universityName
         self.titleLabel.text = "SAT Compare: \(selectedUniversityName)"
-        if studentSATInt < selectedUniversity!.TwentyFivePercentile {
+        if studentSATInt < TwentyFivePercentile {
             // student SAT low
             
             self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
                 
-        } else if studentSATInt > selectedUniversity!.SeventyFivePercentile {
+        } else if studentSATInt > SeventyFivePercentile {
             // student SAT high
                 
             self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
@@ -92,16 +107,16 @@ class ResultViewController: UIViewController {
     func determineStudentPercentile() {
         // we determine student percentile according to the equation (student score - 0th percentile)/(100th percentile - 0th percentile); you have to convert to a float midway through and then unconvert
         let studentSATInt:Int = Int(studentSAT!)!
-        let studentSATPercentileTopEquation = Float(studentSATInt - selectedUniversity!.ZeroPercentile)
-        let studentSATPercentileBottomEquation = Float(selectedUniversity!.HundredPercentile - selectedUniversity!.ZeroPercentile)
+        let studentSATPercentileTopEquation = Float(studentSATInt - ZeroPercentile)
+        let studentSATPercentileBottomEquation = Float(HundredPercentile - ZeroPercentile)
         studentSATPercentile = Int((studentSATPercentileTopEquation/studentSATPercentileBottomEquation)*100)
     }
 
     func setSATImageViews() {
         
         // these image view constraints must be set AS MULTIPLIERS so that they depend on the university SAT according to the following equation: low SAT view = (low SAT-200)/1600; high SAT view = (1800-SAT)/1600 as MULTIPLIERS; you have to convert to a float midway through
-        let lowSATImageViewMultiplier = CGFloat(Float(selectedUniversity!.TwentyFivePercentile - 200)/Float(1600))
-        let highSATImageViewMultiplier = CGFloat(Float(1800 - selectedUniversity!.SeventyFivePercentile)/Float(1600))
+        let lowSATImageViewMultiplier = CGFloat(Float(TwentyFivePercentile - 200)/Float(1600))
+        let highSATImageViewMultiplier = CGFloat(Float(1800 - SeventyFivePercentile)/Float(1600))
         
         // in order to set university slider and label constraints, must first set left and right image view constraints and then match the university slider and label horizontal constraints so that they are at the edges of the image view constraints
         self.lowSATImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -236,8 +251,8 @@ class ResultViewController: UIViewController {
     func SATScoreChangeManyThings() {
         // put in the slider/label values and unhide background slider
         self.backgroundSlider.isHidden = false
-        self.twentyFivePercentileLabel.text = String(selectedUniversity!.TwentyFivePercentile)
-        self.seventyFivePercentileLabel.text = String(selectedUniversity!.SeventyFivePercentile)
+        self.twentyFivePercentileLabel.text = String(TwentyFivePercentile)
+        self.seventyFivePercentileLabel.text = String(SeventyFivePercentile)
             
         // change student SAT width so that the left side matches the student SAT score, so we can use this in the future to place the location of the student SAT label
         self.studentSATImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -352,17 +367,15 @@ class ResultViewController: UIViewController {
         
         savedAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             
-            // after dismissing the alert, we add the user data to the saved array global variables
-            savedUniversities?.append(selectedUniversity!)
-            
+            // after dismissing the alert, we save the data as core data
             // note that the percentile differs based on the three factors below
             let studentSATInt:Int = Int(studentSAT!)!
-            if studentSATInt < selectedUniversity!.TwentyFivePercentile {
-                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "<25%")
-            } else if studentSATInt > selectedUniversity!.SeventyFivePercentile {
-                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: ">75%")
+            if studentSATInt < self.TwentyFivePercentile {
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "<25%", dataUniversity: selectedUniversity!)
+            } else if studentSATInt > self.SeventyFivePercentile {
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: ">75%", dataUniversity: selectedUniversity!)
             } else {
-                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "\(self.studentSATPercentile)%")
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "\(self.studentSATPercentile)%", dataUniversity: selectedUniversity!)
             }
             
         })
@@ -373,9 +386,9 @@ class ResultViewController: UIViewController {
     
     ////
     }
-    
+
     // to persist data, we need to save as core data
-    func saveCoreData(dataSAT:String, dataPercentile: String) {
+    func saveCoreData(dataSAT:String, dataPercentile: String, dataUniversity: UniversityData) {
         
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -385,9 +398,19 @@ class ResultViewController: UIViewController {
         let studentInputDataEntity = NSEntityDescription.entity(forEntityName: "StudentInputData", in: managedContext)
         let studentInputDataObject = NSManagedObject(entity: studentInputDataEntity!, insertInto: managedContext)
         
+        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "StudentUniversityData", in: managedContext)
+        let newSavedUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
+        
         // set SAT and percentile attributes using key-value coding
         studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
         studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
+
+        newSavedUniversity.universityName = (dataUniversity.universityName)
+        newSavedUniversity.chineseName = (dataUniversity.chineseName)
+        newSavedUniversity.bottomReadingPercentile = (dataUniversity.bottomReadingPercentile)
+        newSavedUniversity.bottomMathPercentile = (dataUniversity.bottomMathPercentile)
+        newSavedUniversity.topReadingPercentile = (dataUniversity.topReadingPercentile)
+        newSavedUniversity.topMathPercentile = (dataUniversity.topMathPercentile)
         
         // commit changes to the saved data object and save to disk
         do {
@@ -395,7 +418,9 @@ class ResultViewController: UIViewController {
             
             // now the managed object is in the core data persistent store, but we still have to handle the possible
             savedSAT?.append(studentInputDataObject)
-            print(savedSAT)
+            savedUniversities?.append(newSavedUniversity)
+            print(newSavedUniversity)
+            print(savedUniversities)
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }

@@ -101,7 +101,7 @@ class DataTableViewController: UITableViewController {
             let savedSingleSAT = existingSavedSAT[(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
-            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity?.UniversityName)"
+            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity?.universityName)"
             dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT.value(forKey: "savedSATCore") as! String), Percentile: \(savedSingleSAT.value(forKey: "savedPercentileCore") as! String)"
             
             

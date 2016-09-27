@@ -7,41 +7,61 @@
 //
 
 import UIKit
+import CoreData
 
 class UniversityModel: NSObject {
     
     func getData () -> [UniversityData] {
     ////
     ////
-    
+        
         // array of UniversityData objects
         var UniversityDataObjects:[UniversityData] = [UniversityData]()
         
         // get JSON arry of dictionaries
         let jsonObjects:[NSDictionary] = self.getLocalJsonFile()
         
+        
+        
+        // to persist data, we need to save as core data - one of the most difficult, annoying, useless things I've had to suffer through
+        // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // create a new data entity
+        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "StudentUniversityData", in: managedContext)
+        
+        
+        
         // loop through each dictionary and assign values to our UniversityData objects
-//        var index: Int
-//        for i in index = 0; index < jsonObjects.count; index += 1
         for i in 0...(jsonObjects.count-1) {
         ////
             
             // current JSON dictionary
             let jsonDictionary:NSDictionary = jsonObjects[i]
             
-            // create an UniversityData object
-            let oneUniversity:UniversityData = UniversityData()
+            // create a new managed object (oneUniversity) and insert into the managed object context; this also creates a new UniversityData object
+            let oneUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
             
             // assign the value of each key value pair to the UniversityData object
-            oneUniversity.UniversityName = jsonDictionary["name"] as! String
-            oneUniversity.中文名字 = jsonDictionary["中文名字"] as! String
-            oneUniversity.BottomReadingPercentile = jsonDictionary["25PercentReading"] as! Int
-            oneUniversity.BottomMathPercentile = jsonDictionary["25PercentMath"] as! Int
-            oneUniversity.TopReadingPercentile = jsonDictionary["75PercentReading"] as! Int
-            oneUniversity.TopMathPercentile = jsonDictionary["75PercentMath"] as! Int
+            oneUniversity.chineseName = jsonDictionary["中文名字"] as! String
+            oneUniversity.bottomReadingPercentile = jsonDictionary["25PercentReading"] as! NSNumber
+            oneUniversity.bottomMathPercentile = jsonDictionary["25PercentMath"] as! NSNumber
+            oneUniversity.topReadingPercentile = jsonDictionary["75PercentReading"] as! NSNumber
+            oneUniversity.topMathPercentile = jsonDictionary["75PercentMath"] as! NSNumber
+            oneUniversity.universityName = jsonDictionary["name"] as! String
             
-            // add the university to the university array
-            UniversityDataObjects.append(oneUniversity)
+            // commit changes to the saved data object and save to disk
+            do {
+                try managedContext.save()
+                
+                // now the managed object is in the core data persistent store, but we still have to handle the possible
+                // add the university to the university array
+                UniversityDataObjects.append(oneUniversity)
+                print(UniversityDataObjects)
+            } catch let error as NSError {
+                print("could not save \(error), \(error.userInfo)")
+            }
             
         ////
         }

@@ -4,7 +4,16 @@
         <attribute name="savedPercentileCore" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="savedSATCore" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="StudentUniversityData" representedClassName="UniversityData" syncable="YES">
+        <attribute name="bottomMathPercentile" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bottomReadingPercentile" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="chineseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topMathPercentile" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="topReadingPercentile" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="universityName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="StudentInputData" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="StudentUniversityData" positionX="-63" positionY="0" width="128" height="135"/>
     </elements>
 </model>

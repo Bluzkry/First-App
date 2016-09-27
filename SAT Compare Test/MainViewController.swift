@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         // put the text for the university name (if it exists from the university search) and adjust the size
         if let existingSelectedUniversity = selectedUniversity {
-            universitySearchTextField.text = existingSelectedUniversity.UniversityName
+            universitySearchTextField.text = existingSelectedUniversity.universityName
         }
         
         // put the text for the university SAT score (if it has already been input)
@@ -58,6 +58,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func setStudentSATTextField() {
         // make keyboard have done
         studentSATTextField.returnKeyType = UIReturnKeyType.done
+        
         // hide keyboard if you click outside
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MainViewController.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
@@ -74,7 +75,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func hideKeyboardSwipe(swipe: Bool) {
-//        let swipedDown = swipe.direction.contains(UISwipeGestureRecognizerDirection.down)
         view.endEditing(swipe)
     }
     
@@ -123,10 +123,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                         self.present(incorrectAlertController, animated: true, completion: nil)
                     // SAT score betwen 400 and 1600 check
                     }
+                    
                 ////
                 } else {
                     self.present(incorrectAlertController, animated: true, completion: nil)
-                //// SAT score integre check
+                //// SAT score integer check
                 }
             ////
             ////

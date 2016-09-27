@@ -7,44 +7,46 @@
 //
 
 import UIKit
+import CoreData
+@objc(Category)
 
-class UniversityData: NSObject {
-    var UniversityName:String = ""
-    var 中文名字 = ""
-    var BottomReadingPercentile = 0
-    var BottomMathPercentile = 0
-    var TopReadingPercentile = 0
-    var TopMathPercentile = 0
+class UniversityData: NSManagedObject {
+    @NSManaged var universityName:String
+    @NSManaged var chineseName:String
+    @NSManaged var bottomReadingPercentile:NSNumber
+    @NSManaged var bottomMathPercentile:NSNumber
+    @NSManaged var topReadingPercentile:NSNumber
+    @NSManaged var topMathPercentile:NSNumber
     
-    // get these numbers for later equations in the result view
-    
-    // average
-    var MedianPercentile:Int {
-        get {
-            return (TopMathPercentile + TopReadingPercentile + BottomMathPercentile + BottomReadingPercentile)/2
-        }
-    }
-    
-    var TwentyFivePercentile:Int {
-        return BottomReadingPercentile + BottomMathPercentile
-    }
-    
-    var SeventyFivePercentile:Int {
-        return TopReadingPercentile + TopMathPercentile
-    }
-    
-    // 25th percentile minus difference between 25th percentile and median
-    var ZeroPercentile:Int {
-        get {
-            return 2*(BottomReadingPercentile + BottomMathPercentile) - (TopMathPercentile + TopReadingPercentile + BottomMathPercentile + BottomReadingPercentile)/2
-        }
-    }
-    
-    // 75th percentile plus difference between 75th percentile and median
-    var HundredPercentile:Int {
-        get {
-            return 2*(TopReadingPercentile + TopMathPercentile) - (TopMathPercentile + TopReadingPercentile + BottomMathPercentile + BottomReadingPercentile)/2
-        }
-    }
+//    // get these numbers for later equations in the result view
+//    
+//    // average
+//    var MedianPercentile:Int {
+//        get {
+//            return (topMathPercentile.intValue + topReadingPercentile.intValue + bottomMathPercentile.intValue + bottomReadingPercentile.intValue)/2
+//        }
+//    }
+//    
+//    var TwentyFivePercentile:Int {
+//        return bottomReadingPercentile.intValue + bottomMathPercentile.intValue
+//    }
+//    
+//    var SeventyFivePercentile:Int {
+//        return topReadingPercentile.intValue + topMathPercentile.intValue
+//    }
+//    
+//    // 25th percentile minus difference between 25th percentile and median
+//    var ZeroPercentile:Int {
+//        get {
+//            return 2*(bottomReadingPercentile.intValue + bottomMathPercentile.intValue) - (topMathPercentile.intValue + topReadingPercentile.intValue + bottomMathPercentile.intValue + bottomReadingPercentile.intValue)/2
+//        }
+//    }
+//    
+//    // 75th percentile plus difference between 75th percentile and median
+//    var HundredPercentile:Int {
+//        get {
+//            return 2*(topReadingPercentile.intValue + topMathPercentile.intValue) - (topMathPercentile.intValue + topReadingPercentile.intValue + bottomMathPercentile.intValue + bottomReadingPercentile.intValue)/2
+//        }
+//    }
 
 }
