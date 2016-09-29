@@ -30,15 +30,33 @@ class DataTableViewController: UITableViewController {
         // LOAD CORE DATA
         // get a managed object context through an application delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        let managedContext = appDelegate.persistentContainer.viewContext
         
         // use NSFetchRequest to fetch from core data
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StudentInputData")
+        let studentSATFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StudentInputData")
+        studentSATFetchRequest.returnsObjectsAsFaults = false
+        
+        let studentUniversityFetchRequest = NSFetchRequest<UniversityData>(entityName: "UniversityData")
+        studentUniversityFetchRequest.returnsObjectsAsFaults = false
+        
+        // use NSPredicate to search and filter university data so that it only includes universities saved by the student (because the database contains all the universities, not just those saved by the student)
+//        studentUniversityFetchRequest.predicate = NSPredicate(format: "universityName = %@", "Yale")
         
         // hand fetch request over to managed object context
         do {
-            let results = try managedContext.fetch(fetchRequest)
-            savedSAT = results as? [NSManagedObject]
+            let studentSATResults = try managedContext.fetch(studentSATFetchRequest)
+            savedSAT = studentSATResults as? [NSManagedObject]
+            
+            let studentUniversityResults = try managedContext.fetch(studentUniversityFetchRequest)
+//            savedUniversities = try managedContext.fetch(studentUniversityFetchRequest)
+            print(savedUniversities)
+            savedUniversities = studentUniversityResults as? [UniversityData]
+            print(savedUniversities)
+//            for i in 0...(studentUnivSersityResults.count-1) {
+//                testVariable = studentUniversityResult as UniversityDataß
+//            }
+            
+            print(savedUniversities)
         } catch let error as NSError {
             print ("Could not fetch \(error), \(error.userInfo)")
         }
@@ -101,7 +119,7 @@ class DataTableViewController: UITableViewController {
             let savedSingleSAT = existingSavedSAT[(indexPath as NSIndexPath).row]
             
             // fetches the appropriate university for the data source layout
-            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity?.universityName)"
+            dataCell.dataUniversityLabel.text = "\(savedSingleUniversity!.universityName)"
             dataCell.dataScoreLabel.text = "Score: \(savedSingleSAT.value(forKey: "savedSATCore") as! String), Percentile: \(savedSingleSAT.value(forKey: "savedPercentileCore") as! String)"
             
             

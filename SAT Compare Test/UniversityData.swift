@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-@objc(Category)
+@objc(UniversityData)
 
 class UniversityData: NSManagedObject {
     @NSManaged var universityName:String

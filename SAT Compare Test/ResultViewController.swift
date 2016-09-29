@@ -392,13 +392,13 @@ class ResultViewController: UIViewController {
         
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        let managedContext = appDelegate.persistentContainer.viewContext
         
         // create a new managed object (savedDataObject) and insert into the managed object context
         let studentInputDataEntity = NSEntityDescription.entity(forEntityName: "StudentInputData", in: managedContext)
         let studentInputDataObject = NSManagedObject(entity: studentInputDataEntity!, insertInto: managedContext)
         
-        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "StudentUniversityData", in: managedContext)
+        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)
         let newSavedUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
         
         // set SAT and percentile attributes using key-value coding

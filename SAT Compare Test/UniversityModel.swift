@@ -26,12 +26,10 @@ class UniversityModel: NSObject {
         // to persist data, we need to save as core data - one of the most difficult, annoying, useless things I've had to suffer through
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        let managedContext = appDelegate.persistentContainer.viewContext
         
         // create a new data entity
-        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "StudentUniversityData", in: managedContext)
-        
-        
+        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)
         
         // loop through each dictionary and assign values to our UniversityData objects
         for i in 0...(jsonObjects.count-1) {
@@ -53,12 +51,11 @@ class UniversityModel: NSObject {
             
             // commit changes to the saved data object and save to disk
             do {
-                try managedContext.save()
+//                try managedContext.save()
                 
                 // now the managed object is in the core data persistent store, but we still have to handle the possible
                 // add the university to the university array
                 UniversityDataObjects.append(oneUniversity)
-                print(UniversityDataObjects)
             } catch let error as NSError {
                 print("could not save \(error), \(error.userInfo)")
             }
