@@ -42,12 +42,13 @@ class UniversityModel: NSObject {
             let oneUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
             
             // assign the value of each key value pair to the UniversityData object
+            oneUniversity.universityName = jsonDictionary["name"] as! String
             oneUniversity.chineseName = jsonDictionary["中文名字"] as! String
             oneUniversity.bottomReadingPercentile = jsonDictionary["25PercentReading"] as! NSNumber
             oneUniversity.bottomMathPercentile = jsonDictionary["25PercentMath"] as! NSNumber
             oneUniversity.topReadingPercentile = jsonDictionary["75PercentReading"] as! NSNumber
             oneUniversity.topMathPercentile = jsonDictionary["75PercentMath"] as! NSNumber
-            oneUniversity.universityName = jsonDictionary["name"] as! String
+            oneUniversity.studentData = false
             
             // commit changes to the saved data object and save to disk
             do {

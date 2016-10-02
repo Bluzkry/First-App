@@ -404,6 +404,7 @@ class ResultViewController: UIViewController {
         // set SAT and percentile attributes using key-value coding
         studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
         studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
+        studentInputDataObject.setValue(NSDate(), forKey: "savedDate")
 
         newSavedUniversity.universityName = (dataUniversity.universityName)
         newSavedUniversity.chineseName = (dataUniversity.chineseName)
@@ -411,16 +412,18 @@ class ResultViewController: UIViewController {
         newSavedUniversity.bottomMathPercentile = (dataUniversity.bottomMathPercentile)
         newSavedUniversity.topReadingPercentile = (dataUniversity.topReadingPercentile)
         newSavedUniversity.topMathPercentile = (dataUniversity.topMathPercentile)
+        newSavedUniversity.studentData = true
+        newSavedUniversity.savedDate = NSDate()
         
         // commit changes to the saved data object and save to disk
         do {
             try managedContext.save()
             
             // now the managed object is in the core data persistent store, but we still have to handle the possible
-            savedSAT?.append(studentInputDataObject)
-            savedUniversities?.append(newSavedUniversity)
-            print(newSavedUniversity)
-            print(savedUniversities)
+//            savedSAT?.append(studentInputDataObject)
+//            savedUniversities?.append(newSavedUniversity)
+//            print(newSavedUniversity)
+//            print(savedUniversities)
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }
