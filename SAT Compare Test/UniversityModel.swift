@@ -21,8 +21,6 @@ class UniversityModel: NSObject {
         // get JSON arry of dictionaries
         let jsonObjects:[NSDictionary] = self.getLocalJsonFile()
         
-        
-        
         // to persist data, we need to save as core data - one of the most difficult, annoying, useless things I've had to suffer through
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -30,7 +30,8 @@ class ResultViewController: UIViewController {
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
 
-    
+    // MARK
+    // MARK PREPARATION FOR LATER PARTS
     // get these numbers for later equations in the result view
     // average
     let MedianPercentile:Int = (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
@@ -51,6 +52,9 @@ class ResultViewController: UIViewController {
     // this is for changing things if this comes from the data controller
     var fromData:Bool = false
     
+    
+    // MARK
+    // MARK VIEW LIFE CYCLE
     override func viewDidLoad() {
     ////
         
@@ -80,12 +84,12 @@ class ResultViewController: UIViewController {
         if studentSATInt < TwentyFivePercentile {
             // student SAT low
             
-            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)."
                 
         } else if studentSATInt > SeventyFivePercentile {
             // student SAT high
                 
-            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)."
                 
         } else {
             // student SAT in-between
@@ -104,6 +108,9 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK
+    // MARK SET UP DATA/CONSTRAINTS FOR THE VIEW (E.G. SLIDERS, LABELS)
     func determineStudentPercentile() {
         // we determine student percentile according to the equation (student score - 0th percentile)/(100th percentile - 0th percentile); you have to convert to a float midway through and then unconvert
         let studentSATInt:Int = Int(studentSAT!)!
@@ -248,6 +255,8 @@ class ResultViewController: UIViewController {
         
     }
     
+    // MARK
+    // MARK ANIMATIONS
     func SATScoreChangeManyThings() {
         // put in the slider/label values and unhide background slider
         self.backgroundSlider.isHidden = false
@@ -359,6 +368,8 @@ class ResultViewController: UIViewController {
     ////
     }
     
+    // MARK
+    // MARK SAVE DATA AND PREPARE FOR SEGUES
     @IBAction func saveUniversity(_ sender: AnyObject) {
     ////
         
@@ -404,8 +415,8 @@ class ResultViewController: UIViewController {
         // set SAT and percentile attributes using key-value coding
         studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
         studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
-        studentInputDataObject.setValue(NSDate(), forKey: "savedDate")
-
+        studentInputDataObject.setValue((Date.timeIntervalSinceReferenceDate*1000), forKey: "savedDate")
+        
         newSavedUniversity.universityName = (dataUniversity.universityName)
         newSavedUniversity.chineseName = (dataUniversity.chineseName)
         newSavedUniversity.bottomReadingPercentile = (dataUniversity.bottomReadingPercentile)
@@ -413,17 +424,13 @@ class ResultViewController: UIViewController {
         newSavedUniversity.topReadingPercentile = (dataUniversity.topReadingPercentile)
         newSavedUniversity.topMathPercentile = (dataUniversity.topMathPercentile)
         newSavedUniversity.studentData = true
-        newSavedUniversity.savedDate = NSDate()
+        newSavedUniversity.savedDate = NSNumber(value:Float(Date.timeIntervalSinceReferenceDate)*1000)
         
         // commit changes to the saved data object and save to disk
         do {
             try managedContext.save()
             
             // now the managed object is in the core data persistent store, but we still have to handle the possible
-//            savedSAT?.append(studentInputDataObject)
-//            savedUniversities?.append(newSavedUniversity)
-//            print(newSavedUniversity)
-//            print(savedUniversities)
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }
