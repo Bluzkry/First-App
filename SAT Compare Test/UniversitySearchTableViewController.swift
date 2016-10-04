@@ -9,8 +9,13 @@
 import UIKit
 
 class UniversitySearchController: UITableViewController, UISearchResultsUpdating {
+    
+    // MARK
+    // MARK VARIABLES
 
-    let model:UniversityModel = UniversityModel()
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
+    var model:UniversityModel = UniversityModel()
     var totalData:[UniversityData] = [UniversityData]()
     
     // we need this for any SAT score data passed by the main view controller
@@ -23,6 +28,8 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     var searchcontroller: UISearchController!
     var searchResultsController = UITableViewController()
     
+    // MARK
+    // MARK VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,53 +45,23 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         self.searchcontroller.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // change cancel button depending on language
+        switch 中文 {
+        case false:
+            cancelButton.title = "Cancel"
+        case true:
+            cancelButton.title = "取消"
+        }
+        
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-    ////
-        
-        // filter through the universities
-        self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            return data.universityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())
-            // 以后需要加中文 return data.chineseName.containsString(self.searchcontroller.searchBar.text!)
-        })
-        
-        // update the results table view
-        self.searchResultsController.tableView.reloadData()
-        
-        /* OPTION 2: let totalDataUniversityString = String(totalData)
-        
-        // filter through the universities
-        self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
-            if totalDataUniversityString.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString) == true {
-                return true
-            } else {
-                return false
-            }
-        }) */
-        
-        /* self.filteredUniversities = self.totalData.filter { (data:UniversityData) -> Bool in
-            if totalData.lowercaseString.containsString(self.searchcontroller.searchBar.text!.lowercaseString) {
-                return true
-            } else {
-                return false
-            } */
-        
-    ////
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
+    // MARK TABLE SET-UP
     // number of sections is 1
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -97,12 +74,12 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
             // if we search, the rows is the number of rows in our filtered universities
             return self.filteredUniversities.count
         } else {
-            // otherwise it's 0
-            return 0
+            // otherwise it's the total number of universities
+            return self.totalData.count
         }
     }
     
-    // what's in the table (kinda confused on this one)
+    // what's in the table
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let data:UniversityData
@@ -111,65 +88,51 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
             // if we search, what's in the table is the filtered universities
             data = filteredUniversities[(indexPath as NSIndexPath).row]
         } else {
-            // otherwise it's nothing
-            data = UniversityData()
+            // otherwise it's all the universities
+            data = totalData[(indexPath as NSIndexPath).row]
         }
         
-        cell.textLabel!.text = data.universityName
+        // change what's in the cell by language
+        switch 中文 {
+        case false:
+            cell.textLabel!.text = data.universityName
+        case true:
+            cell.textLabel!.text = data.chineseName
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // user selected a row, the selectedUniversity variable has to be changed to this
-        selectedUniversity = filteredUniversities[(indexPath as NSIndexPath).row]
+        if searchcontroller.isActive && searchcontroller.searchBar.text != "" {
+            selectedUniversity = filteredUniversities[(indexPath as NSIndexPath).row]
+        } else {
+            selectedUniversity = totalData[(indexPath as NSIndexPath).row]
+        }
         
         // trigger the segue to go to the next view
         self.performSegue(withIdentifier: "segueToMainViewController", sender: self)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK
+    // MARK SEARCH
+    func updateSearchResults(for searchController: UISearchController) {
+    ////
+        // filter through the universities
+        switch 中文 {
+        case false:
+            self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
+                return data.universityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())
+            })
+        case true:
+            self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
+                return data.chineseName.contains(self.searchcontroller.searchBar.text!)
+            })
+        }
+        
+        // update the results table view
+        self.searchResultsController.tableView.reloadData()
+    ////
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

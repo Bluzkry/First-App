@@ -104,17 +104,29 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     // MARK TABLE VIEW CONFIGURATION
     // this function is necessary to configure the table view cell and is coded according to the Apple documentation
     func configureCell(_ dataCell: DataTableViewCell, indexPath: NSIndexPath) {
+    ////
+    ////
         let studentSATSelectedObject = studentSATFetchedResultsController.object(at: indexPath as IndexPath) as? NSManagedObject
         let universitySelectedObject = universityFetchedResultsController.object(at: indexPath as IndexPath)
         
         if let singleSATScore = studentSATSelectedObject?.value(forKey: "savedSATCore") as? String {
+        ////
             let singlePercentileScore = studentSATSelectedObject?.value(forKey: "savedPercentileCore") as? String
             let singleUniversity = universitySelectedObject.value(forKey: "universityName")
+            let 大学 = universitySelectedObject.value(forKey: "chineseName")
             
-            dataCell.dataUniversityLabel.text = "\(singleUniversity!)"
-            dataCell.dataScoreLabel.text = "Score: \(singleSATScore), Percentile: \(singlePercentileScore!)"
-            
-        }
+            switch 中文 {
+            case false:
+                dataCell.dataUniversityLabel.text = "\(singleUniversity!)"
+                dataCell.dataScoreLabel.text = "Score: \(singleSATScore), Percentile: \(singlePercentileScore!)"
+            case true:
+                dataCell.dataUniversityLabel.text = "\(大学!)"
+                dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore), 百分位: \(singlePercentileScore!)"
+            } // case ended
+        ////
+        } // if let statement ended
+    ////
+    ////
     }
     
         // we configure the cell, but most of it is based on the configureCell function
@@ -213,7 +225,18 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
 
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // note editing style will never be insert
         }    
+    }
+    
+    // deletion option in editing style doesn't appear
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    // no indentation in editing style
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 
     // override to support rearranging the table view, especially the values
@@ -224,7 +247,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         
         // we have to refresh the core data
         self.initializeFetchedResultsController()
-        
+    ////
         // get objects at index path; note that we have to do a lot of complicated casting (student data to nsnumber then int64 then back, university to int64 then back)
         let studentSATSelectedObject = studentSATFetchedResultsController.object(at: sourceIndexPath as IndexPath) as? NSManagedObject
         let universitySelectedObject = universityFetchedResultsController.object(at: sourceIndexPath as IndexPath)
@@ -233,7 +256,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         let universityDestinationObject = universityFetchedResultsController.object(at: destinationIndexPath)
         let studentSATDestinationObjectSavedDate:NSNumber = studentSATDestinationObject?.value(forKeyPath: "savedDate")! as! NSNumber
         let universityDestinationObjectSavedDate:Int64 = universityDestinationObject.savedDate.int64Value
-        
+    ////
         // if the row we're moving is above the target row, we add one to the date so that the source row ends up below the target row
         if sourceIndexPath.row < destinationIndexPath.row {
         // we add 1 to the destination index object's savedate
@@ -245,15 +268,17 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             let studentSATSelectedObjectChangedDate = NSNumber(value:(studentSATDestinationObjectSavedDate.int64Value - 1))
             studentSATSelectedObject?.setValue(studentSATSelectedObjectChangedDate, forKey: "savedDate")
             universitySelectedObject.savedDate = NSNumber(value:(universityDestinationObjectSavedDate - 1))
+        } else {
+            return
         }
-        
+    ////
         // save
         do {
             try managedContext.save()
         } catch {
             print ("could not save \(error), \(error.localizedDescription)")
         }
-        
+    ////
         // then we restart
         self.initializeFetchedResultsController()
         

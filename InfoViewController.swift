@@ -10,6 +10,11 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    @IBOutlet weak var backBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var englishScrollView: UIScrollView!
+    @IBOutlet weak var 中文ScrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +22,18 @@ class InfoViewController: UIViewController {
         //infoViewScrollView.contentSize = scrollableSize
 
         // Do any additional setup after loading the view.
+        
+        switch 中文 {
+        case false:
+            self.backBarButtonItem.title = "Back"
+            self.中文ScrollView.alpha = 0
+            self.中文ScrollView.isUserInteractionEnabled = false
+        case true:
+            self.backBarButtonItem.title = "返回"
+            self.englishScrollView.alpha = 0
+            self.englishScrollView.isUserInteractionEnabled = false
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

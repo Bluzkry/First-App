@@ -1,29 +1,1316 @@
- [{
-  "name": "Harvard University",
-  "中文名字": "大学一",
-  "25PercentReading": 200,
-  "25PercentMath": 200,
+ [
+  {
+  "name": "American University",
+  "中文名字": "美利坚大学",
+  "25PercentReading": 590,
+  "25PercentMath": 560,
+  "75PercentReading": 690,
+  "75PercentMath": 650,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Amherst College",
+  "中文名字": "阿默斯特学院",
+  "25PercentReading": 680,
+  "25PercentMath": 680,
+  "75PercentReading": 780,
+  "75PercentMath": 780,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Auburn University",
+  "中文名字": "奥本大学",
+  "25PercentReading": 530,
+  "25PercentMath": 540,
+  "75PercentReading": 630,
+  "75PercentMath": 650,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "Barnard College",
+  "中文名字": "巴纳德学院",
+  "25PercentReading": 640,
+  "25PercentMath": 620,
+  "75PercentReading": 730,
+  "75PercentMath": 720,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Bates College",
+  "中文名字": "贝茨学院",
+  "25PercentReading": 590,
+  "25PercentMath": 600,
+  "75PercentReading": 713,
+  "75PercentMath": 703,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Baylor University",
+  "中文名字": "贝勒大学",
+  "25PercentReading": 560,
+  "25PercentMath": 580,
+  "75PercentReading": 650,
+  "75PercentMath": 670,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "Binghamton University--SUNY",
+  "中文名字": "宾汉姆顿大学",
+  "25PercentReading": 600,
+  "25PercentMath": 630,
+  "75PercentReading": 680,
+  "75PercentMath": 703,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Boston College",
+  "中文名字": "波士顿学院",
+  "25PercentReading": 620,
+  "25PercentMath": 640,
+  "75PercentReading": 720,
+  "75PercentMath": 750,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Boston University",
+  "中文名字": "波士顿大学",
+  "25PercentReading": 580,
+  "25PercentMath": 620,
+  "75PercentReading": 680,
+  "75PercentMath": 730,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Bowdoin College",
+  "中文名字": "鲍登学院",
+  "25PercentReading": 690,
+  "25PercentMath": 685,
+  "75PercentReading": 765,
+  "75PercentMath": 770,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Brandeis University",
+  "中文名字": "布兰戴斯大学",
+  "25PercentReading": 600,
+  "25PercentMath": 650,
+  "75PercentReading": 700,
+  "75PercentMath": 770,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Brigham Young University--Provo",
+  "中文名字": "杨百翰大学",
+  "25PercentReading": 570,
+  "25PercentMath": 580,
+  "75PercentReading": 680,
+  "75PercentMath": 680,
+  "25PercentACT": 27,
+  "75PercentACT": 33
+  }, {
+  "name": "Brown University",
+  "中文名字": "布朗大学",
+  "25PercentReading": 680,
+  "25PercentMath": 690,
+  "75PercentReading": 780,
+  "75PercentMath": 780,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Bryn Mawr College",
+  "中文名字": "布尔茅尔学院",
+  "25PercentReading": 620,
+  "25PercentMath": 620,
+  "75PercentReading": 730,
+  "75PercentMath": 730,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Bucknell University",
+  "中文名字": "巴克内尔大学",
+  "25PercentReading": 590,
+  "25PercentMath": 620,
+  "75PercentReading": 680,
+  "75PercentMath": 710,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "California Institute of Technology",
+  "中文名字": "加利福尼亚理工学院",
+  "25PercentReading": 730,
+  "25PercentMath": 770,
   "75PercentReading": 800,
-  "75PercentMath": 800
+  "75PercentMath": 800,
+  "25PercentACT": 34,
+  "75PercentACT": 35
+  }, {
+  "name": "Carleton College",
+  "中文名字": "卡尔顿学院",
+  "25PercentReading": 660,
+  "25PercentMath": 660,
+  "75PercentReading": 750,
+  "75PercentMath": 770,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "Carnegie Mellon University",
+  "中文名字": "卡内基梅隆大学",
+  "25PercentReading": 650,
+  "25PercentMath": 710,
+  "75PercentReading": 740,
+  "75PercentMath": 800,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Case Western Reserve University",
+  "中文名字": "凯斯西储大学",
+  "25PercentReading": 620,
+  "25PercentMath": 680,
+  "75PercentReading": 720,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Centre College",
+  "中文名字": "森特学院",
+  "25PercentReading": 540,
+  "25PercentMath": 570,
+  "75PercentReading": 660,
+  "75PercentMath": 740,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "Claremont McKenna College",
+  "中文名字": "克莱蒙特麦肯纳学院",
+  "25PercentReading": 670,
+  "25PercentMath": 670,
+  "75PercentReading": 750,
+  "75PercentMath": 780,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "Clark University",
+  "中文名字": "克拉克大学",
+  "25PercentReading": 560,
+  "25PercentMath": 560,
+  "75PercentReading": 670,
+  "75PercentMath": 670,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Clemson University",
+  "中文名字": "克莱蒙森大学",
+  "25PercentReading": 560,
+  "25PercentMath": 590,
+  "75PercentReading": 660,
+  "75PercentMath": 90,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Colby College",
+  "中文名字": "科尔比学院",
+  "25PercentReading": 620,
+  "25PercentMath": 640,
+  "75PercentReading": 710,
+  "75PercentMath": 720,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Colgate University",
+  "中文名字": "高露洁大学",
+  "25PercentReading": 620,
+  "25PercentMath": 630,
+  "75PercentReading": 720,
+  "75PercentMath": 730,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "College of the Holy Cross",
+  "中文名字": "圣十字学院",
+  "25PercentReading": 600,
+  "25PercentMath": 620,
+  "75PercentReading": 690,
+  "75PercentMath": 690,
+  "25PercentACT": 28,
+  "75PercentACT": 31
+  }, {
+  "name": "College of William & Mary",
+  "中文名字": "威廉玛丽学院",
+  "25PercentReading": 630,
+  "25PercentMath": 630,
+  "75PercentReading": 730,
+  "75PercentMath": 730,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Colorado College",
+  "中文名字": "科罗拉多学院",
+  "25PercentReading": 630,
+  "25PercentMath": 620,
+  "75PercentReading": 710,
+  "75PercentMath": 710,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Colorado School of Mines",
+  "中文名字": "科罗拉多矿业大学",
+  "25PercentReading": 600,
+  "25PercentMath": 650,
+  "75PercentReading": 690,
+  "75PercentMath": 730,
+  "25PercentACT": 26,
+  "75PercentACT": 32
+  }, {
+  "name": "Columbia University",
+  "中文名字": "哥伦比亚大学",
+  "25PercentReading": 720,
+  "25PercentMath": 720,
+  "75PercentReading": 777,
+  "75PercentMath": 777,
+  "25PercentACT": 32,
+  "75PercentACT": 35
+  }, {
+  "name": "Connecticut College",
+  "中文名字": "康涅狄格学院",
+  "25PercentReading": 610,
+  "25PercentMath": 610,
+  "75PercentReading": 700,
+  "75PercentMath": 700,
+  "25PercentACT": 28,
+  "75PercentACT": 31
+  }, {
+  "name": "Cornell University",
+  "中文名字": "康奈尔大学",
+  "25PercentReading": 650,
+  "25PercentMath": 680,
+  "75PercentReading": 750,
+  "75PercentMath": 780,
+  "25PercentACT": 30,
+  "75PercentACT": 34
+  }, {
+  "name": "Dartmouth College",
+  "中文名字": "达特茅斯学院",
+  "25PercentReading": 660,
+  "25PercentMath": 670,
+  "75PercentReading": 780,
+  "75PercentMath": 780,
+  "25PercentACT": 30,
+  "75PercentACT": 34
+  }, {
+  "name": "Davidson College",
+  "中文名字": "大卫森学院",
+  "25PercentReading": 630,
+  "25PercentMath": 630,
+  "75PercentReading": 720,
+  "75PercentMath": 720,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Dickinson College",
+  "中文名字": "狄金森学院",
+  "25PercentReading": 590,
+  "25PercentMath": 600,
+  "75PercentReading": 680,
+  "75PercentMath": 700,
+  "25PercentACT": 27,
+  "75PercentACT": 30
+  }, {
+  "name": "Drexel University",
+  "中文名字": "德雷塞尔大学",
+  "25PercentReading": 530,
+  "25PercentMath": 565,
+  "75PercentReading": 630,
+  "75PercentMath": 680,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "Duke University",
+  "中文名字": "杜克大学",
+  "25PercentReading": 670,
+  "25PercentMath": 690,
+  "75PercentReading": 760,
+  "75PercentMath": 790,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Emory University",
+  "中文名字": "埃默里大学",
+  "25PercentReading": 670,
+  "25PercentMath": 670,
+  "75PercentReading": 770,
+  "75PercentMath": 770,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Florida State University",
+  "中文名字": "佛罗里达州立大学",
+  "25PercentReading": 560,
+  "25PercentMath": 560,
+  "75PercentReading": 640,
+  "75PercentMath": 640,
+  "25PercentACT": 25,
+  "75PercentACT": 29
+  }, {
+  "name": "Fordham University",
+  "中文名字": "佛罕大学",
+  "25PercentReading": 580,
+  "25PercentMath": 590,
+  "75PercentReading": 670,
+  "75PercentMath": 680,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Franklin and Marshall College",
+  "中文名字": "富兰克林与马歇尔学院",
+  "25PercentReading": 580,
+  "25PercentMath": 630,
+  "75PercentReading": 670,
+  "75PercentMath": 730,
+  "25PercentACT": 28,
+  "75PercentACT": 31
+  }, {
+  "name": "George Washington University",
+  "中文名字": "乔治华盛顿大学",
+  "25PercentReading": 590,
+  "25PercentMath": 600,
+  "75PercentReading": 690,
+  "75PercentMath": 700,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Georgetown University",
+  "中文名字": "乔治城大学",
+  "25PercentReading": 660,
+  "25PercentMath": 660,
+  "75PercentReading": 750,
+  "75PercentMath": 750,
+  "25PercentACT": 30,
+  "75PercentACT": 34
+  }, {
+  "name": "Georgia Institute of Technology",
+  "中文名字": "佐治亚理工学院",
+  "25PercentReading": 630,
+  "25PercentMath": 680,
+  "75PercentReading": 730,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Grinnell College",
+  "中文名字": "格林内尔学院",
+  "25PercentReading": 640,
+  "25PercentMath": 660,
+  "75PercentReading": 740,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Hamilton College",
+  "中文名字": "汉密尔顿学院",
+  "25PercentReading": 650,
+  "25PercentMath": 650,
+  "75PercentReading": 740,
+  "75PercentMath": 730,
+  "25PercentACT": 31,
+  "75PercentACT": 33
+  }, {
+  "name": "Harvard University",
+  "中文名字": "哈佛大学",
+  "25PercentReading": 700,
+  "25PercentMath": 710,
+  "75PercentReading": 800,
+  "75PercentMath": 800,
+  "25PercentACT": 32,
+  "75PercentACT": 35
+  }, {
+  "name": "Harvey Mudd College",
+  "中文名字": "哈维姆德学院",
+  "25PercentReading": 670,
+  "25PercentMath": 730,
+  "75PercentReading": 760,
+  "75PercentMath": 800,
+  "25PercentACT": 33,
+  "75PercentACT": 35
+  }, {
+  "name": "Haverford College",
+  "中文名字": "哈弗福德学院",
+  "25PercentReading": 660,
+  "25PercentMath": 660,
+  "75PercentReading": 760,
+  "75PercentMath": 770,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Indiana University--Bloomington",
+  "中文名字": "印第安纳大学伯明顿主校区",
+  "25PercentReading": 520,
+  "25PercentMath": 540,
+  "75PercentReading": 630,
+  "75PercentMath": 660,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "Johns Hopkins University",
+  "中文名字": "约翰霍普金斯大学",
+  "25PercentReading": 690,
+  "25PercentMath": 710,
+  "75PercentReading": 760,
+  "75PercentMath": 790,
+  "25PercentACT": 32,
+  "75PercentACT": 34
+  }, {
+  "name": "Kenyon College",
+  "中文名字": "凯尼恩学院",
+  "25PercentReading": 630,
+  "25PercentMath": 610,
+  "75PercentReading": 730,
+  "75PercentMath": 690,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Lafayette College",
+  "中文名字": "拉斐特学院",
+  "25PercentReading": 580,
+  "25PercentMath": 620,
+  "75PercentReading": 670,
+  "75PercentMath": 710,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Lehigh University",
+  "中文名字": "利哈伊大学",
+  "25PercentReading": 590,
+  "25PercentMath": 640,
+  "75PercentReading": 680,
+  "75PercentMath": 740,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Loyola University Chicago",
+  "中文名字": "芝加哥洛约拉大学",
+  "25PercentReading": 520,
+  "25PercentMath": 518,
+  "75PercentReading": 630,
+  "75PercentMath": 630,
+  "25PercentACT": 24,
+  "75PercentACT": 29
+  }, {
+  "name": "Macalester College",
+  "中文名字": "玛卡莱斯特学院",
+  "25PercentReading": 620,
+  "25PercentMath": 620,
+  "75PercentReading": 730,
+  "75PercentMath": 740,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Marquette University",
+  "中文名字": "马凯特大学",
+  "25PercentReading": 530,
+  "25PercentMath": 540,
+  "75PercentReading": 640,
+  "75PercentMath": 660,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "Massachusetts Institute of Technology",
+  "中文名字": "麻省理工学院",
+  "25PercentReading": 680,
+  "25PercentMath": 750,
+  "75PercentReading": 770,
+  "75PercentMath": 800,
+  "25PercentACT": 33,
+  "75PercentACT": 35
+  }, {
+  "name": "Miami University--Oxford",
+  "中文名字": "迈阿密大学-牛津分校",
+  "25PercentReading": 550,
+  "25PercentMath": 590,
+  "75PercentReading": 650,
+  "75PercentMath": 690,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Michigan State University",
+  "中文名字": "科罗拉多矿业大学",
+  "25PercentReading": 450,
+  "25PercentMath": 530,
+  "75PercentReading": 580,
+  "75PercentMath": 680,
+  "25PercentACT": 23,
+  "75PercentACT": 28
+  }, {
+  "name": "Middlebury College",
+  "中文名字": "米德伯理学院",
+  "25PercentReading": 630,
+  "25PercentMath": 630,
+  "75PercentReading": 730,
+  "75PercentMath": 740,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Mount Holyoke College",
+  "中文名字": "曼荷莲女子学院",
+  "25PercentReading": 620,
+  "25PercentMath": 610,
+  "75PercentReading": 730,
+  "75PercentMath": 735,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "New York University",
+  "中文名字": "纽约大学",
+  "25PercentReading": 620,
+  "25PercentMath": 630,
+  "75PercentReading": 720,
+  "75PercentMath": 750,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "North Carolina State University--Raleigh",
+  "中文名字": "北卡罗来纳州立大学",
+  "25PercentReading": 570,
+  "25PercentMath": 590,
+  "75PercentReading": 650,
+  "75PercentMath": 680,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Northeastern University",
+  "中文名字": "美国东北大学",
+  "25PercentReading": 660,
+  "25PercentMath": 680,
+  "75PercentReading": 740,
+  "75PercentMath": 770,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Northwestern University",
+  "中文名字": "美国西北大学",
+  "25PercentReading": 690,
+  "25PercentMath": 710,
+  "75PercentReading": 760,
+  "75PercentMath": 800,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Oberlin College",
+  "中文名字": "欧柏林大学",
+  "25PercentReading": 640,
+  "25PercentMath": 620,
+  "75PercentReading": 740,
+  "75PercentMath": 710,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Occidental College",
+  "中文名字": "西方学院",
+  "25PercentReading": 600,
+  "25PercentMath": 600,
+  "75PercentReading": 690,
+  "75PercentMath": 690,
+  "25PercentACT": 28,
+  "75PercentACT": 31
+  }, {
+  "name": "Ohio State University--Columbus",
+  "中文名字": "俄亥俄州立大学",
+  "25PercentReading": 560,
+  "25PercentMath": 610,
+  "75PercentReading": 670,
+  "75PercentMath": 720,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Penn State--University Park",
+  "中文名字": "宾州州立大学",
+  "25PercentReading": 530,
+  "25PercentMath": 560,
+  "75PercentReading": 620,
+  "75PercentMath": 670,
+  "25PercentACT": 25,
+  "75PercentACT": 29
+  }, {
+  "name": "Pepperdine University",
+  "中文名字": "佩珀代因大学",
+  "25PercentReading": 550,
+  "25PercentMath": 550,
+  "75PercentReading": 650,
+  "75PercentMath": 670,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "Pitzer College",
+  "中文名字": "匹泽学院",
+  "25PercentReading": 620,
+  "25PercentMath": 630,
+  "75PercentReading": 720,
+  "75PercentMath": 720,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Pomona College",
+  "中文名字": "波莫纳学院",
+  "25PercentReading": 670,
+  "25PercentMath": 690,
+  "75PercentReading": 760,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 34
+  }, {
+  "name": "Princeton University",
+  "中文名字": "普林斯顿大学",
+  "25PercentReading": 690,
+  "25PercentMath": 700,
+  "75PercentReading": 790,
+  "75PercentMath": 800,
+  "25PercentACT": 32,
+  "75PercentACT": 35
+  }, {
+  "name": "Purdue University--West Lafayette",
+  "中文名字": "普渡大学本校",
+  "25PercentReading": 520,
+  "25PercentMath": 560,
+  "75PercentReading": 630,
+  "75PercentMath": 700,
+  "25PercentACT": 25,
+  "75PercentACT": 31
+  }, {
+  "name": "Rensselaer Polytechnic Institute",
+  "中文名字": "伦斯勒理工学院",
+  "25PercentReading": 610,
+  "25PercentMath": 670,
+  "75PercentReading": 720,
+  "75PercentMath": 770,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Rhodes College",
+  "中文名字": "罗德学院",
+  "25PercentReading": 600,
+  "25PercentMath": 580,
+  "75PercentReading": 700,
+  "75PercentMath": 680,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "Rice University",
+  "中文名字": "莱斯大学",
+  "25PercentReading": 710,
+  "25PercentMath": 730,
+  "75PercentReading": 790,
+  "75PercentMath": 800,
+  "25PercentACT": 33,
+  "75PercentACT": 35
+  }, {
+  "name": "Rutgers University--New Brunswick",
+  "中文名字": "罗格斯大学",
+  "25PercentReading": 530,
+  "25PercentMath": 580,
+  "75PercentReading": 640,
+  "75PercentMath": 700,
+  "25PercentACT": null,
+  "75PercentACT": null
+  }, {
+  "name": "Scripps College",
+  "中文名字": "斯克利普斯学院(女校)",
+  "25PercentReading": 650,
+  "25PercentMath": 630,
+  "75PercentReading": 730,
+  "75PercentMath": 718,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Sewanee--University of the South",
+  "中文名字": "西沃恩南方大学",
+  "25PercentReading": 580,
+  "25PercentMath": 560,
+  "75PercentReading": 670,
+  "75PercentMath": 650,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Skidmore College",
+  "中文名字": "斯基德莫尔学院",
+  "25PercentReading": 550,
+  "25PercentMath": 560,
+  "75PercentReading": 670,
+  "75PercentMath": 673,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Smith College",
+  "中文名字": "史密斯女子学院",
+  "25PercentReading": 620,
+  "25PercentMath": 620,
+  "75PercentReading": 740,
+  "75PercentMath": 720,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Soka University of America",
+  "中文名字": "创价大学",
+  "25PercentReading": 490,
+  "25PercentMath": 580,
+  "75PercentReading": 650,
+  "75PercentMath": 740,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "Southern Methodist University",
+  "中文名字": "南卫理公会大学",
+  "25PercentReading": 600,
+  "25PercentMath": 620,
+  "75PercentReading": 690,
+  "75PercentMath": 720,
+  "25PercentACT": 28,
+  "75PercentACT": 32
+  }, {
+  "name": "Stanford University",
+  "中文名字": "斯坦福大学",
+  "25PercentReading": 690,
+  "25PercentMath": 700,
+  "75PercentReading": 780,
+  "75PercentMath": 800,
+  "25PercentACT": 31,
+  "75PercentACT": 35
+  }, {
+  "name": "Stony Brook University--SUNY",
+  "中文名字": "纽约州立大学-石溪分校",
+  "25PercentReading": 550,
+  "25PercentMath": 600,
+  "75PercentReading": 660,
+  "75PercentMath": 720,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "SUNY College of Environmental Science",
+  "中文名字": "纽约州立大学-环境科学与林业科学学院",
+  "25PercentReading": 560,
+  "25PercentMath": 560,
+  "75PercentReading": 650,
+  "75PercentMath": 650,
+  "25PercentACT": 26,
+  "75PercentACT": 29
+  }, {
+  "name": "Swarthmore College",
+  "中文名字": "史瓦兹摩尔学院",
+  "25PercentReading": 670,
+  "25PercentMath": 670,
+  "75PercentReading": 760,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 34
+  }, {
+  "name": "Texas A&M University--College Station",
+  "中文名字": "德州农工大学",
+  "25PercentReading": 520,
+  "25PercentMath": 550,
+  "75PercentReading": 640,
+  "75PercentMath": 670,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "Texas Christian University",
+  "中文名字": "德克萨斯基督教大学",
+  "25PercentReading": 530,
+  "25PercentMath": 550,
+  "75PercentReading": 630,
+  "75PercentMath": 650,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "Trinity College",
+  "中文名字": "三一学院",
+  "25PercentReading": 570,
+  "25PercentMath": 580,
+  "75PercentReading": 660,
+  "75PercentMath": 680,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "Tufts University",
+  "中文名字": "塔夫茨大学",
+  "25PercentReading": 680,
+  "25PercentMath": 690,
+  "75PercentReading": 750,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Tulane University",
+  "中文名字": "杜兰大学",
+  "25PercentReading": 620,
+  "25PercentMath": 640,
+  "75PercentReading": 710,
+  "75PercentMath": 700,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Union College",
+  "中文名字": "联邦大学",
+  "25PercentReading": 610,
+  "25PercentMath": 630,
+  "75PercentReading": 680,
+  "75PercentMath": 720,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "United States Military Academy",
+  "中文名字": "美国军事学院",
+  "25PercentReading": 570,
+  "25PercentMath": 590,
+  "75PercentReading": 690,
+  "75PercentMath": 700,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "United States Naval Academy",
+  "中文名字": "美国海军学院",
+  "25PercentReading": 600,
+  "25PercentMath": 630,
+  "75PercentReading": 650,
+  "75PercentMath": 680,
+  "25PercentACT": null,
+  "75PercentACT": null
+  }, {
+  "name": "University at Buffalo--SUNY",
+  "中文名字": "纽约州立大学-水牛城分校",
+  "25PercentReading": 510,
+  "25PercentMath": 550,
+  "75PercentReading": 610,
+  "75PercentMath": 650,
+  "25PercentACT": 24,
+  "75PercentACT": 29
+  }, {
+  "name": "University of California--Berkeley",
+  "中文名字": "加州大学伯克利分校",
+  "25PercentReading": 610,
+  "25PercentMath": 640,
+  "75PercentReading": 730,
+  "75PercentMath": 770,
+  "25PercentACT": 29,
+  "75PercentACT": 34
+  }, {
+  "name": "University of California--Davis",
+  "中文名字": "加州大学戴维斯分校",
+  "25PercentReading": 510,
+  "25PercentMath": 560,
+  "75PercentReading": 630,
+  "75PercentMath": 710,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "University of California--Irvine",
+  "中文名字": "加州大学欧文分校",
+  "25PercentReading": 490,
+  "25PercentMath": 550,
+  "75PercentReading": 620,
+  "75PercentMath": 690,
+  "25PercentACT": null,
+  "75PercentACT": null
+  }, {
+  "name": "University of California--Los Angeles",
+  "中文名字": "加州大学洛杉矶分校",
+  "25PercentReading": 570,
+  "25PercentMath": 600,
+  "75PercentReading": 700,
+  "75PercentMath": 750,
+  "25PercentACT": 25,
+  "75PercentACT": 33
+  }, {
+  "name": "University of California--San Diego",
+  "中文名字": "加州大学圣地亚哥分校",
+  "25PercentReading": 580,
+  "25PercentMath": 630,
+  "75PercentReading": 680,
+  "75PercentMath": 770,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "University of California--Santa Barbara",
+  "中文名字": "加州大学圣塔芭芭拉分校",
+  "25PercentReading": 550,
+  "25PercentMath": 580,
+  "75PercentReading": 670,
+  "75PercentMath": 700,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
+  "name": "University of California--Santa Cruz",
+  "中文名字": "加州大学圣克鲁兹分校",
+  "25PercentReading": 520,
+  "25PercentMath": 550,
+  "75PercentReading": 640,
+  "75PercentMath": 670,
+  "25PercentACT": 23,
+  "75PercentACT": 29
+  }, {
+  "name": "University of Chicago",
+  "中文名字": "芝加哥大学",
+  "25PercentReading": 725,
+  "25PercentMath": 725,
+  "75PercentReading": 775,
+  "75PercentMath": 775,
+  "25PercentACT": 32,
+  "75PercentACT": 35
+  }, {
+  "name": "University of Colorado--Boulder",
+  "中文名字": "科罗拉多大学波德分校",
+  "25PercentReading": 490,
+  "25PercentMath": 480,
+  "75PercentReading": 620,
+  "75PercentMath": 600,
+  "25PercentACT": 20,
+  "75PercentACT": 25
+  }, {
+  "name": "University of Connecticut",
+  "中文名字": "康涅狄格大学",
+  "25PercentReading": 550,
+  "25PercentMath": 580,
+  "75PercentReading": 650,
+  "75PercentMath": 690,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Delaware",
+  "中文名字": "特拉华大学",
+  "25PercentReading": 540,
+  "25PercentMath": 560,
+  "75PercentReading": 640,
+  "75PercentMath": 660,
+  "25PercentACT": 24,
+  "75PercentACT": 29
+  }, {
+  "name": "University of Denver",
+  "中文名字": "丹佛大学",
+  "25PercentReading": 550,
+  "25PercentMath": 560,
+  "75PercentReading": 660,
+  "75PercentMath": 660,
+  "25PercentACT": 23,
+  "75PercentACT": 30
+  }, {
+  "name": "University of Florida",
+  "中文名字": "佛罗里达大学",
+  "25PercentReading": 580,
+  "25PercentMath": 590,
+  "75PercentReading": 670,
+  "75PercentMath": 680,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Georgia",
+  "中文名字": "乔治亚大学",
+  "25PercentReading": 570,
+  "25PercentMath": 580,
+  "75PercentReading": 660,
+  "75PercentMath": 670,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Illinois--Urbana-Champaign",
+  "中文名字": "伊利诺伊大学香槟分校",
+  "25PercentReading": 570,
+  "25PercentMath": 700,
+  "75PercentReading": 680,
+  "75PercentMath": 790,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Iowa",
+  "中文名字": "爱荷华大学",
+  "25PercentReading": 460,
+  "25PercentMath": 540,
+  "75PercentReading": 630,
+  "75PercentMath": 690,
+  "25PercentACT": 23,
+  "75PercentACT": 28
+  }, {
+  "name": "University of Maryland--College Park",
+  "中文名字": "马里兰大学-帕克分校",
+  "25PercentReading": 590,
+  "25PercentMath": 620,
+  "75PercentReading": 690,
+  "75PercentMath": 730,
+  "25PercentACT": null,
+  "75PercentACT": null
+  }, {
+  "name": "University of Massachusetts--Amherst",
+  "中文名字": "麻省大学-艾默斯特校区",
+  "25PercentReading": 550,
+  "25PercentMath": 580,
+  "75PercentReading": 640,
+  "75PercentMath": 670,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "University of Miami",
+  "中文名字": "迈阿密大学",
+  "25PercentReading": 590,
+  "25PercentMath": 610,
+  "75PercentReading": 690,
+  "75PercentMath": 700,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "University of Michigan--Ann Arbor",
+  "中文名字": "密歇根大学安娜堡分校",
+  "25PercentReading": 630,
+  "25PercentMath": 660,
+  "75PercentReading": 730,
+  "75PercentMath": 770,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "University of Minnesota--Twin Cities",
+  "中文名字": "明尼苏达大学",
+  "25PercentReading": 560,
+  "25PercentMath": 620,
+  "75PercentReading": 700,
+  "75PercentMath": 740,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of North Carolina--Chapel Hill",
+  "中文名字": "北卡罗来纳州大学教堂山分校",
+  "25PercentReading": 590,
+  "25PercentMath": 610,
+  "75PercentReading": 690,
+  "75PercentMath": 700,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "University of Notre Dame",
+  "中文名字": "圣母诺特丹大学",
+  "25PercentReading": 670,
+  "25PercentMath": 680,
+  "75PercentReading": 760,
+  "75PercentMath": 770,
+  "25PercentACT": 32,
+  "75PercentACT": 34
+  }, {
+  "name": "University of Pennsylvania",
+  "中文名字": "宾夕法尼亚大学",
+  "25PercentReading": 680,
+  "25PercentMath": 700,
+  "75PercentReading": 760,
+  "75PercentMath": 790,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "University of Pittsburgh",
+  "中文名字": "匹兹堡大学",
+  "25PercentReading": 580,
+  "25PercentMath": 600,
+  "75PercentReading": 660,
+  "75PercentMath": 690,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Richmond",
+  "中文名字": "里奇蒙大学",
+  "25PercentReading": 600,
+  "25PercentMath": 620,
+  "75PercentReading": 700,
+  "75PercentMath": 720,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "University of San Diego",
+  "中文名字": "圣地亚哥大学",
+  "25PercentReading": 550,
+  "25PercentMath": 560,
+  "75PercentReading": 640,
+  "75PercentMath": 670,
+  "25PercentACT": 26,
+  "75PercentACT": 30
+  }, {
+  "name": "University of Southern California",
+  "中文名字": "南加州大学",
+  "25PercentReading": 620,
+  "25PercentMath": 650,
+  "75PercentReading": 730,
+  "75PercentMath": 770,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "University of Texas--Austin",
+  "中文名字": "德克萨斯大学-奥斯汀分校",
+  "25PercentReading": 570,
+  "25PercentMath": 600,
+  "75PercentReading": 680,
+  "75PercentMath": 710,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Tulsa",
+  "中文名字": "塔尔萨大学",
+  "25PercentReading": 575,
+  "25PercentMath": 575,
+  "75PercentReading": 710,
+  "75PercentMath": 710,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "University of Vermont",
+  "中文名字": "佛蒙特大学",
+  "25PercentReading": 550,
+  "25PercentMath": 550,
+  "75PercentReading": 650,
+  "75PercentMath": 640,
+  "25PercentACT": 25,
+  "75PercentACT": 30
+  }, {
+  "name": "University of Virginia",
+  "中文名字": "弗吉尼亚大学",
+  "25PercentReading": 620,
+  "25PercentMath": 630,
+  "75PercentReading": 720,
+  "75PercentMath": 740,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "University of Washington",
+  "中文名字": "西雅图华盛顿大学",
+  "25PercentReading": 540,
+  "25PercentMath": 580,
+  "75PercentReading": 660,
+  "75PercentMath": 710,
+  "25PercentACT": 26,
+  "75PercentACT": 31
+  }, {
+  "name": "University of Wisconsin--Madison",
+  "中文名字": "威斯康星大学-麦迪逊分校",
+  "25PercentReading": 560,
+  "25PercentMath": 630,
+  "75PercentReading": 660,
+  "75PercentMath": 760,
+  "25PercentACT": 27,
+  "75PercentACT": 31
+  }, {
+  "name": "Vanderbilt University",
+  "中文名字": "范德堡大学",
+  "25PercentReading": 710,
+  "25PercentMath": 720,
+  "75PercentReading": 790,
+  "75PercentMath": 800,
+  "25PercentACT": 32,
+  "75PercentACT": 35
+  }, {
+  "name": "Vassar College",
+  "中文名字": "瓦萨尔学院",
+  "25PercentReading": 670,
+  "25PercentMath": 660,
+  "75PercentReading": 750,
+  "75PercentMath": 740,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Villanova University",
+  "中文名字": "维拉诺瓦大学",
+  "25PercentReading": 590,
+  "25PercentMath": 610,
+  "75PercentReading": 690,
+  "75PercentMath": 710,
+  "25PercentACT": 29,
+  "75PercentACT": 32
+  }, {
+  "name": "Virginia Tech",
+  "中文名字": "弗吉尼亚理工大学",
+  "25PercentReading": 540,
+  "25PercentMath": 560,
+  "75PercentReading": 640,
+  "75PercentMath": 680,
+  "25PercentACT": null,
+  "75PercentACT": null
+  }, {
+  "name": "Wake Forest University",
+  "中文名字": "维克森林大学",
+  "25PercentReading": 590,
+  "25PercentMath": 610,
+  "75PercentReading": 690,
+  "75PercentMath": 720,
+  "25PercentACT": 27,
+  "75PercentACT": 33
+  }, {
+  "name": "Washington and Lee University",
+  "中文名字": "华盛顿和李大学",
+  "25PercentReading": 650,
+  "25PercentMath": 660,
+  "75PercentReading": 730,
+  "75PercentMath": 740,
+  "25PercentACT": 30,
+  "75PercentACT": 33
+  }, {
+  "name": "Washington University in St. Louis",
+  "中文名字": "圣路易斯华盛顿大学",
+  "25PercentReading": 690,
+  "25PercentMath": 710,
+  "75PercentReading": 760,
+  "75PercentMath": 790,
+  "25PercentACT": 32,
+  "75PercentACT": 34
+  }, {
+  "name": "Wellesley College",
+  "中文名字": "威尔士利学院",
+  "25PercentReading": 640,
+  "25PercentMath": 650,
+  "75PercentReading": 740,
+  "75PercentMath": 750,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "Wesleyan University",
+  "中文名字": "卫斯理大学",
+  "25PercentReading": 620,
+  "25PercentMath": 640,
+  "75PercentReading": 730,
+  "75PercentMath": 740,
+  "25PercentACT": 29,
+  "75PercentACT": 33
+  }, {
+  "name": "Whitman College",
+  "中文名字": "会特门学院",
+  "25PercentReading": 610,
+  "25PercentMath": 600,
+  "75PercentReading": 700,
+  "75PercentMath": 700,
+  "25PercentACT": 27,
+  "75PercentACT": 32
+  }, {
+  "name": "Williams College",
+  "中文名字": "威廉姆斯学院",
+  "25PercentReading": 670,
+  "25PercentMath": 660,
+  "75PercentReading": 780,
+  "75PercentMath": 770,
+  "25PercentACT": 31,
+  "75PercentACT": 34
+  }, {
+  "name": "Worcester Polytechnic Institute",
+  "中文名字": "伍斯特理工学院",
+  "25PercentReading": 570,
+  "25PercentMath": 640,
+  "75PercentReading": 680,
+  "75PercentMath": 740,
+  "25PercentACT": 27,
+  "75PercentACT": 32
   }, {
   "name": "Yale University",
-  "中文名字": "大学二",
-  "25PercentReading": 500,
-  "25PercentMath": 500,
-  "75PercentReading": 750,
-  "75PercentMath": 750
-  }, {
-  "name": "abc",
-  "中文名字": "大学三",
-  "25PercentReading": 700,
-  "25PercentMath": 750,
+  "中文名字": "耶鲁大学",
+  "25PercentReading": 720,
+  "25PercentMath": 710,
   "75PercentReading": 800,
-  "75PercentMath": 800
+  "75PercentMath": 800,
+  "25PercentACT": 31,
+  "75PercentACT": 35
   }, {
-  "name": "abcd",
-  "中文名字": "大学四",
-  "25PercentReading": 0,
-  "25PercentMath": 0,
-  "75PercentReading": 0,
-  "75PercentMath": 0
+  "name": "Yeshiva University",
+  "中文名字": "耶斯希瓦大学",
+  "25PercentReading": 560,
+  "25PercentMath": 560,
+  "75PercentReading": 680,
+  "75PercentMath": 680,
+  "25PercentACT": 23,
+  "75PercentACT": 29
   }]

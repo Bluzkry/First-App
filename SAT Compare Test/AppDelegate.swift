@@ -9,11 +9,15 @@
 import UIKit
 import CoreData
 
+var studentSAT:String?
+var selectedUniversity:UniversityData?
+var 中文:Bool = false
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

@@ -16,7 +16,7 @@ class UniversityModel: NSObject {
     ////
         
         // array of UniversityData objects
-        var UniversityDataObjects:[UniversityData] = [UniversityData]()
+        var universityDataObjects:[UniversityData] = [UniversityData]()
         
         // get JSON arry of dictionaries
         let jsonObjects:[NSDictionary] = self.getLocalJsonFile()
@@ -48,22 +48,12 @@ class UniversityModel: NSObject {
             oneUniversity.topMathPercentile = jsonDictionary["75PercentMath"] as! NSNumber
             oneUniversity.studentData = false
             
-            // commit changes to the saved data object and save to disk
-            do {
-//                try managedContext.save()
-                
-                // now the managed object is in the core data persistent store, but we still have to handle the possible
-                // add the university to the university array
-                UniversityDataObjects.append(oneUniversity)
-            } catch let error as NSError {
-                print("could not save \(error), \(error.userInfo)")
-            }
-            
+            universityDataObjects.append(oneUniversity)
         ////
         }
         
         // return list of university data objects
-        return UniversityDataObjects
+        return universityDataObjects
         
     ////
     ////

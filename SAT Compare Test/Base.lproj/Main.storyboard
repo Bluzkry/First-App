@@ -31,8 +31,15 @@
                             <outlet property="delegate" destination="N0h-ZW-C36" id="jeU-k8-hBC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ifm-Qo-anS"/>
+                    <navigationItem key="navigationItem" id="ifm-Qo-anS">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bsN-w6-nbw">
+                            <connections>
+                                <segue destination="hfx-md-h5N" kind="presentation" id="sir-JG-tiN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="bsN-w6-nbw" id="H7t-G7-ttA"/>
                         <segue destination="hfx-md-h5N" kind="presentation" identifier="segueToMainViewController" id="e3d-1r-xHz"/>
                     </connections>
                 </tableViewController>
@@ -64,7 +71,7 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-Aw-VIb" userLabel="University Stack View">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are your interested in?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are you interested in?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,7 +103,7 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vYI-BT-15X" userLabel="SAT Stack View">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,7 +137,7 @@
                                     <segue destination="7wv-u4-ik7" kind="presentation" identifier="segueToInfoViewController" id="G5d-U1-q5j"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-nP-qoe">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-nP-qoe" userLabel="Submit Stack View">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
                                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,6 +172,30 @@
                                     <constraint firstAttribute="width" constant="150" id="piu-gl-UlT"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J8U-JY-4gW" userLabel="Language Stack View">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-Aj-tLL">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="English">
+                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="englishButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="zwn-qX-GR9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-ZM-s0j">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="中文">
+                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="中文ButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="2gr-do-Fe4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -177,7 +208,9 @@
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leading" id="HEi-i8-hi8"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.75" id="Iu4-W9-5dJ"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="LAZ-Ul-3pj"/>
+                            <constraint firstAttribute="trailing" secondItem="J8U-JY-4gW" secondAttribute="trailing" constant="8" id="OOs-sk-uee"/>
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
+                            <constraint firstItem="J8U-JY-4gW" firstAttribute="top" secondItem="4mb-2I-Mtf" secondAttribute="bottom" id="d0v-px-Qat"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.35" id="gwk-fq-P6I"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
                             <constraint firstItem="9QI-nP-qoe" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="lU9-Jg-Z3F"/>
@@ -188,11 +221,15 @@
                     <connections>
                         <outlet property="SATBackground" destination="X3s-3U-bCw" id="X3y-am-0dV"/>
                         <outlet property="cancelButton" destination="PNY-8P-QEn" id="2PT-nD-gcX"/>
+                        <outlet property="englishButton" destination="NMw-Aj-tLL" id="v1d-VX-m0w"/>
                         <outlet property="infoButton" destination="Un0-wb-fKp" id="Ltd-iB-B11"/>
-                        <outlet property="studentSATSubmitButton" destination="Usn-NC-UjQ" id="ptF-4e-7WP"/>
+                        <outlet property="studentSATQuestion" destination="hb3-ir-EeN" id="oyW-Vd-HTb"/>
                         <outlet property="studentSATTextField" destination="0Kn-Jv-Ebg" id="ZSQ-eS-79O"/>
+                        <outlet property="submitButton" destination="Usn-NC-UjQ" id="ptF-4e-7WP"/>
                         <outlet property="universitySearchBackground" destination="ElU-h0-mMZ" id="fr8-hc-KoT"/>
+                        <outlet property="universitySearchQuestion" destination="hDv-4d-qlb" id="BSV-dU-esj"/>
                         <outlet property="universitySearchTextField" destination="bBa-f2-Xxy" id="PIM-1f-WRf"/>
+                        <outlet property="中文Button" destination="bgM-ZM-s0j" id="H5j-3L-Ld7"/>
                         <segue destination="ET8-Ig-WOR" kind="presentation" identifier="segueToSearchController" id="3BP-kl-eLW"/>
                         <segue destination="ToN-qs-1Ys" kind="presentation" identifier="segueToResultViewController" id="hIS-tf-tb5"/>
                     </connections>
@@ -213,9 +250,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-wi-2Db">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-wi-2Db" userLabel="English Scroll View">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-2i-O6d" userLabel="Text">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIH-2i-O6d" userLabel="EnglishText">
                                         <attributedString key="attributedText">
                                             <fragment content="Suggestions for the App, bugs found in the App? Looking for a developer or college application advice for your child? E-mail:  ">
                                                 <attributes>
@@ -267,6 +304,56 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
+                                            <fragment content="Data Notes: ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  SAT data is unavailable for the following universities:  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Bard College Saint Louis University Syracuse University United States Air Force Academy University of Rochester">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  SAT data is for the year 2015 to 2016 for all universities, with the exception of the below:  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">California Institute of Technology Colby College Harvard University Middleburg College Trinity College United States Military Academy University of Delaware University of Tulsa Yeshiva University</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">  All of the above university data is for the year 2014-2015, with the exception of Colby College, which is for the year 2013-2014.  Data for the following universities is for admitted, rather than enrolled students:  </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Emory University Rice University">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
                                             <fragment content="Possible Questions:">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
@@ -310,7 +397,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (although information for the above two universities have been taken from data published elsewhere).  </string>
+                                                <string key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
@@ -340,32 +427,259 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <constraints>
                                     <constraint firstItem="MIH-2i-O6d" firstAttribute="top" secondItem="fWl-wi-2Db" secondAttribute="top" constant="27" id="1D7-qv-nuG"/>
                                     <constraint firstAttribute="trailing" secondItem="MIH-2i-O6d" secondAttribute="trailing" id="CDk-e1-29S"/>
-                                    <constraint firstAttribute="bottom" secondItem="MIH-2i-O6d" secondAttribute="bottom" constant="86" id="Z9R-Yw-QRs"/>
+                                    <constraint firstAttribute="bottom" secondItem="MIH-2i-O6d" secondAttribute="bottom" constant="25" id="Z9R-Yw-QRs"/>
                                     <constraint firstItem="MIH-2i-O6d" firstAttribute="leading" secondItem="fWl-wi-2Db" secondAttribute="leading" id="wD8-ON-JvE"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-1C-Rau" userLabel="中文 Scroll View">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acu-up-6oZ" userLabel="中文Text">
+                                        <attributedString key="attributedText">
+                                            <fragment content="Looking for college application advice for your child? Contact: ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" 023-86716117  jjss303030@qq.com">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+ Suggestions for the App, bugs found in the App, Chinese grammatical mistakes in the App, looking for a developer? E-mail:  </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="3041871928@qq.com">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+ (Note: Developer is American but can understand and read/write Chinese. Nevertheless, English is still preferred as a method of communication.) 
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="About &quot;SAT Compare&quot;: ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">
+
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="http://opa.berkeley.edu/sites/default/files/uc_berkeley_cds_2015-16_8-3-2016.pdf">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  This App assumes a linear distribution between the 25th and 75th SAT percentiles.  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Data Notes: ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  SAT data is unavailable for the following universities:  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Bard College Saint Louis University Syracuse University United States Air Force Academy University of Rochester">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  SAT data is for the year 2015 to 2016 for all universities, with the exception of the below:  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">California Institute of Technology Colby College Harvard University Middleburg College Trinity College United States Military Academy University of Delaware University of Tulsa Yeshiva University</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">  All of the above university data is for the year 2014-2015, with the exception of Colby College, which is for the year 2013-2014.  Data for the following universities is for admitted, rather than enrolled students:  </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Emory University Rice University">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Possible Questions:">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="I got a 1600 but was rejected by all the Ivy League universities. Why? ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content"> For American universities, the ACT and SAT are part, but not all, of what the application is evaluated upon. American applicants generally consider the GPA twice as important as the standardized tests (unfortunately, Chinese GPA's are less reliable and thus less heavily emphasized by universities).  Additionally, as is probably already known, American universities impose nationality quotas upon applicants. These quotas are especially stringent for top universities and Chinese students in particular.  </mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="We thus advise subtracting 50 to 75 points from your SAT score when using this App.">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="  For any further questions, feel free to contact us.  ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Why do you focus on the SAT? Aren't other factors, such as GPA, more important, than the SAT?">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </mutableString>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="The university I'm interested in isn't on SAT Compare. Why not?">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">  Unfortunately, due to time constraints, SAT Compare only includes national universities ranked in the top 100 and liberal arts colleges ranked in the top 50 of the US News &amp; World Report university rankings</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">Isn't assuming a linear distribution unreliable? If SAT Compare only has data for enrolled students, rather than accepted students, isn't that also unreliable?  </string>
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">These are factors you will have to take into consideration in utilizing SAT Compare. Data such as this is simply not provided (or perhaps not even collected in the first place) by universities.</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="acu-up-6oZ" firstAttribute="top" secondItem="fVE-1C-Rau" secondAttribute="top" constant="100" id="9l0-tG-ISL"/>
+                                    <constraint firstItem="acu-up-6oZ" firstAttribute="leading" secondItem="fVE-1C-Rau" secondAttribute="leading" id="DnT-QR-H1r"/>
+                                    <constraint firstAttribute="trailing" secondItem="acu-up-6oZ" secondAttribute="trailing" id="nuc-bU-heU"/>
+                                    <constraint firstAttribute="bottom" secondItem="acu-up-6oZ" secondAttribute="bottom" constant="25" id="x0W-m7-DTE"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fVE-1C-Rau" firstAttribute="top" secondItem="ne7-yd-JTy" secondAttribute="bottom" constant="-70" id="1nF-7X-B1c"/>
                             <constraint firstItem="fWl-wi-2Db" firstAttribute="leading" secondItem="KJ5-QI-bPL" secondAttribute="leadingMargin" id="2ju-3r-JJI"/>
-                            <constraint firstItem="7z6-Dg-hJt" firstAttribute="top" secondItem="fWl-wi-2Db" secondAttribute="bottom" id="9FF-Oq-8Zg"/>
+                            <constraint firstItem="7z6-Dg-hJt" firstAttribute="top" secondItem="fWl-wi-2Db" secondAttribute="bottom" id="9FF-Oq-8Zg" userLabel="Bottom Layout Guide.top = English Scroll View.bottom "/>
+                            <constraint firstItem="acu-up-6oZ" firstAttribute="width" secondItem="KJ5-QI-bPL" secondAttribute="width" multiplier="0.9" id="BOK-VP-0TQ"/>
                             <constraint firstItem="fWl-wi-2Db" firstAttribute="top" secondItem="ne7-yd-JTy" secondAttribute="bottom" constant="-70" id="Hc4-KK-81E"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fVE-1C-Rau" secondAttribute="leading" id="XjH-Zy-Isy"/>
                             <constraint firstItem="MIH-2i-O6d" firstAttribute="width" secondItem="KJ5-QI-bPL" secondAttribute="width" multiplier="0.9" id="fv8-bI-gVc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fWl-wi-2Db" secondAttribute="trailing" id="nqU-Lu-fDg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fVE-1C-Rau" secondAttribute="trailing" id="vYD-UL-kyp"/>
+                            <constraint firstItem="7z6-Dg-hJt" firstAttribute="top" secondItem="fVE-1C-Rau" secondAttribute="bottom" id="xJO-n2-OYS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Up9-UJ-uty">
-                        <barButtonItem key="leftBarButtonItem" id="Z5W-bg-jyy">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="sEY-MT-TpF" userLabel="Back">
-                                <rect key="frame" x="16" y="7" width="29" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Back Icon"/>
-                                <connections>
-                                    <segue destination="hfx-md-h5N" kind="presentation" identifier="segueToMainViewController" id="C9f-pr-z0e"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="TwD-UE-81j" userLabel="Back">
+                            <connections>
+                                <segue destination="hfx-md-h5N" kind="presentation" id="6ek-AC-rR5"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="TwD-UE-81j" id="DNR-QJ-7eg"/>
+                        <outlet property="englishScrollView" destination="fWl-wi-2Db" id="kIK-QZ-0sg"/>
+                        <outlet property="中文ScrollView" destination="fVE-1C-Rau" id="hQq-ql-TIt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtW-m0-vDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,7 +703,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                     <fragment content="SAT Compare: X University">
                                         <attributes>
                                             <color key="NSColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="36" name="Palatino-BoldItalic"/>
+                                            <font key="NSFont" size="30" name="Palatino-BoldItalic"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -485,7 +799,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                             <constraint firstItem="G59-Tp-rul" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leading" id="cTk-SD-oEu"/>
                             <constraint firstItem="0EG-V3-fWS" firstAttribute="top" secondItem="Csy-bo-JZM" secondAttribute="top" id="gIi-ky-2Wd"/>
                             <constraint firstAttribute="trailing" secondItem="bbr-KQ-JiW" secondAttribute="trailing" id="h7R-xV-zRl"/>
-                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.45" id="j70-CH-oMY"/>
+                            <constraint firstItem="Woa-dc-m3u" firstAttribute="centerY" secondItem="Csy-bo-JZM" secondAttribute="centerY" multiplier="0.5" id="j70-CH-oMY"/>
                             <constraint firstItem="Woa-dc-m3u" firstAttribute="leading" secondItem="Csy-bo-JZM" secondAttribute="leadingMargin" constant="8" id="lMd-fp-XQx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0eL-dC-LFw" secondAttribute="trailing" id="p17-6s-pKo"/>
                             <constraint firstAttribute="trailing" secondItem="GtP-YV-63l" secondAttribute="trailing" constant="20" id="sEx-Rf-Pfk"/>
@@ -494,17 +808,12 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dcw-Cs-XXR">
-                        <barButtonItem key="leftBarButtonItem" style="done" id="Kkb-lf-U77">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" id="84b-9x-rwo">
-                                <rect key="frame" x="16" y="7" width="83" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Back Icon"/>
-                                <connections>
-                                    <action selector="backToData:" destination="WN5-Tq-43G" eventType="touchUpInside" id="X04-63-bw4"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="LkW-MR-d73" userLabel="Back Button">
+                            <connections>
+                                <action selector="backToData:" destination="WN5-Tq-43G" id="3ZI-Kg-2ti"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Uh8-fl-W9h">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Uh8-fl-W9h">
                             <connections>
                                 <segue destination="hfx-md-h5N" kind="presentation" identifier="segueSearchDone" id="tkD-xh-fFL"/>
                             </connections>
@@ -512,7 +821,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backToData" destination="84b-9x-rwo" id="gX9-eq-7Ys"/>
+                        <outlet property="backToData" destination="LkW-MR-d73" id="QSh-yj-cHD"/>
+                        <outlet property="doneButton" destination="Uh8-fl-W9h" id="Een-Zv-Tjj"/>
                         <outlet property="highSATImageView" destination="ooa-ju-7gv" id="RPZ-QF-oxV"/>
                         <outlet property="lowSATImageView" destination="0EG-V3-fWS" id="RBm-BE-qnd"/>
                         <outlet property="resultViewControllerImageView" destination="Csy-bo-JZM" id="Lli-5n-p8i"/>
@@ -566,10 +876,10 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
             </objects>
             <point key="canvasLocation" x="4014" y="271"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Uza-lE-cC1">
             <objects>
-                <tabBarController id="hfx-md-h5N" sceneMemberID="viewController">
+                <tabBarController id="hfx-md-h5N" customClass="TabBarViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lVh-hO-dqY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -587,7 +897,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <!--Navigation to Main View Controller-->
         <scene sceneID="KGF-FG-sba">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" customClass="NavigationToMainViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" image="Tab Main" selectedImage="Tab Main" id="I1F-5J-qet"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7Z-rm-B7K">
@@ -596,6 +906,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="mainTabBarItem" destination="I1F-5J-qet" id="BMG-OQ-kI7"/>
                         <segue destination="ziS-gR-eeH" kind="relationship" relationship="rootViewController" id="63q-XU-QH9"/>
                     </connections>
                 </navigationController>
@@ -682,8 +993,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <!--Navigation to Data Table View Controller-->
         <scene sceneID="csi-sp-Qj4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved Universities" image="Tab Saved" selectedImage="Tab Saved" id="CXg-PC-OfS"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" customClass="NavigationToDataTableViewController" customModule="SAT_Compare_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Saved Universities" image="Tab Saved" selectedImage="Tab Saved" id="CXg-PC-OfS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I93-5F-LA1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -691,6 +1002,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="savedSATUniversitiesBarItem" destination="CXg-PC-OfS" id="oKF-vY-2iK"/>
                         <segue destination="mYh-Pe-7l1" kind="relationship" relationship="rootViewController" id="31A-Rr-JzK"/>
                     </connections>
                 </navigationController>
@@ -700,14 +1012,13 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         </scene>
     </scenes>
     <resources>
-        <image name="Back Icon" width="29" height="29"/>
         <image name="Background Main" width="510" height="342"/>
         <image name="Background Result" width="341" height="222"/>
         <image name="Tab Main" width="25" height="25"/>
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="60k-dO-Rfa"/>
+        <segue reference="tkD-xh-fFL"/>
         <segue reference="hIS-tf-tb5"/>
     </inferredMetricsTieBreakers>
 </document>

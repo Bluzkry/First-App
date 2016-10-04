@@ -23,7 +23,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var sliderBackground: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var backToData: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var backToData: UIBarButtonItem!
     
     var backgroundSlider: UISlider! = UISlider()
     var twentyFivePercentileLabel: UILabel! = UILabel()
@@ -57,9 +58,6 @@ class ResultViewController: UIViewController {
     // MARK VIEW LIFE CYCLE
     override func viewDidLoad() {
     ////
-        
-        let studentSATInt:Int = Int(studentSAT!)!
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -67,8 +65,8 @@ class ResultViewController: UIViewController {
         self.setUniversitySlider()
         self.setBackgroundSlider()
         self.setSATImageViews()
-        self.setTwentyFivePercentileLabel()
         self.setSeventyFivePercentileLabel()
+        self.setTwentyFivePercentileLabel()
         self.saveButton.layer.cornerRadius = 4
         
         // change many things
@@ -78,28 +76,8 @@ class ResultViewController: UIViewController {
         // fade in comes after we set the studentSATlabel and determine whether or not it comes from the main view or the data
         self.comesFromMainView()
         
-        // now we have three situations: the student's score is below the 25th percentile, above the 75th percentile, or in-between
-        let selectedUniversityName = selectedUniversity!.universityName
-        self.titleLabel.text = "SAT Compare: \(selectedUniversityName)"
-        if studentSATInt < TwentyFivePercentile {
-            // student SAT low
-            
-            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)."
-                
-        } else if studentSATInt > SeventyFivePercentile {
-            // student SAT high
-                
-            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)."
-                
-        } else {
-            // student SAT in-between
-                
-            // determine student percentile
-            self.determineStudentPercentile()
-            self.resultViewControllerText.text = "Your SAT score places you on the \(studentSATPercentile)th percentile of students enrolled at \(selectedUniversityName)."
-                
-        }
-
+        // presentation based on different ACT/SAT, language, score
+        self.presentationBasedOnSelectedVariables()
     ////
     }
     
@@ -201,8 +179,14 @@ class ResultViewController: UIViewController {
         // set constraints; make it so that the horizontal constraint centers the label on the trailing/right margin of the low SAT view
         self.twentyFivePercentileLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        let twentyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelHorizontalConstraint)
+        // if the SAT scores overlap, set a constraint so that the 25% label is always to the left of the 75% label
+        if SeventyFivePercentile-TwentyFivePercentile <= 130 {
+            let twentyFivePercentileRightConstraint = NSLayoutConstraint(item: seventyFivePercentileLabel, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.greaterThanOrEqual, toItem: twentyFivePercentileLabel, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 5)
+            self.resultViewControllerImageView.addConstraint(twentyFivePercentileRightConstraint)
+        } else {
+            let twentyFivePercentileLabelHorizontalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: lowSATImageView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+            self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelHorizontalConstraint)
+        }
         
         let twentyFivePercentileLabelVerticalConstraint = NSLayoutConstraint(item: twentyFivePercentileLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: universitySlider, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 25)
         self.resultViewControllerImageView.addConstraint(twentyFivePercentileLabelVerticalConstraint)
@@ -256,6 +240,75 @@ class ResultViewController: UIViewController {
     }
     
     // MARK
+    // MARK CHANGE THINGS DEPENDING ON ACT/SAT, LANGUAGE, SCORE
+    func presentationBasedOnSelectedVariables() {
+    ////
+    ////
+        // six situations
+        let studentSATInt:Int = Int(studentSAT!)!
+        let selectedUniversityName = selectedUniversity!.universityName
+        let 选择大学 = selectedUniversity!.chineseName
+        determineStudentPercentile()
+        
+        if 中文==false && studentSATInt<TwentyFivePercentile {
+            // 1: English, below the 25th percentile
+            
+            self.titleLabel.text = "\(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)."
+            self.doneButton.title = "Done"
+            self.backToData.title = "Back"
+            self.saveButton.setTitle("Save", for: UIControlState.normal)
+    ////
+        } else if 中文==false && studentSATInt>=TwentyFivePercentile && studentSATInt<=SeventyFivePercentile {
+            // 2: English, middle percentile
+            
+            self.titleLabel.text = "\(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you on the \(studentSATPercentile)th percentile of students enrolled at \(selectedUniversityName)."
+            self.doneButton.title = "Done"
+            self.backToData.title = "Back"
+            self.saveButton.setTitle("Save", for: UIControlState.normal)
+    ////
+        } else if 中文==false && studentSATInt>SeventyFivePercentile {
+            // 3: English, above the 75th percentile
+            
+            self.titleLabel.text = "\(selectedUniversityName)"
+            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)."
+            self.doneButton.title = "Done"
+            self.backToData.title = "Back"
+            self.saveButton.setTitle("Save", for: UIControlState.normal)
+    ////
+        } else if 中文==true && studentSATInt<TwentyFivePercentile {
+            // 4: 中文, below the 25th percentile
+            
+            self.titleLabel.text = "\(选择大学)"
+            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)最低25%的新生范围。"
+            self.doneButton.title = "完成"
+            self.backToData.title = "返回"
+            self.saveButton.setTitle("存在", for: UIControlState.normal)
+    ////
+        } else if 中文==true && studentSATInt>=TwentyFivePercentile && studentSATInt<=SeventyFivePercentile {
+            // 5: 中文, middle percentile
+            
+            self.titleLabel.text = "\(选择大学)"
+            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)\(studentSATPercentile)%的新生范围。"
+            self.doneButton.title = "完成"
+            self.backToData.title = "返回"
+            self.saveButton.setTitle("存在", for: UIControlState.normal)
+    ////
+        } else if 中文==true && studentSATInt>SeventyFivePercentile {
+            // 6: 中文, above the 75th percentile
+            
+            self.titleLabel.text = "\(选择大学)"
+            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)最高75%的新生范围。"
+            self.doneButton.title = "完成"
+            self.backToData.title = "返回"
+            self.saveButton.setTitle("存在", for: UIControlState.normal)
+        }
+    ////
+    ////
+    }
+    
+    // MARK
     // MARK ANIMATIONS
     func SATScoreChangeManyThings() {
         // put in the slider/label values and unhide background slider
@@ -280,7 +333,7 @@ class ResultViewController: UIViewController {
             fadeInGeneral()
 
             // make the back button invisible and unusable
-            backToData.isHidden = true
+            backToData.tintColor = UIColor.clear
             backToData.isEnabled = false
         } else {
             // if it's from the data table, we don't do any animations and just set everything to unhidden
@@ -372,12 +425,12 @@ class ResultViewController: UIViewController {
     // MARK SAVE DATA AND PREPARE FOR SEGUES
     @IBAction func saveUniversity(_ sender: AnyObject) {
     ////
+//        let 中文SavedAlertController = UIAlertController(title: "通知：", message: "你的大学以保存。", preferredStyle: UIAlertControllerStyle.alert) 确定
+//        中文SavedAlertController.addAction(<#T##UIAlertAction#>)
         
         // create an alert to tell students if data is missing
-        let savedAlertController = UIAlertController(title: "Notice:", message: "Your university has been saved.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        savedAlertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
-            
+        let savedAlertController = UIAlertController(title: alertControllerTitle(), message: alertControllerMessage(), preferredStyle: UIAlertControllerStyle.alert)
+        savedAlertController.addAction(UIAlertAction(title: alertControllerAction(), style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             // after dismissing the alert, we save the data as core data
             // note that the percentile differs based on the three factors below
             let studentSATInt:Int = Int(studentSAT!)!
@@ -388,7 +441,6 @@ class ResultViewController: UIViewController {
             } else {
                 self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "\(self.studentSATPercentile)%", dataUniversity: selectedUniversity!)
             }
-            
         })
         )
         
@@ -397,21 +449,50 @@ class ResultViewController: UIViewController {
     
     ////
     }
+    
+    // we need to change alert controller text based on language
+    func alertControllerTitle() -> String {
+        switch 中文 {
+        case false:
+            return "Notice:"
+        case true:
+            return "通知："
+        }
+    }
+    
+    func alertControllerMessage() -> String {
+        switch 中文 {
+        case false:
+            return "Your university has been saved."
+        case true:
+            return "你的大学已保存。"
+        }
+    }
+    
+    func alertControllerAction() -> String {
+        switch 中文 {
+        case false:
+            return "Dismiss"
+        case true:
+            return "确定"
+        }
+    }
 
     // to persist data, we need to save as core data
     func saveCoreData(dataSAT:String, dataPercentile: String, dataUniversity: UniversityData) {
-        
+    ////
+    ////
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
-        
+    ////
         // create a new managed object (savedDataObject) and insert into the managed object context
         let studentInputDataEntity = NSEntityDescription.entity(forEntityName: "StudentInputData", in: managedContext)
         let studentInputDataObject = NSManagedObject(entity: studentInputDataEntity!, insertInto: managedContext)
-        
+    ////
         let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)
         let newSavedUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
-        
+    ////
         // set SAT and percentile attributes using key-value coding
         studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
         studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
@@ -425,7 +506,7 @@ class ResultViewController: UIViewController {
         newSavedUniversity.topMathPercentile = (dataUniversity.topMathPercentile)
         newSavedUniversity.studentData = true
         newSavedUniversity.savedDate = NSNumber(value:Float(Date.timeIntervalSinceReferenceDate)*1000)
-        
+    ////
         // commit changes to the saved data object and save to disk
         do {
             try managedContext.save()
@@ -434,7 +515,8 @@ class ResultViewController: UIViewController {
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }
-        
+    ////
+    ////
     }
     
     // segues back to the data view if we hit the back button
@@ -443,6 +525,7 @@ class ResultViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    ////
         if segue.identifier == "segueSearchDone" {
             // we reset the global variables when we're done
             studentSAT = nil
@@ -456,6 +539,7 @@ class ResultViewController: UIViewController {
             studentSAT = nil
             selectedUniversity = nil
         }
+    ////
     }
 
 }
