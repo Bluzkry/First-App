@@ -465,7 +465,7 @@ class ResultViewController: UIViewController {
         case false:
             return "Your university has been saved."
         case true:
-            return "你的大学已保存。"
+            return "你选择的大学已经保存了。"
         }
     }
     

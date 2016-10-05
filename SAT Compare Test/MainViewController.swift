@@ -86,7 +86,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             // tab bars
             // http://stackoverflow.com/questions/26683260/reload-tabbarcontroller-after-switching-language
             for i in 0...Int((self.tabBarController?.viewControllers?.count)! - 1) {
-                var viewController = self.tabBarController?.viewControllers?[i]
+                let viewController = self.tabBarController?.viewControllers?[i]
                 switch i {
                 case 0:
                     viewController?.tabBarItem.title = "Main"
@@ -116,7 +116,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.cancelButton.setTitle("取消", for: UIControlState.highlighted)
         ////
             for i in 0...Int((self.tabBarController?.viewControllers?.count)! - 1) {
-                var viewController = self.tabBarController?.viewControllers?[i]
+                let viewController = self.tabBarController?.viewControllers?[i]
                 switch i {
                 case 0:
                     viewController?.tabBarItem.title = "首页"
@@ -244,7 +244,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         case false:
             return "Please select a university or input an SAT score between 400 and 1600."
         case true:
-            return "TO BE DETERMINED"
+            return "请选择一个大学或输入SAT分数（400到1600之间）。"
         }
     }
     

@@ -28,7 +28,6 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-                
         // fetch results
         self.initializeFetchedResultsController()
         
@@ -50,6 +49,15 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         
         // low alpha
         imageView.alpha = 0.5
+        
+        // change language of edit button (apparently this needs to be here for the "edit" button method to be called)
+        switch 中文 {
+        case false:
+            self.navigationItem.rightBarButtonItem?.title = "Edit"
+        case true:
+            self.navigationItem.rightBarButtonItem?.title = "编辑"
+        }
+
         
     }
     
@@ -129,7 +137,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     ////
     }
     
-        // we configure the cell, but most of it is based on the configureCell function
+    // we configure the cell, but most of it is based on the configureCell function
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // table view cells are reused and should be dequeued using a cell identifier
         let cellIdentifier = "DataTableViewCell"	
@@ -161,6 +169,20 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     // translucent cell backgrounds so we can see the image but still easily read the contents
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor(white: 1, alpha: 0.75)
+    }
+    
+    // change language of "Edit" button
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        if self.isEditing && 中文==true {
+            self.editButtonItem.title = "完成"
+        } else if self.isEditing==false && 中文==true {
+            self.editButtonItem.title = "编辑"
+        } else if self.isEditing && 中文==false {
+            self.editButtonItem.title = "Done"
+        } else if self.isEditing==false && 中文==false {
+            self.editButtonItem.title = "Edit"
+        }
     }
     
     
@@ -257,7 +279,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         let studentSATDestinationObjectSavedDate:NSNumber = studentSATDestinationObject?.value(forKeyPath: "savedDate")! as! NSNumber
         let universityDestinationObjectSavedDate:Int64 = universityDestinationObject.savedDate.int64Value
     ////
-        // if the row we're moving is above the target row, we add one to the date so that the source row ends up below the target row
+        // if the row we're moving is above the target row, we add one millisecond to the date so that the source row ends up below the target row
         if sourceIndexPath.row < destinationIndexPath.row {
         // we add 1 to the destination index object's savedate
         let studentSATSelectedObjectChangedDate = NSNumber(value:(studentSATDestinationObjectSavedDate.int64Value + 1))
