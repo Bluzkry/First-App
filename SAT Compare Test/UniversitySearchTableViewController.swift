@@ -134,5 +134,13 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         self.searchResultsController.tableView.reloadData()
     ////
     }
+    
+    // MARK
+    // PREPARE FOR SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueCancel" {
+            selectedUniversity = nil
+        }
+    }
 
 }

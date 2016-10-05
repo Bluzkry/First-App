@@ -62,6 +62,7 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // set sliders and labels
+        doneButton.isEnabled = false
         self.setUniversitySlider()
         self.setBackgroundSlider()
         self.setSATImageViews()
@@ -359,6 +360,8 @@ class ResultViewController: UIViewController {
             
             self.backgroundSlider.value = Float(studentSAT!)!
             
+            doneButton.isEnabled = true
+            
         }
     }
     
@@ -410,10 +413,9 @@ class ResultViewController: UIViewController {
                 }, completion: nil)
             
             // when the image loads, also make the student SAT score fade-in (after the slider thumb lands)
-            UIView.animate(withDuration: 1, delay: 1, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.studentSATLabel.alpha = 1
-                }, completion: nil)
-            
+                }, completion: {(Bool) in self.doneButton.isEnabled = true})
         ////
         }
 
@@ -425,8 +427,9 @@ class ResultViewController: UIViewController {
     // MARK SAVE DATA AND PREPARE FOR SEGUES
     @IBAction func saveUniversity(_ sender: AnyObject) {
     ////
-//        let 中文SavedAlertController = UIAlertController(title: "通知：", message: "你的大学以保存。", preferredStyle: UIAlertControllerStyle.alert) 确定
-//        中文SavedAlertController.addAction(<#T##UIAlertAction#>)
+        
+        // normally the fetchedresultscontroller will run a bunch of functions when we save to core data - which leads to a lot of errors, so we don't call the functions
+        callNSFetchedResultsControllerDelegates = false
         
         // create an alert to tell students if data is missing
         let savedAlertController = UIAlertController(title: alertControllerTitle(), message: alertControllerMessage(), preferredStyle: UIAlertControllerStyle.alert)
@@ -446,7 +449,7 @@ class ResultViewController: UIViewController {
         
         // present
         self.present(savedAlertController, animated: true, completion: nil)
-    
+            
     ////
     }
     
@@ -510,8 +513,7 @@ class ResultViewController: UIViewController {
         // commit changes to the saved data object and save to disk
         do {
             try managedContext.save()
-            
-            // now the managed object is in the core data persistent store, but we still have to handle the possible
+        // now the managed object is in the core data persistent store, but we still have to handle the possible
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }
@@ -530,6 +532,7 @@ class ResultViewController: UIViewController {
             // we reset the global variables when we're done
             studentSAT = nil
             selectedUniversity = nil
+            callNSFetchedResultsControllerDelegates = true
         }
         
         if segue.identifier == "segueBackToData" {

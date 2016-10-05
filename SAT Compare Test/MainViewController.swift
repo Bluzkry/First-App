@@ -62,8 +62,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         switch 中文 {
         case false:
             // language buttons
-            englishButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
-            中文Button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 12.0)
+            englishButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17.0)
+            中文Button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 15.0)
         ////
             // question text
             studentSATQuestion.text = "What is your SAT score?"
@@ -76,6 +76,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             if let existingStudentSAT = studentSAT {
                 studentSATTextField.text = String(existingStudentSAT)
             }
+            setStudentSATTextField()
         ////
             // button title
             self.submitButton.setTitle("Submit", for: UIControlState.normal)
@@ -98,8 +99,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     ////
     ////
         case true:
-            englishButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 12.0)
-            中文Button.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
+            englishButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 17.0)
+            中文Button.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 15.0)
         ////
             studentSATQuestion.text = "  你的SAT分数："
             universitySearchQuestion.text = "  你对哪些大学感兴趣？"
@@ -109,6 +110,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             if let existingStudentSAT = studentSAT {
                 studentSATTextField.text = String(existingStudentSAT)
             }
+            setStudentSATTextField()
         ////
             self.submitButton.setTitle("发送", for: UIControlState.normal)
             self.submitButton.setTitle("发送", for: UIControlState.highlighted)
@@ -131,18 +133,31 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setStudentSATTextField() {
-        // make keyboard have done
-        studentSATTextField.returnKeyType = UIReturnKeyType.done
+    ////
+        // number keyboard
+        studentSATTextField.keyboardType = UIKeyboardType.numberPad
+
+        // keyboard has done button
+        // first add a toolbar
+        let doneToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolBar.barStyle = UIBarStyle.default
+        // add an array of items (a cancel button which calls upon a method, a flexible space which puts the cancel and done buttons in the right places, and a done button which calls upon a method)
+        doneToolBar.items = [UIBarButtonItem(title: cancelBarLanguage(), style: UIBarButtonItemStyle.done, target: self, action: #selector(cancelBarAction)) , UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil), UIBarButtonItem(title: doneBarLanguage(), style: UIBarButtonItemStyle.done, target: self, action: #selector(doneBarAction))]
         
+        // make it the same size as the phone and add it to the keyboard
+        doneToolBar.sizeToFit()
+        self.studentSATTextField.inputAccessoryView = doneToolBar
+    ////
         // hide keyboard if you click outside
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MainViewController.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
         self.view.addGestureRecognizer(tapGesture)
-        
+    ////
         // hide keyboard if you swipe; 
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboardSwipe))
         swipeDown.direction = UISwipeGestureRecognizerDirection.down
         self.view.addGestureRecognizer(swipeDown)
+    ////
     }
     
     func hideKeyboard() {
@@ -158,6 +173,33 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func cancelBarAction() {
+        self.studentSATTextField.text = ""
+        self.studentSATTextField.resignFirstResponder()
+    }
+    
+    func cancelBarLanguage() -> String {
+        switch 中文 {
+        case false:
+            return "Cancel"
+        case true:
+            return "取消"
+        }
+    }
+    
+    func doneBarAction() {
+        self.studentSATTextField.resignFirstResponder()
+    }
+    
+    func doneBarLanguage() -> String {
+        switch 中文 {
+        case false:
+            return "Done"
+        case true:
+            return "完成"
+        }
+    }
+    
     // MARK
     // MARK ACTIONS AND SEGUES
     @IBAction func universitySearchTextField(_ sender: AnyObject) {
@@ -166,68 +208,43 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButtonPressed(_ sender: AnyObject) {
     ////
-    ////
-    ////
-    ////
-        
         // create an alert to tell students if data is missing
         let incorrectAlertController = UIAlertController(title: alertControllerTitle(), message: alertControllerMessage(), preferredStyle: UIAlertControllerStyle.alert)
         incorrectAlertController.addAction(UIAlertAction(title: alertControllerAction(), style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
         })
         )
+        
         // we first have to make the student SAT the number input in the text field
         let studentSAT = studentSATTextField.text
 
         // check if university has been selected
-        if selectedUniversity != nil {
-        ////
-        ////
-        ////
-            // check if SAT score has been input
-            if studentSAT != nil && studentSAT != "" {
-            ////
-            ////
-                // check if it's an integer
-                if let existingStudentSATInt:Int = Int(studentSAT!) {
-                ////
-                    // check if SAT score between 400 and 1600
-                    
-                    if (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) {
-                        // perform segue
-                        self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
-                        
-                    } else {
-                        // error alert
-                        self.present(incorrectAlertController, animated: true, completion: nil)
-                    // SAT score betwen 400 and 1600 check
-                    }
-                    
-                ////
-                } else {
-                    self.present(incorrectAlertController, animated: true, completion: nil)
-                //// SAT score integer check
-                }
-            ////
-            ////
-            } else {
-                self.present(incorrectAlertController, animated: true, completion: nil)
-            ////
-            //// SAT score input check
-            }
-        ////
-        ////
-        ////
-        } else {
+        guard selectedUniversity != nil else {
             self.present(incorrectAlertController, animated: true, completion: nil)
-        ////
-        ////
-        ////  university check
+            return
         }
+
+        // check if SAT score has been input
+        guard studentSAT != nil && studentSAT != "" else {
+            self.present(incorrectAlertController, animated: true, completion: nil)
+            return
+        }
+        
+        // check if it's an integer
+        guard let existingStudentSATInt:Int = Int(studentSAT!) else {
+            self.present(incorrectAlertController, animated: true, completion: nil)
+            return
+        }
+        
+        // check if SAT score between 400 and 1600
+        guard (existingStudentSATInt <= 1600) && (existingStudentSATInt >= 400) else {
+            self.present(incorrectAlertController, animated: true, completion: nil)
+            return
+        }
+        
+        // perform segue
+        self.performSegue(withIdentifier: "segueToResultViewController", sender: self)
     ////
-    ////
-    ////
-    ////
-    } // end function
+    }
     
     // we need to change alert controller text based on language
     func alertControllerTitle() -> String {

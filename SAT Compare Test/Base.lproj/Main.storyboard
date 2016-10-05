@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="ifm-Qo-anS">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="bsN-w6-nbw">
                             <connections>
-                                <segue destination="hfx-md-h5N" kind="presentation" id="sir-JG-tiN"/>
+                                <segue destination="hfx-md-h5N" kind="presentation" identifier="segueCancel" id="sir-JG-tiN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -172,10 +172,10 @@
                                     <constraint firstAttribute="width" constant="150" id="piu-gl-UlT"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J8U-JY-4gW" userLabel="Language Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J8U-JY-4gW" userLabel="Language Stack View">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-Aj-tLL">
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="English">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -185,7 +185,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-ZM-s0j">
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="中文">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,9 +208,9 @@
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leading" id="HEi-i8-hi8"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.75" id="Iu4-W9-5dJ"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="LAZ-Ul-3pj"/>
-                            <constraint firstAttribute="trailing" secondItem="J8U-JY-4gW" secondAttribute="trailing" constant="8" id="OOs-sk-uee"/>
+                            <constraint firstAttribute="trailing" secondItem="J8U-JY-4gW" secondAttribute="trailing" constant="12" id="OOs-sk-uee"/>
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
-                            <constraint firstItem="J8U-JY-4gW" firstAttribute="top" secondItem="4mb-2I-Mtf" secondAttribute="bottom" id="d0v-px-Qat"/>
+                            <constraint firstItem="J8U-JY-4gW" firstAttribute="top" secondItem="4mb-2I-Mtf" secondAttribute="bottom" constant="4" id="d0v-px-Qat"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.35" id="gwk-fq-P6I"/>
                             <constraint firstItem="eAv-Jc-41K" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="lDB-q4-RBR"/>
                             <constraint firstItem="9QI-nP-qoe" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="1.6" id="lU9-Jg-Z3F"/>
@@ -766,7 +766,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="7ea-Hk-M3z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1018,7 +1018,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tkD-xh-fFL"/>
+        <segue reference="sir-JG-tiN"/>
         <segue reference="hIS-tf-tb5"/>
     </inferredMetricsTieBreakers>
 </document>

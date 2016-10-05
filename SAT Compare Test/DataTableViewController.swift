@@ -13,8 +13,6 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     
     var studentSATFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     var universityFetchedResultsController: NSFetchedResultsController<UniversityData>!
-    // necessary for changing table rows
-    var changingRows:Bool = false
     // get managedcontextobject through the application delegate
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -30,12 +28,12 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         // fetch results
         self.initializeFetchedResultsController()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
+    ////
         super.viewWillAppear(animated)
-        
+    ////
         // add a background view to the table view
         let backgroundImage = UIImage(named: "Background Data")
         let imageView = UIImageView(image:backgroundImage)
@@ -49,7 +47,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         
         // low alpha
         imageView.alpha = 0.5
-        
+    ////
         // change language of edit button (apparently this needs to be here for the "edit" button method to be called)
         switch 中文 {
         case false:
@@ -57,8 +55,9 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         case true:
             self.navigationItem.rightBarButtonItem?.title = "编辑"
         }
-
         
+        self.tableView.reloadData()
+    ////
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,7 +73,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         
         let studentUniversityFetchRequest = NSFetchRequest<UniversityData>(entityName: "UniversityData")
         studentUniversityFetchRequest.returnsObjectsAsFaults = false
-        
+    ////
         // use nspredicate and nssortdescriptor to search and filter university data so that it only includes universities saved by the student (because the database contains all the universities, not just those saved by the student)
         // note that nssortdescriptor is required to use nsfetchedresultscontroller
         let SATSortDescriptorDate = NSSortDescriptor(key: "savedDate", ascending: true)
@@ -83,16 +82,16 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         let universitySortDescriptorDate = NSSortDescriptor(key: "savedDate", ascending: true)
         studentUniversityFetchRequest.sortDescriptors = [universitySortDescriptorDate]
         studentUniversityFetchRequest.predicate = NSPredicate(format: "studentData = true")
-        
+    ////
         // initialize fetched results controllers and hand fetch request over to managed object context
         studentSATFetchedResultsController = NSFetchedResultsController(fetchRequest: studentSATFetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
         
         universityFetchedResultsController = NSFetchedResultsController(fetchRequest: studentUniversityFetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
-        
+    ////
         // conjure fetched results controllers and set delegates
         self.studentSATFetchedResultsController.delegate = self
         self.universityFetchedResultsController.delegate = self
-        
+    ////
         // perform fetch
         do {
             try studentSATFetchedResultsController.performFetch()
@@ -149,11 +148,10 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-//        guard let sections = studentSATFetchedResultsController.sections else {
-//        return 0
-//        }
-//        return sections.count
-        return 1
+        guard let sections = studentSATFetchedResultsController.sections else {
+            return 0
+        }
+        return sections.count
     }
     
     // number of rows based on the sat fetchedresultscontroller count
@@ -185,12 +183,11 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         }
     }
     
-    
     // MARK
     // MARK FETCHED RESULTS CONTROLLER DELEGATE METHODS according to the Apple documentation
     // note that we do not call these methods if we are changing table rows
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if changingRows == false {
+        if callNSFetchedResultsControllerDelegates == true {
             tableView.beginUpdates()
         } else {
             return
@@ -198,25 +195,38 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        if changingRows == false {
-            switch (type) {
-            case .insert:
-                tableView.insertRows(at: [newIndexPath!], with: UITableViewRowAnimation.fade)
-            case .delete:
-                tableView.deleteRows(at: [indexPath!], with: UITableViewRowAnimation.fade)
-            case .update:
-                let cell = tableView.cellForRow(at: indexPath!) as! DataTableViewCell
-                configureCell(cell, indexPath: indexPath! as NSIndexPath)
-            case .move:
-                tableView.moveRow(at: indexPath!, to: newIndexPath!)
-            }
-        } else {
+        
+        guard callNSFetchedResultsControllerDelegates == true else {
             return
         }
+        
+        // this delegate method runs twice when we manipulate data because we have two fetched results controllers, which causes an error (e.g. rows being deleted twice); we therefore set a condition so that this only runs when one fetched results controller is called
+        // but the error sometimes still occurs
+        guard controller == studentSATFetchedResultsController else {
+            return
+        }
+        
+        switch (type) {
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: UITableViewRowAnimation.fade)
+        case .delete:
+                tableView.deleteRows(at: [indexPath!], with: UITableViewRowAnimation.fade)
+        case .update:
+            let cell = tableView.cellForRow(at: indexPath!) as! DataTableViewCell
+            configureCell(cell, indexPath: indexPath! as NSIndexPath)
+        case .move:
+            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        }
+
+    }
+    
+    // this gets rid of some strange errors that happen when i save core data
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        return
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if changingRows == false {
+        if callNSFetchedResultsControllerDelegates == true {
             tableView.endUpdates()
         } else {
             return
@@ -238,7 +248,6 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             let universitySelectedObject = universityFetchedResultsController.object(at: indexPath as IndexPath)
             managedContext.delete(studentSATSelectedObject!)
             managedContext.delete(universitySelectedObject)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
             do {
                 try managedContext.save()
             } catch let error as NSError {
@@ -265,7 +274,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     ////
         // bypass the delegate methods temporarily
-        self.changingRows = true
+        callNSFetchedResultsControllerDelegates = false
         
         // we have to refresh the core data
         self.initializeFetchedResultsController()
@@ -291,6 +300,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             studentSATSelectedObject?.setValue(studentSATSelectedObjectChangedDate, forKey: "savedDate")
             universitySelectedObject.savedDate = NSNumber(value:(universityDestinationObjectSavedDate - 1))
         } else {
+            callNSFetchedResultsControllerDelegates = true
             return
         }
     ////
@@ -305,7 +315,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         self.initializeFetchedResultsController()
         
         // reset delegates
-        self.changingRows = true
+        callNSFetchedResultsControllerDelegates = true
     ////
     }
 
