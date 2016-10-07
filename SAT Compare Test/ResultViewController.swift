@@ -485,22 +485,17 @@ class ResultViewController: UIViewController {
     func saveCoreData(dataSAT:String, dataPercentile: String, dataUniversity: UniversityData) {
     ////
     ////
+        
         // we get a reference to the app delegate and use that to retrieve the AppDelegate's NSManagedObjectContext, which is like a memory "scratchpad" we need for CoreData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
     ////
         // create a new managed object (savedDataObject) and insert into the managed object context
-        let studentInputDataEntity = NSEntityDescription.entity(forEntityName: "StudentInputData", in: managedContext)
-        let studentInputDataObject = NSManagedObject(entity: studentInputDataEntity!, insertInto: managedContext)
     ////
         let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)
         let newSavedUniversity = UniversityData(entity: studentUniversityDataEntity!, insertInto: managedContext)
     ////
-        // set SAT and percentile attributes using key-value coding
-        studentInputDataObject.setValue(dataSAT, forKey: "savedSATCore")
-        studentInputDataObject.setValue(dataPercentile, forKey: "savedPercentileCore")
-        studentInputDataObject.setValue((Date.timeIntervalSinceReferenceDate*1000), forKey: "savedDate")
-        
+        // set SAT and percentile attributes using key-value coding        
         newSavedUniversity.universityName = (dataUniversity.universityName)
         newSavedUniversity.chineseName = (dataUniversity.chineseName)
         newSavedUniversity.bottomReadingPercentile = (dataUniversity.bottomReadingPercentile)
@@ -508,7 +503,10 @@ class ResultViewController: UIViewController {
         newSavedUniversity.topReadingPercentile = (dataUniversity.topReadingPercentile)
         newSavedUniversity.topMathPercentile = (dataUniversity.topMathPercentile)
         newSavedUniversity.studentData = true
-        newSavedUniversity.savedDate = NSNumber(value:Float(Date.timeIntervalSinceReferenceDate)*1000)
+        newSavedUniversity.savedStudentSAT = dataSAT
+        newSavedUniversity.savedStudentPercentile = dataPercentile
+        // the order of the university is that of the function result, plus one
+        newSavedUniversity.order = findLastUniversityOrder(lastUniversityManagedContext: managedContext)! + 1
     ////
         // commit changes to the saved data object and save to disk
         do {
@@ -517,8 +515,27 @@ class ResultViewController: UIViewController {
         } catch let error as NSError {
             print("could not save \(error), \(error.userInfo)")
         }
+        
     ////
     ////
+    }
+    
+    func findLastUniversityOrder (lastUniversityManagedContext managedContext: NSManagedObjectContext) -> Int16? {
+        // we fetch the data (but only the university with the highest order, if there is an order)
+        let orderRequest = NSFetchRequest<UniversityData>(entityName: "UniversityData")
+        orderRequest.fetchLimit = 1
+        let universitySortDescriptorOrder = NSSortDescriptor(key: "order", ascending: false)
+        orderRequest.sortDescriptors = [universitySortDescriptorOrder]
+        
+        var orderError: NSError? = nil
+        do {
+            // if there is a university result which has an order property, we return the order number; otherwise we return 0?
+            let orderUniversityData = try managedContext.fetch(orderRequest) as [UniversityData]
+            return orderUniversityData.isEmpty ? Int16(0) : Int16(orderUniversityData[0].order)
+        } catch {
+            print("could not save \(orderError), \(orderError?.localizedDescription)")
+            return nil
+        }
     }
     
     // segues back to the data view if we hit the back button

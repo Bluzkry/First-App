@@ -11,7 +11,6 @@ import CoreData
 
 class DataTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var studentSATFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     var universityFetchedResultsController: NSFetchedResultsController<UniversityData>!
     // get managedcontextobject through the application delegate
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -68,37 +67,22 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     func initializeFetchedResultsController() {
     ////
         // use nsfetchrequest to fetch from core data
-        let studentSATFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "StudentInputData")
-        studentSATFetchRequest.returnsObjectsAsFaults = false
-        
         let studentUniversityFetchRequest = NSFetchRequest<UniversityData>(entityName: "UniversityData")
         studentUniversityFetchRequest.returnsObjectsAsFaults = false
     ////
         // use nspredicate and nssortdescriptor to search and filter university data so that it only includes universities saved by the student (because the database contains all the universities, not just those saved by the student)
         // note that nssortdescriptor is required to use nsfetchedresultscontroller
-        let SATSortDescriptorDate = NSSortDescriptor(key: "savedDate", ascending: true)
-        studentSATFetchRequest.sortDescriptors = [SATSortDescriptorDate]
-        
-        let universitySortDescriptorDate = NSSortDescriptor(key: "savedDate", ascending: true)
-        studentUniversityFetchRequest.sortDescriptors = [universitySortDescriptorDate]
+        let universitySortDescriptorOrder = NSSortDescriptor(key: "order", ascending: false)
+        studentUniversityFetchRequest.sortDescriptors = [universitySortDescriptorOrder]
         studentUniversityFetchRequest.predicate = NSPredicate(format: "studentData = true")
     ////
         // initialize fetched results controllers and hand fetch request over to managed object context
-        studentSATFetchedResultsController = NSFetchedResultsController(fetchRequest: studentSATFetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
-        
         universityFetchedResultsController = NSFetchedResultsController(fetchRequest: studentUniversityFetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
     ////
         // conjure fetched results controllers and set delegates
-        self.studentSATFetchedResultsController.delegate = self
         self.universityFetchedResultsController.delegate = self
     ////
         // perform fetch
-        do {
-            try studentSATFetchedResultsController.performFetch()
-        } catch {
-            fatalError("Failed to initialize studentFetchedResultsController: \(error)")
-        }
-        
         do {
             try universityFetchedResultsController.performFetch()
         } catch {
@@ -112,27 +96,23 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     // this function is necessary to configure the table view cell and is coded according to the Apple documentation
     func configureCell(_ dataCell: DataTableViewCell, indexPath: NSIndexPath) {
     ////
-    ////
-        let studentSATSelectedObject = studentSATFetchedResultsController.object(at: indexPath as IndexPath) as? NSManagedObject
-        let universitySelectedObject = universityFetchedResultsController.object(at: indexPath as IndexPath)
-        
-        if let singleSATScore = studentSATSelectedObject?.value(forKey: "savedSATCore") as? String {
-        ////
-            let singlePercentileScore = studentSATSelectedObject?.value(forKey: "savedPercentileCore") as? String
-            let singleUniversity = universitySelectedObject.value(forKey: "universityName")
-            let 大学 = universitySelectedObject.value(forKey: "chineseName")
+        if let universitySelectedObject = universityFetchedResultsController?.object(at: indexPath as IndexPath) {
+            
+            let singleSATScore = universitySelectedObject.savedStudentSAT
+            let singlePercentileScore = universitySelectedObject.savedStudentPercentile
+            let singleUniversity = universitySelectedObject.universityName
+            let 大学 = universitySelectedObject.chineseName
             
             switch 中文 {
             case false:
-                dataCell.dataUniversityLabel.text = "\(singleUniversity!)"
-                dataCell.dataScoreLabel.text = "Score: \(singleSATScore), Percentile: \(singlePercentileScore!)"
+                dataCell.dataUniversityLabel.text = "\(singleUniversity)"
+                dataCell.dataScoreLabel.text = "Score: \(singleSATScore), Percentile: \(singlePercentileScore)"
             case true:
-                dataCell.dataUniversityLabel.text = "\(大学!)"
-                dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore), 百分位: \(singlePercentileScore!)"
+                dataCell.dataUniversityLabel.text = "\(大学)"
+                dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore), 百分位: \(singlePercentileScore)"
             } // case ended
-        ////
+            
         } // if let statement ended
-    ////
     ////
     }
     
@@ -148,7 +128,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = studentSATFetchedResultsController.sections else {
+        guard let sections = universityFetchedResultsController.sections else {
             return 0
         }
         return sections.count
@@ -156,7 +136,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     
     // number of rows based on the sat fetchedresultscontroller count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = studentSATFetchedResultsController.sections else {
+        guard let sections = universityFetchedResultsController.sections else {
             return 0
         }
         
@@ -200,12 +180,6 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             return
         }
         
-        // this delegate method runs twice when we manipulate data because we have two fetched results controllers, which causes an error (e.g. rows being deleted twice); we therefore set a condition so that this only runs when one fetched results controller is called
-        // but the error sometimes still occurs
-        guard controller == studentSATFetchedResultsController else {
-            return
-        }
-        
         switch (type) {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: UITableViewRowAnimation.fade)
@@ -244,9 +218,8 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     // override to support editing the table view. i.e. deletion
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let studentSATSelectedObject = studentSATFetchedResultsController.object(at: indexPath as IndexPath) as? NSManagedObject
+            // we find the university row that we want to delete by selecting the row, then we delete it using the delegate methods (and save the updated data)
             let universitySelectedObject = universityFetchedResultsController.object(at: indexPath as IndexPath)
-            managedContext.delete(studentSATSelectedObject!)
             managedContext.delete(universitySelectedObject)
             do {
                 try managedContext.save()
@@ -275,33 +248,19 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     ////
         // bypass the delegate methods temporarily
         callNSFetchedResultsControllerDelegates = false
-        
-        // we have to refresh the core data
-        self.initializeFetchedResultsController()
     ////
-        // get objects at index path; note that we have to do a lot of complicated casting (student data to nsnumber then int64 then back, university to int64 then back)
-        let studentSATSelectedObject = studentSATFetchedResultsController.object(at: sourceIndexPath as IndexPath) as? NSManagedObject
-        let universitySelectedObject = universityFetchedResultsController.object(at: sourceIndexPath as IndexPath)
-        
-        let studentSATDestinationObject = studentSATFetchedResultsController.object(at: destinationIndexPath as IndexPath) as? NSManagedObject
-        let universityDestinationObject = universityFetchedResultsController.object(at: destinationIndexPath)
-        let studentSATDestinationObjectSavedDate:NSNumber = studentSATDestinationObject?.value(forKeyPath: "savedDate")! as! NSNumber
-        let universityDestinationObjectSavedDate:Int64 = universityDestinationObject.savedDate.int64Value
-    ////
-        // if the row we're moving is above the target row, we add one millisecond to the date so that the source row ends up below the target row
-        if sourceIndexPath.row < destinationIndexPath.row {
-        // we add 1 to the destination index object's savedate
-        let studentSATSelectedObjectChangedDate = NSNumber(value:(studentSATDestinationObjectSavedDate.int64Value + 1))
-        studentSATSelectedObject?.setValue(studentSATSelectedObjectChangedDate, forKey: "savedDate")
-        universitySelectedObject.savedDate = NSNumber(value:(universityDestinationObjectSavedDate + 1))
-        // otherwise we do the opposite
-        } else if sourceIndexPath.row > destinationIndexPath.row {
-            let studentSATSelectedObjectChangedDate = NSNumber(value:(studentSATDestinationObjectSavedDate.int64Value - 1))
-            studentSATSelectedObject?.setValue(studentSATSelectedObjectChangedDate, forKey: "savedDate")
-            universitySelectedObject.savedDate = NSNumber(value:(universityDestinationObjectSavedDate - 1))
-        } else {
-            callNSFetchedResultsControllerDelegates = true
-            return
+        if var totalSavedUniversities = self.universityFetchedResultsController.fetchedObjects {
+            // we remove the source university row and insert it in the destination row (while temporarily saving the source university as a property)
+            let sourceRowUniversity = totalSavedUniversities[sourceIndexPath.row] as UniversityData
+            totalSavedUniversities.remove(at: sourceIndexPath.row)
+            totalSavedUniversities.insert(sourceRowUniversity, at: destinationIndexPath.row)
+            
+            // then we reset the order of all the universities through a for loop
+            var index:Int16 = Int16(totalSavedUniversities.count)
+            for university in totalSavedUniversities as [UniversityData] {
+                index -= 1
+                university.order = index
+            }
         }
     ////
         // save
@@ -311,8 +270,10 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             print ("could not save \(error), \(error.localizedDescription)")
         }
     ////
-        // then we restart
-        self.initializeFetchedResultsController()
+        // since the internal state of the table view is in disarray until the method returns, we don't reload our rows until the operation is ended (this moves the operation to the back of the main queue)
+        DispatchQueue.main.async { () -> Void in
+            tableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: UITableViewRowAnimation.fade)
+        }
         
         // reset delegates
         callNSFetchedResultsControllerDelegates = true
@@ -331,12 +292,10 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // user selected a row, the selectedUniversity and studentSAT variable has to be changed to this
-        let studentSATSelectedObject = studentSATFetchedResultsController.object(at: indexPath as IndexPath) as? NSManagedObject
-        let universitySelectedObject = universityFetchedResultsController.object(at: indexPath as IndexPath)
+        if let universitySelectedObject = universityFetchedResultsController?.object(at: indexPath as IndexPath) {
         
-        if let singleSATScore = studentSATSelectedObject?.value(forKey: "savedSATCore") as? String {
             selectedUniversity = universitySelectedObject
-            studentSAT = singleSATScore
+            studentSAT = universitySelectedObject.savedStudentSAT
             
             // trigger the segue to go to the next view
             self.performSegue(withIdentifier: "segueFromDataTableViewController", sender: self)
@@ -353,15 +312,5 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             targetResultController.fromData = true
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

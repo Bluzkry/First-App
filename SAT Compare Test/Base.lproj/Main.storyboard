@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfx-md-h5N">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfx-md-h5N">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -479,9 +479,9 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled students at a particular university. The 25th and 75th percentile SAT scores of enrolled students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -571,7 +571,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content"> For American universities, the ACT and SAT are part, but not all, of what the application is evaluated upon. American applicants generally consider the GPA twice as important as the standardized tests (unfortunately, Chinese GPA's are less reliable and thus less heavily emphasized by universities).  Additionally, as is probably already known, American universities impose nationality quotas upon applicants. These quotas are especially stringent for top universities and Chinese students in particular.  </mutableString>
+                                                <string key="content"> For American universities, the ACT and SAT are part, but not all, of what the application is evaluated upon. American applicants generally consider the GPA twice as important as the standardized tests (unfortunately, Chinese GPA's are less reliable and thus less heavily emphasized by universities).  Additionally, as is probably already known, American universities impose nationality quotas upon applicants. These quotas are especially stringent for top universities and Chinese students in particular.  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -597,8 +597,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </mutableString>
+                                                <string key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  http://www.ir.ufl.edu/CDS/cds2015-2016.pdf  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially.  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -619,7 +619,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </mutableString>
+                                                <string key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
@@ -647,7 +647,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="acu-up-6oZ" firstAttribute="top" secondItem="fVE-1C-Rau" secondAttribute="top" constant="100" id="9l0-tG-ISL"/>
+                                    <constraint firstItem="acu-up-6oZ" firstAttribute="top" secondItem="fVE-1C-Rau" secondAttribute="top" constant="91" id="9l0-tG-ISL"/>
                                     <constraint firstItem="acu-up-6oZ" firstAttribute="leading" secondItem="fVE-1C-Rau" secondAttribute="leading" id="DnT-QR-H1r"/>
                                     <constraint firstAttribute="trailing" secondItem="acu-up-6oZ" secondAttribute="trailing" id="nuc-bU-heU"/>
                                     <constraint firstAttribute="bottom" secondItem="acu-up-6oZ" secondAttribute="bottom" constant="25" id="x0W-m7-DTE"/>
@@ -948,7 +948,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
                                     <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-xy-UKu">
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-xy-UKu">
+                                            <frame key="frameInset" minX="16" minY="16" width="343" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="University" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-CE-eHq" userLabel="University">
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
@@ -1018,7 +1019,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled st
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sir-JG-tiN"/>
-        <segue reference="hIS-tf-tb5"/>
+        <segue reference="tkD-xh-fFL"/>
+        <segue reference="CuJ-GI-HnN"/>
     </inferredMetricsTieBreakers>
 </document>

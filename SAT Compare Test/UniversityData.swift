@@ -18,7 +18,9 @@ class UniversityData: NSManagedObject {
     @NSManaged var topReadingPercentile:NSNumber
     @NSManaged var topMathPercentile:NSNumber
     @NSManaged var studentData:Bool
-    @NSManaged var savedDate:NSNumber
+    @NSManaged var order: Int16
+    @NSManaged var savedStudentSAT:String
+    @NSManaged var savedStudentPercentile:String
     
 //    // get these numbers for later equations in the result view
 //    
