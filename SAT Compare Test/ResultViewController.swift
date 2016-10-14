@@ -30,6 +30,10 @@ class ResultViewController: UIViewController {
     var twentyFivePercentileLabel: UILabel! = UILabel()
     var seventyFivePercentileLabel: UILabel! = UILabel()
     var studentSATLabel: UILabel! = UILabel()
+    
+    // get userdefaults for language
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
 
     // MARK
     // MARK PREPARATION FOR LATER PARTS
@@ -60,6 +64,8 @@ class ResultViewController: UIViewController {
     ////
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        中文 = appUserDefaults.bool(forKey: "language")
         
         // set sliders and labels
         doneButton.isEnabled = false
@@ -255,7 +261,7 @@ class ResultViewController: UIViewController {
             // 1: English, below the 25th percentile
             
             self.titleLabel.text = "\(selectedUniversityName)"
-            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of students enrolled at \(selectedUniversityName)."
+            self.resultViewControllerText.text = "Your SAT score places you below the 25th percentile of freshman students enrolled at \(selectedUniversityName)."
             self.doneButton.title = "Done"
             self.backToData.title = "Back"
             self.saveButton.setTitle("Save", for: UIControlState.normal)
@@ -264,7 +270,7 @@ class ResultViewController: UIViewController {
             // 2: English, middle percentile
             
             self.titleLabel.text = "\(selectedUniversityName)"
-            self.resultViewControllerText.text = "Your SAT score places you on the \(studentSATPercentile)th percentile of students enrolled at \(selectedUniversityName)."
+            self.resultViewControllerText.text = "Your SAT score places you on the \(studentSATPercentile)th percentile of freshman students enrolled at \(selectedUniversityName)."
             self.doneButton.title = "Done"
             self.backToData.title = "Back"
             self.saveButton.setTitle("Save", for: UIControlState.normal)
@@ -273,7 +279,7 @@ class ResultViewController: UIViewController {
             // 3: English, above the 75th percentile
             
             self.titleLabel.text = "\(selectedUniversityName)"
-            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of students enrolled at \(selectedUniversityName)."
+            self.resultViewControllerText.text = "Your SAT score places you above the 75th percentile of freshman students enrolled at \(selectedUniversityName)."
             self.doneButton.title = "Done"
             self.backToData.title = "Back"
             self.saveButton.setTitle("Save", for: UIControlState.normal)
@@ -282,7 +288,7 @@ class ResultViewController: UIViewController {
             // 4: 中文, below the 25th percentile
             
             self.titleLabel.text = "\(选择大学)"
-            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)最低25%的新生范围。"
+            self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的后25%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
             self.saveButton.setTitle("存在", for: UIControlState.normal)
@@ -291,7 +297,7 @@ class ResultViewController: UIViewController {
             // 5: 中文, middle percentile
             
             self.titleLabel.text = "\(选择大学)"
-            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)\(studentSATPercentile)%的新生范围。"
+            self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的前\(studentSATPercentile)%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
             self.saveButton.setTitle("存在", for: UIControlState.normal)
@@ -300,7 +306,7 @@ class ResultViewController: UIViewController {
             // 6: 中文, above the 75th percentile
             
             self.titleLabel.text = "\(选择大学)"
-            self.resultViewControllerText.text = "你的SAT分数把你排在\(选择大学)最高75%的新生范围。"
+            self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的前25%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
             self.saveButton.setTitle("存在", for: UIControlState.normal)
@@ -438,9 +444,9 @@ class ResultViewController: UIViewController {
             // note that the percentile differs based on the three factors below
             let studentSATInt:Int = Int(studentSAT!)!
             if studentSATInt < self.TwentyFivePercentile {
-                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "<25%", dataUniversity: selectedUniversity!)
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "Below 25%", dataUniversity: selectedUniversity!)
             } else if studentSATInt > self.SeventyFivePercentile {
-                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: ">75%", dataUniversity: selectedUniversity!)
+                self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "Above 75%", dataUniversity: selectedUniversity!)
             } else {
                 self.saveCoreData(dataSAT: studentSAT!, dataPercentile: "\(self.studentSATPercentile)%", dataUniversity: selectedUniversity!)
             }
@@ -455,7 +461,7 @@ class ResultViewController: UIViewController {
     
     // we need to change alert controller text based on language
     func alertControllerTitle() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Notice:"
         case true:
@@ -464,7 +470,7 @@ class ResultViewController: UIViewController {
     }
     
     func alertControllerMessage() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Your university has been saved."
         case true:
@@ -473,7 +479,7 @@ class ResultViewController: UIViewController {
     }
     
     func alertControllerAction() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Dismiss"
         case true:
@@ -527,7 +533,7 @@ class ResultViewController: UIViewController {
         let universitySortDescriptorOrder = NSSortDescriptor(key: "order", ascending: false)
         orderRequest.sortDescriptors = [universitySortDescriptorOrder]
         
-        var orderError: NSError? = nil
+        let orderError: NSError? = nil
         do {
             // if there is a university result which has an order property, we return the order number; otherwise we return 0?
             let orderUniversityData = try managedContext.fetch(orderRequest) as [UniversityData]

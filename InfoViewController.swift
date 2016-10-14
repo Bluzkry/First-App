@@ -14,6 +14,9 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var englishScrollView: UIScrollView!
     @IBOutlet weak var 中文ScrollView: UIScrollView!
     
+    // get userdefaults for language
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,10 @@ class InfoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        switch 中文 {
+        // set language
+        中文 = appUserDefaults.bool(forKey: "language")
+        
+        switch 中文! {
         case false:
             self.backBarButtonItem.title = "Back"
             self.中文ScrollView.alpha = 0

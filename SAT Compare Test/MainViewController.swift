@@ -25,7 +25,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-        
+    
+    // necessary to save 中文 variable
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
+    
     // MARK
     // MARK VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -40,8 +44,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.SATBackground.layer.cornerRadius = 6
         self.infoButton.layer.cornerRadius = 10
         
-        setStudentSATTextField()
         setLanguage()
+        setStudentSATTextField()
         
         // hide navigation bar
         self.navigationController!.setNavigationBarHidden(true, animated: true)
@@ -59,7 +63,15 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func setLanguage() {
     ////
     ////
-        switch 中文 {
+        // set nsappUserDefaults
+        中文 = appUserDefaults.object(forKey: "language") as! Bool?
+        // when the app is first loaded, we set the language to english
+        if 中文 == nil {
+            中文 = false
+            appUserDefaults.set(false, forKey: "language")
+        }
+        
+        switch 中文! {
         case false:
             // language buttons
             englishButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17.0)
@@ -179,7 +191,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func cancelBarLanguage() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Cancel"
         case true:
@@ -192,7 +204,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func doneBarLanguage() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Done"
         case true:
@@ -248,7 +260,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     // we need to change alert controller text based on language
     func alertControllerTitle() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Notice:"
         case true:
@@ -257,7 +269,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func alertControllerMessage() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Please select a university or input an SAT score between 400 and 1600."
         case true:
@@ -266,7 +278,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     func alertControllerAction() -> String {
-        switch 中文 {
+        switch 中文! {
         case false:
             return "Dismiss"
         case true:
@@ -283,7 +295,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func englishButtonPressed(_ sender: AnyObject) {
-        中文 = false
+        appUserDefaults.set(false, forKey: "language")
         setLanguage()
         
         // add fade transition
@@ -296,7 +308,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func 中文ButtonPressed(_ sender: AnyObject) {
-        中文 = true
+        appUserDefaults.set(true, forKey: "language")
         setLanguage()
         
         let languageTransition = CATransition()

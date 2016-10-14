@@ -15,11 +15,18 @@ class NavigationToMainViewController: UINavigationController {
 
     @IBOutlet weak var mainTabBarItem: UITabBarItem!
     
+    // get nsuserdefaults for language
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set language
+        中文 = appUserDefaults.bool(forKey: "language")
+        
         // Do any additional setup after loading the view.
-        switch 中文 {
+        switch 中文! {
         case false:
             mainTabBarItem.title = "Main"
         case true:

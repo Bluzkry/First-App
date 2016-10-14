@@ -14,6 +14,9 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     var universityFetchedResultsController: NSFetchedResultsController<UniversityData>!
     // get managedcontextobject through the application delegate
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    // get nsuserdefaults for language
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
     
     // MARK
     // MARK VIEW LIFE CYCLE
@@ -22,13 +25,30 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        // set language
+        中文 = appUserDefaults.bool(forKey: "language")
+        
+        // this is necessary so that when we click a university and then go back, the "main" tab bar's language is still the language that the user has selected
+        for i in 0...Int((self.tabBarController?.viewControllers?.count)! - 1) {
+            let viewController = self.tabBarController?.viewControllers?[i]
+            if i == 0 && 中文 == false {
+                viewController?.tabBarItem.title = "Main"
+            } else if i == 0 && 中文 == true {
+                viewController?.tabBarItem.title = "首页"
+            } else if i == 1 && 中文 == false {
+                viewController?.tabBarItem.title = "Saved Universities"
+            } else if i == 1 && 中文 == true {
+                viewController?.tabBarItem.title = "选择大学"
+            }
+        }
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         // fetch results
         self.initializeFetchedResultsController()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
     ////
         super.viewWillAppear(animated)
@@ -48,7 +68,7 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         imageView.alpha = 0.5
     ////
         // change language of edit button (apparently this needs to be here for the "edit" button method to be called)
-        switch 中文 {
+        switch 中文! {
         case false:
             self.navigationItem.rightBarButtonItem?.title = "Edit"
         case true:
@@ -103,13 +123,21 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
             let singleUniversity = universitySelectedObject.universityName
             let 大学 = universitySelectedObject.chineseName
             
-            switch 中文 {
+            switch 中文! {
             case false:
                 dataCell.dataUniversityLabel.text = "\(singleUniversity)"
                 dataCell.dataScoreLabel.text = "Score: \(singleSATScore), Percentile: \(singlePercentileScore)"
             case true:
-                dataCell.dataUniversityLabel.text = "\(大学)"
-                dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore), 百分位: \(singlePercentileScore)"
+                if universitySelectedObject.savedStudentPercentile == "Above 75%" {
+                    dataCell.dataUniversityLabel.text = "\(大学)"
+                    dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore) 前25%"
+                } else if universitySelectedObject.savedStudentPercentile == "Below 25%" {
+                    dataCell.dataUniversityLabel.text = "\(大学)"
+                    dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore) 后25%"
+                } else {
+                    dataCell.dataUniversityLabel.text = "\(大学)"
+                    dataCell.dataScoreLabel.text = "SAT分数: \(singleSATScore) 前\(singlePercentileScore)"
+                }
             } // case ended
             
         } // if let statement ended

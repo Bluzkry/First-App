@@ -12,7 +12,7 @@ import CoreData
 
 var studentSAT:String?
 var selectedUniversity:UniversityData?
-var 中文:Bool = false
+//var 中文:Bool = false
 // necessary for changing table rows
 var callNSFetchedResultsControllerDelegates:Bool = true
 

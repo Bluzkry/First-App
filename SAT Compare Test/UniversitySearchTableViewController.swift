@@ -28,10 +28,17 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     var searchcontroller: UISearchController!
     var searchResultsController = UITableViewController()
     
+    // get nsuserdefaults for language
+    let appuserDefaults = UserDefaults.standard
+    var 中文:Bool?
+    
     // MARK
     // MARK VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // get language
+        中文 = appuserDefaults.bool(forKey: "language")
         
         // get data from the data model
         self.totalData = self.model.getData()
@@ -46,7 +53,7 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         definesPresentationContext = true
         
         // change cancel button depending on language
-        switch 中文 {
+        switch 中文! {
         case false:
             cancelButton.title = "Cancel"
         case true:
@@ -93,7 +100,7 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         }
         
         // change what's in the cell by language
-        switch 中文 {
+        switch 中文! {
         case false:
             cell.textLabel!.text = data.universityName
         case true:
@@ -119,7 +126,7 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
     ////
         // filter through the universities
-        switch 中文 {
+        switch 中文! {
         case false:
             self.filteredUniversities = self.totalData.filter({ (data:UniversityData) -> Bool in
                 return data.universityName.lowercased().contains(self.searchcontroller.searchBar.text!.lowercased())

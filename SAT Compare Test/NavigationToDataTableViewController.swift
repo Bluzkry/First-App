@@ -12,11 +12,18 @@ class NavigationToDataTableViewController: UINavigationController {
 
     @IBOutlet weak var savedSATUniversitiesBarItem: UITabBarItem!
     
+    // get nsuserdefaults for language
+    let appUserDefaults = UserDefaults.standard
+    var 中文:Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set language
+        中文 = appUserDefaults.bool(forKey: "language")
+        
         // Do any additional setup after loading the view.
-        switch 中文 {
+        switch 中文! {
         case false:
             savedSATUniversitiesBarItem.title = "Saved Universities"
         case true:
