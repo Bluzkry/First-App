@@ -59,7 +59,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     // MARK
     // MARK SET-UP
-    
     func setLanguage() {
     ////
     ////
@@ -305,6 +304,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         languageTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         view.layer.add(languageTransition, forKey: nil)
         
+        // post notification to reload the table view so that the language changes
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     @IBAction func 中文ButtonPressed(_ sender: AnyObject) {
@@ -316,6 +317,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         languageTransition.duration = 0.75
         languageTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         view.layer.add(languageTransition, forKey: nil)
+        
+        // post notification to reload the table view so that the language changes
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

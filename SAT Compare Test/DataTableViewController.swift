@@ -47,6 +47,10 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         // fetch results
         self.initializeFetchedResultsController()
+        
+        // create notification center so that language changes are notified
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: NSNotification.Name(rawValue: "load"), object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +86,10 @@ class DataTableViewController: UITableViewController, NSFetchedResultsController
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func reloadTable(notification:NSNotification) {
+        self.viewDidLoad()
     }
     
     func initializeFetchedResultsController() {

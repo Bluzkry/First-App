@@ -20,9 +20,6 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //var scrollableSize = CGSizeMake(0, 0)
-        //infoViewScrollView.contentSize = scrollableSize
 
         // Do any additional setup after loading the view.
         
