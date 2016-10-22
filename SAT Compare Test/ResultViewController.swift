@@ -291,7 +291,7 @@ class ResultViewController: UIViewController {
             self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的后25%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
-            self.saveButton.setTitle("存在", for: UIControlState.normal)
+            self.saveButton.setTitle("保存", for: UIControlState.normal)
     ////
         } else if 中文==true && studentSATInt>=TwentyFivePercentile && studentSATInt<=SeventyFivePercentile {
             // 5: 中文, middle percentile
@@ -300,7 +300,7 @@ class ResultViewController: UIViewController {
             self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的前\(studentSATPercentile)%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
-            self.saveButton.setTitle("存在", for: UIControlState.normal)
+            self.saveButton.setTitle("保存", for: UIControlState.normal)
     ////
         } else if 中文==true && studentSATInt>SeventyFivePercentile {
             // 6: 中文, above the 75th percentile
@@ -309,7 +309,7 @@ class ResultViewController: UIViewController {
             self.resultViewControllerText.text = "你的SAT分数在\(选择大学)报到新生分数的前25%。"
             self.doneButton.title = "完成"
             self.backToData.title = "返回"
-            self.saveButton.setTitle("存在", for: UIControlState.normal)
+            self.saveButton.setTitle("保存", for: UIControlState.normal)
         }
     ////
     ////
@@ -396,7 +396,7 @@ class ResultViewController: UIViewController {
                 let studentSATFloat:Float? = Float(studentSATInt)
                 let pathXVariable:CGFloat = CGFloat( ((Float(studentSATFloat!) - 200)/Float(1600)) * Float(self.resultViewControllerImageView.bounds.width) )
                 
-                // we do some magic with keyframes, which I don't understand
+                // we do some magic with keyframes
                 let keyFrameAnimation = CAKeyframeAnimation(keyPath: "position")
                 let mutablePath = CGMutablePath()
                 
@@ -406,7 +406,6 @@ class ResultViewController: UIViewController {
                 
                 // then we set it to curve; the first two values pathXVariable/2 and 50 are the values which set the curve point, the last two values are the values which the thumb lands on, and pathXVariable is determined by the equationa above, whereas they-value is the university slider's y-value
                 mutablePath.addQuadCurve(to: CGPoint.init(x: pathXVariable, y: self.universitySlider.center.y), control: CGPoint.init(x: pathXVariable, y: 50))
-//                    CGPathAddQuadCurveToPoint(mutablePath, nil, pathXVariable/2, 50, pathXVariable, self.universitySlider.center.y)
                 
                 keyFrameAnimation.path = mutablePath
                 // actually the timer is this; the arguments don't have any effect
@@ -481,7 +480,7 @@ class ResultViewController: UIViewController {
     func alertControllerAction() -> String {
         switch 中文! {
         case false:
-            return "Dismiss"
+            return "Done"
         case true:
             return "确定"
         }

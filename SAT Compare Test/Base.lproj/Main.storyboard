@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56o-7R-1WG" id="lLH-QF-Ekd">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -283,9 +283,9 @@ Cgo
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
+                                                <string key="content">
 
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled freshman students at a particular university. The 25th and 75th percentile SAT scores of enrolled freshman students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </mutableString>
+SAT Compare compares an individual's SAT scores to the SAT scores of enrolled freshman students at a particular university. The 25th and 75th percentile SAT scores of enrolled freshman students are publicly available through a university's Common Data Set, which is published every year by most universities.  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below:  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -375,8 +375,8 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  </mutableString>
+                                                <string key="content">
+ This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.   With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75.  </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -411,7 +411,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </mutableString>
+                                                <string key="content">.  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere).  </string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
@@ -449,148 +449,63 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acu-up-6oZ" userLabel="中文Text">
                                         <attributedString key="attributedText">
-                                            <fragment content="Looking for college application advice for your child? Contact: ">
+                                            <fragment content="正在为孩子寻找美国大学申请专业的建议吗？请联系： ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="您孩子申请美国大学的咨询联系人：">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
+                                            <fragment content=" 023-86716117  ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="023-86716117  jjss303030@qq.com">
+                                            <fragment content="1667810449@qq.com">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
- Suggestions for the App, bugs found in the App, Chinese grammatical mistakes in the App, looking for a developer? E-mail: </string>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="对">
+                                            <fragment content=" 对APP改进的建议（如瑕疵、中文语法错误、APP的开发）请联系：  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="APP">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".SFNSText-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name=".SFNSText-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="的建议，错误，中文语法改进或者需要">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="APP">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name=".SFNSText-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name=".SFNSText-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="开发，请电邮：">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="3041871928@qq.com">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
                                                 <string key="content">
- (Note: Developer is American but can understand and read/write Chinese. Nevertheless, English is still preferred as a method of communication.) </string>
+ （APP开发者是能读写中文的美国人 ,不过英文交流更流畅）  </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="（">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="这个APP开发者是美国人但能读懂中文。当然英文最好。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="）">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content"> 
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="About &quot;SAT Compare&quot;:  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -611,101 +526,84 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
-
-SAT Compare compares an individual's SAT scores to the SAT scores of enrolled freshman students at a particular university. The 25th and 75th percentile SAT scores of enrolled freshman students are publicly available through a university's Common Data Set, which is published every year by most universities. </mutableString>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="“">
+                                            <fragment content=" “SAT Compare”">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="SAT Compare">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="”">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="比较您孩子的SAT分数与某个大学新生学生的SAT分数。这新生SAT百分位数25%和75%是大学通过共同数据单元公开发表的数据。这数据每年发表一次。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  For instance, UC Berkeley's 25th and 75th SAT percentiles are 1250 and 1500, respectively, per the link below: ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="比如加州大学伯克利分校新生的SAT百分位数25%和75%分别是1250和1500。也就是最差的四分之一新生分数是1250。最好的四分之一新生分数是1500。">
+                                            <fragment content="是将您个人的">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
+                                                    <color key="NSColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  ">
+                                            <fragment content="SAT分数">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="与特定大学注册新生的SAT分数进行比较。特定大学注册">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="新生SAT">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="成绩后25%">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="和前25%的统计分数来自于这些大学的公共数据库中">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="，这些数据">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">每年发布一次。  比如加州大学伯克利分校每年注册新生的SAT分数，后面25%和前面25%的分数分别是1250和1500。也就是最差的四分之一注册新生的分数是1250，最好的四分之一注册新生的分数是1500。（中间50%的分数介于1250分到1500分之间）  </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="http://opa.berkeley.edu/sites/default/files/uc_berkeley_cds_2015-16_8-3-2016.pdf">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  This App assumes a linear distribution between the 25th and 75th SAT percentiles. ">
+                                            <fragment content="  此App只设定了后25%和前25%SAT分数的分布情况。  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="这APP假设SAT百分位数从25%到75%是线性分布的。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Data Notes:  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -718,24 +616,15 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                     <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  SAT data is unavailable for the following universities: ">
+                                            <fragment content=" ">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="下面这些大学没有发表他们的SAT数据">
+                                            <fragment content=" 下面这些大学没有发表他们的SAT数据  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -759,24 +648,15 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  SAT data is for the year 2015 to 2016 for all universities, with the exception of the below: ">
+                                            <fragment content=" ">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="SAT数据是从2015至2016期间但以下大学例外：">
+                                            <fragment content=" 所有学校的SAT数据来自于2015年至2016年，除了：  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -788,51 +668,15 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">  All of the above university data is for the year 2014-2015, with the exception of Colby College, which is for the year 2013-2014. </string>
+                                            <fragment content=" ">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="以上这些学校的SAT数据是从2014至2015期间。科尔比学院是从2013至2014期间。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  Data for the following universities is for admitted, rather than enrolled students: ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="以">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="下">
+                                            <fragment content=" 以上这些学校的SAT数据来自2014年至2015年。科尔比学院的SAT数据来自于2013年至2014年。  以下这些学校的SAT数据是指录取的学生成绩，而不是注册新生的成绩：  ">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="PingFangSC-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="这些学校的SAT数据是属于录取的学生，不是报到的新学生。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -849,19 +693,6 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="Possible Questions:">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content=" ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
                                             <fragment content="常见的问题：">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="PingFangSC-Semibold"/>
@@ -871,315 +702,228 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                                     <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  ">
+                                            <fragment content=" ">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="I got a 1600 but was rejected by all the Ivy League universities. Why? ">
+                                            <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="为什么我拿到满分1600但被所有常春藤大学拒绝？">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content=" ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> SAT或ACT分数只是美国大学录取学生的标准之一。对美国学生一般来说GPA占的比重是SAT或ACT分数的一倍以上。遗憾的是中国高中的GPA没有像美国高中那样可靠。所以中国高中GPA的比重要低很多。  另外美国大学对录取外国学生有名额限制。特别是竞争激烈的学校和有很多中国学生申请的学校。  </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="所以我们建议中国学生在使用这个APP时要自少减去五十至七十五分。">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content"> For American universities, the ACT and SAT are part, but not all, of what the application is evaluated upon. American applicants generally consider the GPA twice as important as the standardized tests (unfortunately, Chinese GPA's are less reliable and thus less heavily emphasized by universities). </mutableString>
+                                                <string key="content"> 如有任何问题，请联系我们：
+</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="SAT或ACT分数只是美国大学录取学生的标准之一。对美国学生一般来说GPA占的比重是SAT或ACT分数的一倍以上。不幸的是中国高中的GPA没有像美国高中那样可靠。所以中国高中GPA的比重要低很多。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">  Additionally, as is probably already known, American universities impose nationality quotas upon applicants. These quotas are especially stringent for top universities and Chinese students in particular. </string>
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="另外美国大学对录取外国学生有名额限制。特别是竞争激烈的学校和对中国学生因为很多中国学生申请。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="We thus advise subtracting 50 to 75 points from your SAT score when using this App. ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="所以我们建议中国学生在应用这个APP时要自己减少五十至七十五分。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  For any further questions, feel free to contact us. ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="如果你有更多问题，请联系我们。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Why do you focus on the SAT? Aren't other factors, such as GPA, more important, than the SAT? ">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="为什么以SAT为重点？有没有其他因素，列入GPA，比SAT更重要。">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">
- This is correct. Factors such as AP test scores, extracurricular activities, gender, GPA, nationality, race, recommendation letters, SAT II scores, etc. are all important factors in the application process, sometimes much more so than SAT scores. Unfortunately, none of these factors, with the exception of GPA, is measurable in a way which offers easy statistical analysis of the type provided in SAT Compare.  </mutableString>
+                                                <string key="content">18580497917    86716117   
+</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="84">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="112">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="140">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="168">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="196">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="224">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="252">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="280">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="308">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="336">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="是的其他因素比如AP考试成绩，课外活动，性别，GPA，国籍，种族，推荐信，SAT 单项考试成绩，等等都是录取过程中考虑的因素。有时候这些因素甚至比SAT分数更重要。但SAT分数仍然是最好的分析比较因为它的通用性和各个大学发表的数据。">
+                                            <fragment content="1667810449@qq.com">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <url key="NSLink" string="mailto:1667810449@qq.com"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="    ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="3041871928@qq.com">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <url key="NSLink" string="mailto:3041871928@qq.com"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="   ">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <mutableString key="content">  With respect to GPA, universities all tend to report enrolling students as having similar GPA's, in a range of 3.5-4.0. For instance, the 50th-ranked university in the U.S. News &amp; World Report university rankings states that 95% of enrolling students have a GPA above 3.75. </mutableString>
+                                                <string key="content">为什么要以SAT为重点？还有没有其他重要的因素，例如GPA，它是否比SAT更重要？
+</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    <color key="NSColor" red="0.98431372549019602" green="0.0" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="关于GPA，各大学通常只发布一个大范围内的数据从3.5到4.0。比如一个排名第五十名的大学报告新生的95%的GPA在3.75以上。">
+                                            <fragment>
+                                                <string key="content"> 是的，其他因素比如AP考试成绩，课外活动，性别，GPA，国籍，种族，推荐信，SAT2 单课成绩，等等。这些都是录取过程中要考虑的因素，有时这些因素可能会比SAT分数更重要。遗憾的是，除了GPA之外，这些因素中没有一个是可以象“SAT Compare”这样容易被统计分析和可量化的。   关于GPA，各大学通常只会发布一个大致范围的数据，通常是从3.5到4.0。比如一个排名第五十名的大学，95%注册新生 GPA在3.75以上。  </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="http://www.ir.ufl.edu/CDS/cds2015-2016.pdf">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">  Additionally, GPA is not always reliable. Some high schools, particularly small private schools, tend to inflate their GPA's substantially. </string>
+                                            <fragment content="  另外，各个高中的GPA差别很大，尤其是一些小的私立高中，通常会拔高学生的GPA成绩。  ">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="另外各个高中的GPA差别很大。特别是一些小的私立高中。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="  ">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="The university I'm interested in isn't on SAT Compare. Why not? ">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="我想申请的大学为什么不在“SAT Compare”上？">
+                                            <fragment content="我想申请的大学为什么不在“SAT Compare”的名单上面？">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangTC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangTC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">  Unfortunately, due to time constraints, SAT Compare only includes national universities ranked in the top 100 and liberal arts colleges ranked in the top 50 of the US News &amp; World Report university rankings</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content=". ">
+                                            <fragment content="  由于时间有限，目前APP只包括了美国新闻和世界报告排名前一百名的综合大学和前五十名的文理学院。 ">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="由于时间有限，目前APP只包括了美国新闻和世界报告大学排名前一百名和文理学院排名前五十名。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <mutableString key="content">  Additionally, some universities, such as the University of Chicago and Columbia, do not publish a Common Data Set. In such cases it may be impossible to include them in SAT Compare (note that information for the above two universities have been taken from data published elsewhere). </mutableString>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="另外有些大学比如芝加哥大学和哥伦比亚大学就没有发布他们的通用数据单元。他们的数据是从其他渠道取得的。如果不能从其他渠道取得数据，就无法进行“SAT Compare”。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="  ">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">Isn't assuming a linear distribution unreliable? If SAT Compare only has data for enrolled students, rather than accepted students, isn't that also unreliable? </string>
+                                            <fragment content="另外，有些综合大学，比如芝加哥大学和哥伦比亚大学就没有发布他们公共数据库中的资料，这两所学校的数据是从另外的渠道获得的。其他的学校，如果不能获得相应的数据，也就无法进行“SAT Compare”了。">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="SAT百分位数分析假设SAT百分位数线性分布。这合理吗？“SAT Compare">
+                                            <fragment content="  ">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="”">
+                                            <fragment content="是不是假设线性分布不可靠？ 如果SAT比较只有注册学生的数据，而不是录取的学生，是不是可靠的？">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="较使用新生数据而不是被录取学生的数据。这可靠吗？">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="  ">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">These are factors you will have to take into consideration in utilizing SAT Compare. Data such as this is simply not provided (or perhaps not even collected in the first place) by universities. </string>
+                                            <fragment content="这些因数是在采纳“SAT Compare”会考虑到的。录取新生的SAT分数因种种原因各大学没有发布过，甚至可能就没有收集过。">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="PingFangSC-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="问题是这两个数据因种种原因大学都没有发布过甚至可能没有收集过。">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PingFangSC-Light"/>
-                                                    <real key="NSKern" value="0.0"/>
-                                                    <font key="NSOriginalFont" size="17" name="PingFangSC-Light"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1485,7 +1229,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
                                 <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D2x-v8-yMg" id="X6u-du-RWx">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-xy-UKu">
