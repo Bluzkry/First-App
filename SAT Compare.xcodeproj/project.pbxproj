@@ -16,9 +16,11 @@
 		A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
 		A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */ = {isa = PBXBuildFile; fileRef = A528FD0D1D6A09C100FD012D /* University Dataset.json */; };
 		A54CAE361D83417F00C4673F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CAE351D83417F00C4673F /* InfoViewController.swift */; };
+		A57FA1C21DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
+		A57FA1C31DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
+		A57FA1C41DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
 		A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
 		A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
-		A589E02C1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
 		A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
 		A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
 		A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */; };
@@ -61,8 +63,6 @@
 		A5EC060B1DA26F28001ACA27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
 		A5EC060D1DA26F2C001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
 		A5EC060E1DA26F2D001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
-		A5EC060F1DA26F30001ACA27 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
-		A5EC06101DA26F32001ACA27 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
 		A5EC06131DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
 		A5EC06141DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
 		A5EC06151DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
@@ -98,10 +98,10 @@
 		A528FD0B1D6A09B900FD012D /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		A528FD0D1D6A09C100FD012D /* University Dataset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "University Dataset.json"; sourceTree = "<group>"; };
 		A54CAE351D83417F00C4673F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A57FA1C11DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAT_Compare.xcdatamodel; sourceTree = "<group>"; };
 		A589E0201D69E5C100DEAD84 /* SAT Compare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAT Compare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A589E0231D69E5C100DEAD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A589E0281D69E5C100DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAT_Compare.xcdatamodel; sourceTree = "<group>"; };
 		A589E02D1D69E5C200DEAD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A589E0301D69E5C200DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A589E0321D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
 				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
 				A589E0321D69E5C200DEAD84 /* Info.plist */,
-				A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */,
+				A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */,
 			);
 			name = "SAT Compare ";
 			path = "SAT Compare";
@@ -375,11 +375,11 @@
 				A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */,
 				A5140E641D75930A00500482 /* MainViewController.swift in Sources */,
 				A506D8811D88642F00196A6B /* DataTableViewController.swift in Sources */,
-				A589E02C1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld in Sources */,
 				A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */,
 				A506D8861D88654C00196A6B /* DataTableViewCell.swift in Sources */,
 				A5EC05EA1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */,
 				A54CAE361D83417F00C4673F /* InfoViewController.swift in Sources */,
+				A57FA1C21DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */,
 				A528FD0A1D6A099B00FD012D /* UniversityData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,13 +390,13 @@
 			files = (
 				A5EC05F01DA26EE1001ACA27 /* MainViewController.swift in Sources */,
 				A5EC05FC1DA26F01001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC060F1DA26F30001ACA27 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC06021DA26F10001ACA27 /* UniversityModel.swift in Sources */,
 				A5EC05EB1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */,
 				A5EC05FA1DA26EFE001ACA27 /* ResultViewController.swift in Sources */,
 				A5EC05FE1DA26F08001ACA27 /* DataTableViewCell.swift in Sources */,
 				A5EC06001DA26F0C001ACA27 /* UniversityData.swift in Sources */,
 				A5EC05F21DA26EE5001ACA27 /* InfoViewController.swift in Sources */,
+				A57FA1C31DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC05F81DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
 				A5EC05F61DA26EF4001ACA27 /* AppDelegate.swift in Sources */,
 				A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */,
@@ -410,13 +410,13 @@
 			files = (
 				A5EC05F11DA26EE1001ACA27 /* MainViewController.swift in Sources */,
 				A5EC05FD1DA26F02001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC06101DA26F32001ACA27 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC06031DA26F10001ACA27 /* UniversityModel.swift in Sources */,
 				A5EC05EC1DA26ED2001ACA27 /* NavigationToMainViewController.swift in Sources */,
 				A5EC05FB1DA26EFF001ACA27 /* ResultViewController.swift in Sources */,
 				A5EC05FF1DA26F09001ACA27 /* DataTableViewCell.swift in Sources */,
 				A5EC06011DA26F0D001ACA27 /* UniversityData.swift in Sources */,
 				A5EC05F31DA26EE6001ACA27 /* InfoViewController.swift in Sources */,
+				A57FA1C41DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC05F91DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
 				A5EC05F71DA26EF6001ACA27 /* AppDelegate.swift in Sources */,
 				A589E0471D69E5C200DEAD84 /* SAT_Compare_UITests.swift in Sources */,
@@ -669,12 +669,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */ = {
+		A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */,
+				A57FA1C11DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodel */,
 			);
-			currentVersion = A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */;
+			currentVersion = A57FA1C11DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodel */;
 			path = SAT_Compare.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
