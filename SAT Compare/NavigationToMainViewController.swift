@@ -1,6 +1,6 @@
 //
 //  NavigationToMainViewController.swift
-//  SAT Compare Test
+// SAT Compare
 //
 //  Created by Alexander Zou on 10/3/16.
 //  Copyright © 2016 Alexander Zou. All rights reserved.

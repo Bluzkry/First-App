@@ -1,6 +1,6 @@
 //
 //  UniversitySearchController.swift
-//  SAT Compare Test
+// SAT Compare
 //
 //  Created by Alexander Zou on 8/21/16.
 //  Copyright © 2016 Alexander Zou. All rights reserved.
