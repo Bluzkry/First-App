@@ -1,6 +1,6 @@
 //
 //  InfoViewController.swift
-//  SAT Compare Test
+// SAT Compare
 //
 //  Created by Alexander Zou on 9/10/16.
 //  Copyright © 2016 Alexander Zou. All rights reserved.
@@ -13,6 +13,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var backBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var englishScrollView: UIScrollView!
     @IBOutlet weak var 中文ScrollView: UIScrollView!
+    @IBOutlet weak var 中文Text: UILabel!
     
     // get userdefaults for language
     let appUserDefaults = UserDefaults.standard

@@ -18,11 +18,11 @@
 		A54CAE361D83417F00C4673F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CAE351D83417F00C4673F /* InfoViewController.swift */; };
 		A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
 		A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
-		A589E02C1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */; };
+		A589E02C1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
 		A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
 		A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
-		A589E03C1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E03B1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift */; };
-		A589E0471D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0461D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift */; };
+		A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */; };
+		A589E0471D69E5C200DEAD84 /* SAT_Compare_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */; };
 		A589E0551D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
 		A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
 		A5EC05EA1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */; };
@@ -61,8 +61,8 @@
 		A5EC060B1DA26F28001ACA27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
 		A5EC060D1DA26F2C001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
 		A5EC060E1DA26F2D001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
-		A5EC060F1DA26F30001ACA27 /* SAT_Compare_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */; };
-		A5EC06101DA26F32001ACA27 /* SAT_Compare_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */; };
+		A5EC060F1DA26F30001ACA27 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
+		A5EC06101DA26F32001ACA27 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */; };
 		A5EC06131DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
 		A5EC06141DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
 		A5EC06151DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
@@ -89,33 +89,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A506D8801D88642F00196A6B /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
-		A506D8841D88654C00196A6B /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		A506D8801D88642F00196A6B /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A506D8841D88654C00196A6B /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A506D8851D88654C00196A6B /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
 		A50E4C701D85C7F100328716 /* DataTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewController.xib; sourceTree = "<group>"; };
-		A5140E631D75930A00500482 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A5140E631D75930A00500482 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A528FD091D6A099B00FD012D /* UniversityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
 		A528FD0B1D6A09B900FD012D /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		A528FD0D1D6A09C100FD012D /* University Dataset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "University Dataset.json"; sourceTree = "<group>"; };
-		A54CAE351D83417F00C4673F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
-		A589E0201D69E5C100DEAD84 /* SAT Compare Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAT Compare Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A589E0231D69E5C100DEAD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A54CAE351D83417F00C4673F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A589E0201D69E5C100DEAD84 /* SAT Compare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAT Compare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A589E0231D69E5C100DEAD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A589E0281D69E5C100DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A589E02B1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAT_Compare_Test.xcdatamodel; sourceTree = "<group>"; };
+		A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAT_Compare.xcdatamodel; sourceTree = "<group>"; };
 		A589E02D1D69E5C200DEAD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A589E0301D69E5C200DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A589E0321D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A589E0371D69E5C200DEAD84 /* SAT Compare TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A589E03B1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_TestTests.swift; sourceTree = "<group>"; };
+		A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compares.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_Tests.swift; sourceTree = "<group>"; };
 		A589E03D1D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A589E0421D69E5C200DEAD84 /* SAT Compare TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A589E0461D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_TestUITests.swift; sourceTree = "<group>"; };
+		A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_UITests.swift; sourceTree = "<group>"; };
 		A589E0481D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitySearchTableViewController.swift; sourceTree = "<group>"; };
-		A5BFB9251D76C88D004F62AC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationToMainViewController.swift; sourceTree = "<group>"; };
+		A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UniversitySearchTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A5BFB9251D76C88D004F62AC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResultViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NavigationToMainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationToMainViewController.xib; sourceTree = "<group>"; };
-		A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationToDataTableViewController.swift; sourceTree = "<group>"; };
+		A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NavigationToDataTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationToDataTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,9 +147,9 @@
 		A589E0171D69E5C100DEAD84 = {
 			isa = PBXGroup;
 			children = (
-				A589E0221D69E5C100DEAD84 /* SAT Compare Test */,
-				A589E03A1D69E5C200DEAD84 /* SAT Compare TestTests */,
-				A589E0451D69E5C200DEAD84 /* SAT Compare TestUITests */,
+				A589E0221D69E5C100DEAD84 /* SAT Compare  */,
+				A589E03A1D69E5C200DEAD84 /* SAT Compare Tests */,
+				A589E0451D69E5C200DEAD84 /* SAT Compare UITests */,
 				A589E0211D69E5C100DEAD84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,14 +157,14 @@
 		A589E0211D69E5C100DEAD84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A589E0201D69E5C100DEAD84 /* SAT Compare Test.app */,
-				A589E0371D69E5C200DEAD84 /* SAT Compare TestTests.xctest */,
-				A589E0421D69E5C200DEAD84 /* SAT Compare TestUITests.xctest */,
+				A589E0201D69E5C100DEAD84 /* SAT Compare.app */,
+				A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */,
+				A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A589E0221D69E5C100DEAD84 /* SAT Compare Test */ = {
+		A589E0221D69E5C100DEAD84 /* SAT Compare  */ = {
 			isa = PBXGroup;
 			children = (
 				A589E0231D69E5C100DEAD84 /* AppDelegate.swift */,
@@ -187,35 +187,36 @@
 				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
 				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
 				A589E0321D69E5C200DEAD84 /* Info.plist */,
-				A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */,
+				A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */,
 			);
-			path = "SAT Compare Test";
+			name = "SAT Compare ";
+			path = "SAT Compare";
 			sourceTree = "<group>";
 		};
-		A589E03A1D69E5C200DEAD84 /* SAT Compare TestTests */ = {
+		A589E03A1D69E5C200DEAD84 /* SAT Compare Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A589E03B1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift */,
+				A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */,
 				A589E03D1D69E5C200DEAD84 /* Info.plist */,
 			);
-			path = "SAT Compare TestTests";
+			path = "SAT Compare Tests";
 			sourceTree = "<group>";
 		};
-		A589E0451D69E5C200DEAD84 /* SAT Compare TestUITests */ = {
+		A589E0451D69E5C200DEAD84 /* SAT Compare UITests */ = {
 			isa = PBXGroup;
 			children = (
-				A589E0461D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift */,
+				A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */,
 				A589E0481D69E5C200DEAD84 /* Info.plist */,
 			);
-			path = "SAT Compare TestUITests";
+			path = "SAT Compare UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A589E01F1D69E5C100DEAD84 /* SAT Compare Test */ = {
+		A589E01F1D69E5C100DEAD84 /* SAT Compare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A589E04B1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare Test" */;
+			buildConfigurationList = A589E04B1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare" */;
 			buildPhases = (
 				A589E01C1D69E5C100DEAD84 /* Sources */,
 				A589E01D1D69E5C100DEAD84 /* Frameworks */,
@@ -225,14 +226,14 @@
 			);
 			dependencies = (
 			);
-			name = "SAT Compare Test";
+			name = "SAT Compare";
 			productName = "SAT Compare Test";
-			productReference = A589E0201D69E5C100DEAD84 /* SAT Compare Test.app */;
+			productReference = A589E0201D69E5C100DEAD84 /* SAT Compare.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A589E0361D69E5C200DEAD84 /* SAT Compare TestTests */ = {
+		A589E0361D69E5C200DEAD84 /* SAT Compares */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestTests" */;
+			buildConfigurationList = A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compares" */;
 			buildPhases = (
 				A589E0331D69E5C200DEAD84 /* Sources */,
 				A589E0341D69E5C200DEAD84 /* Frameworks */,
@@ -243,14 +244,14 @@
 			dependencies = (
 				A589E0391D69E5C200DEAD84 /* PBXTargetDependency */,
 			);
-			name = "SAT Compare TestTests";
+			name = "SAT Compares";
 			productName = "SAT Compare TestTests";
-			productReference = A589E0371D69E5C200DEAD84 /* SAT Compare TestTests.xctest */;
+			productReference = A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A589E0411D69E5C200DEAD84 /* SAT Compare TestUITests */ = {
+		A589E0411D69E5C200DEAD84 /* SAT Compare UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestUITests" */;
+			buildConfigurationList = A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare UITests" */;
 			buildPhases = (
 				A589E03E1D69E5C200DEAD84 /* Sources */,
 				A589E03F1D69E5C200DEAD84 /* Frameworks */,
@@ -261,9 +262,9 @@
 			dependencies = (
 				A589E0441D69E5C200DEAD84 /* PBXTargetDependency */,
 			);
-			name = "SAT Compare TestUITests";
+			name = "SAT Compare UITests";
 			productName = "SAT Compare TestUITests";
-			productReference = A589E0421D69E5C200DEAD84 /* SAT Compare TestUITests.xctest */;
+			productReference = A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +296,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A589E01B1D69E5C100DEAD84 /* Build configuration list for PBXProject "SAT Compare Test" */;
+			buildConfigurationList = A589E01B1D69E5C100DEAD84 /* Build configuration list for PBXProject "SAT Compare" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -308,9 +309,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A589E01F1D69E5C100DEAD84 /* SAT Compare Test */,
-				A589E0361D69E5C200DEAD84 /* SAT Compare TestTests */,
-				A589E0411D69E5C200DEAD84 /* SAT Compare TestUITests */,
+				A589E01F1D69E5C100DEAD84 /* SAT Compare */,
+				A589E0361D69E5C200DEAD84 /* SAT Compares */,
+				A589E0411D69E5C200DEAD84 /* SAT Compare UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -374,7 +375,7 @@
 				A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */,
 				A5140E641D75930A00500482 /* MainViewController.swift in Sources */,
 				A506D8811D88642F00196A6B /* DataTableViewController.swift in Sources */,
-				A589E02C1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld in Sources */,
+				A589E02C1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld in Sources */,
 				A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */,
 				A506D8861D88654C00196A6B /* DataTableViewCell.swift in Sources */,
 				A5EC05EA1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */,
@@ -389,7 +390,7 @@
 			files = (
 				A5EC05F01DA26EE1001ACA27 /* MainViewController.swift in Sources */,
 				A5EC05FC1DA26F01001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC060F1DA26F30001ACA27 /* SAT_Compare_Test.xcdatamodeld in Sources */,
+				A5EC060F1DA26F30001ACA27 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC06021DA26F10001ACA27 /* UniversityModel.swift in Sources */,
 				A5EC05EB1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */,
 				A5EC05FA1DA26EFE001ACA27 /* ResultViewController.swift in Sources */,
@@ -398,7 +399,7 @@
 				A5EC05F21DA26EE5001ACA27 /* InfoViewController.swift in Sources */,
 				A5EC05F81DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
 				A5EC05F61DA26EF4001ACA27 /* AppDelegate.swift in Sources */,
-				A589E03C1D69E5C200DEAD84 /* SAT_Compare_TestTests.swift in Sources */,
+				A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */,
 				A5EC06141DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +410,7 @@
 			files = (
 				A5EC05F11DA26EE1001ACA27 /* MainViewController.swift in Sources */,
 				A5EC05FD1DA26F02001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC06101DA26F32001ACA27 /* SAT_Compare_Test.xcdatamodeld in Sources */,
+				A5EC06101DA26F32001ACA27 /* SAT_Compare.xcdatamodeld in Sources */,
 				A5EC06031DA26F10001ACA27 /* UniversityModel.swift in Sources */,
 				A5EC05EC1DA26ED2001ACA27 /* NavigationToMainViewController.swift in Sources */,
 				A5EC05FB1DA26EFF001ACA27 /* ResultViewController.swift in Sources */,
@@ -418,7 +419,7 @@
 				A5EC05F31DA26EE6001ACA27 /* InfoViewController.swift in Sources */,
 				A5EC05F91DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
 				A5EC05F71DA26EF6001ACA27 /* AppDelegate.swift in Sources */,
-				A589E0471D69E5C200DEAD84 /* SAT_Compare_TestUITests.swift in Sources */,
+				A589E0471D69E5C200DEAD84 /* SAT_Compare_UITests.swift in Sources */,
 				A5EC06151DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,12 +429,12 @@
 /* Begin PBXTargetDependency section */
 		A589E0391D69E5C200DEAD84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A589E01F1D69E5C100DEAD84 /* SAT Compare Test */;
+			target = A589E01F1D69E5C100DEAD84 /* SAT Compare */;
 			targetProxy = A589E0381D69E5C200DEAD84 /* PBXContainerItemProxy */;
 		};
 		A589E0441D69E5C200DEAD84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A589E01F1D69E5C100DEAD84 /* SAT Compare Test */;
+			target = A589E01F1D69E5C100DEAD84 /* SAT Compare */;
 			targetProxy = A589E0431D69E5C200DEAD84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -553,9 +554,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PGTYT4WX9;
-				INFOPLIST_FILE = "SAT Compare Test/Info.plist";
+				INFOPLIST_FILE = "SAT Compare/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -566,9 +568,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PGTYT4WX9;
-				INFOPLIST_FILE = "SAT Compare Test/Info.plist";
+				INFOPLIST_FILE = "SAT Compare/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -578,12 +581,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "SAT Compare TestTests/Info.plist";
+				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-TestTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare Test.app/SAT Compare Test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
 			};
 			name = Debug;
 		};
@@ -591,21 +594,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "SAT Compare TestTests/Info.plist";
+				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-TestTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare Test.app/SAT Compare Test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
 			};
 			name = Release;
 		};
 		A589E0521D69E5C200DEAD84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "SAT Compare TestUITests/Info.plist";
+				INFOPLIST_FILE = "SAT Compare UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-TestUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "SAT Compare Test";
@@ -615,9 +618,9 @@
 		A589E0531D69E5C200DEAD84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "SAT Compare TestUITests/Info.plist";
+				INFOPLIST_FILE = "SAT Compare UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-TestUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "SAT Compare Test";
@@ -627,7 +630,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A589E01B1D69E5C100DEAD84 /* Build configuration list for PBXProject "SAT Compare Test" */ = {
+		A589E01B1D69E5C100DEAD84 /* Build configuration list for PBXProject "SAT Compare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A589E0491D69E5C200DEAD84 /* Debug */,
@@ -636,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A589E04B1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare Test" */ = {
+		A589E04B1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A589E04C1D69E5C200DEAD84 /* Debug */,
@@ -645,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestTests" */ = {
+		A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compares" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A589E04F1D69E5C200DEAD84 /* Debug */,
@@ -654,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare TestUITests" */ = {
+		A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A589E0521D69E5C200DEAD84 /* Debug */,
@@ -666,13 +669,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A589E02A1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodeld */ = {
+		A589E02A1D69E5C200DEAD84 /* SAT_Compare.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A589E02B1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodel */,
+				A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */,
 			);
-			currentVersion = A589E02B1D69E5C200DEAD84 /* SAT_Compare_Test.xcdatamodel */;
-			path = SAT_Compare_Test.xcdatamodeld;
+			currentVersion = A589E02B1D69E5C200DEAD84 /* SAT_Compare.xcdatamodel */;
+			path = SAT_Compare.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
