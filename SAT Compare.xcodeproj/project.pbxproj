@@ -279,18 +279,18 @@
 				TargetAttributes = {
 					A589E01F1D69E5C100DEAD84 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7PGTYT4WX9;
+						DevelopmentTeam = K2ZM767CYM;
 						LastSwiftMigration = 0800;
 					};
 					A589E0361D69E5C200DEAD84 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7PGTYT4WX9;
+						DevelopmentTeam = K2ZM767CYM;
 						LastSwiftMigration = 0800;
 						TestTargetID = A589E01F1D69E5C100DEAD84;
 					};
 					A589E0411D69E5C200DEAD84 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7PGTYT4WX9;
+						DevelopmentTeam = K2ZM767CYM;
 						LastSwiftMigration = 0800;
 						TestTargetID = A589E01F1D69E5C100DEAD84;
 					};
@@ -479,6 +479,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -527,6 +528,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -553,11 +555,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7PGTYT4WX9;
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderZou.SATCompare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -567,11 +569,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7PGTYT4WX9;
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderZou.SATCompare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -581,9 +583,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
@@ -594,9 +597,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
@@ -606,9 +610,10 @@
 		A589E0521D69E5C200DEAD84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-UITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "SAT Compare Test";
@@ -618,9 +623,10 @@
 		A589E0531D69E5C200DEAD84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = K2ZM767CYM;
 				INFOPLIST_FILE = "SAT Compare UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-UITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "SAT Compare Test";
