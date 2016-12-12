@@ -39,17 +39,17 @@ class ResultViewController: UIViewController {
     // MARK PREPARATION FOR LATER PARTS
     // get these numbers for later equations in the result view
     // average
-    let MedianPercentile:Int = (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    let MedianPercentile:Int = (selectedUniversity!.topMathPercentile!.intValue + selectedUniversity!.topReadingPercentile!.intValue + selectedUniversity!.bottomMathPercentile!.intValue + selectedUniversity!.bottomReadingPercentile!.intValue)/2
     
-    let TwentyFivePercentile:Int = selectedUniversity!.bottomReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue
+    let TwentyFivePercentile:Int = selectedUniversity!.bottomReadingPercentile!.intValue + selectedUniversity!.bottomMathPercentile!.intValue
     
-    let SeventyFivePercentile:Int = selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.topMathPercentile.intValue
+    let SeventyFivePercentile:Int = selectedUniversity!.topReadingPercentile!.intValue + selectedUniversity!.topMathPercentile!.intValue
     
     // 25th percentile minus difference between 25th percentile and median
-    let ZeroPercentile:Int = 2*(selectedUniversity!.bottomReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue) - (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    let ZeroPercentile:Int = 2*(selectedUniversity!.bottomReadingPercentile!.intValue + selectedUniversity!.bottomMathPercentile!.intValue) - (selectedUniversity!.topMathPercentile!.intValue + selectedUniversity!.topReadingPercentile!.intValue + selectedUniversity!.bottomMathPercentile!.intValue + selectedUniversity!.bottomReadingPercentile!.intValue)/2
     
     // 75th percentile plus difference between 75th percentile and median
-    let HundredPercentile:Int = 2*(selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.topMathPercentile.intValue) - (selectedUniversity!.topMathPercentile.intValue + selectedUniversity!.topReadingPercentile.intValue + selectedUniversity!.bottomMathPercentile.intValue + selectedUniversity!.bottomReadingPercentile.intValue)/2
+    let HundredPercentile:Int = 2*(selectedUniversity!.topReadingPercentile!.intValue + selectedUniversity!.topMathPercentile!.intValue) - (selectedUniversity!.topMathPercentile!.intValue + selectedUniversity!.topReadingPercentile!.intValue + selectedUniversity!.bottomMathPercentile!.intValue + selectedUniversity!.bottomReadingPercentile!.intValue)/2
     
     // this is needed at top for determining the student SAT percentile
     var studentSATPercentile:Int = 0
@@ -84,7 +84,7 @@ class ResultViewController: UIViewController {
         self.comesFromMainView()
         
         // presentation based on different ACT/SAT, language, score
-        self.presentationBasedOnSelectedVariables()
+        self.presentationBasedOnSelectedVariables()        
     ////
     }
     

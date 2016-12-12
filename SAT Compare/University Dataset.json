@@ -711,6 +711,15 @@
   "25PercentACT": null,
   "75PercentACT": null
   }, {
+  "name": "Saint Louis University",
+  "中文名字": "圣路易斯大学",
+  "25PercentReading": null,
+  "25PercentMath": null,
+  "75PercentReading": null,
+  "75PercentMath": null,
+  "25PercentACT": 24,
+  "75PercentACT": 30
+  }, {
   "name": "Scripps College",
   "中文名字": "斯克利普斯学院(女校)",
   "25PercentReading": 650,

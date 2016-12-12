@@ -41,8 +41,10 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         中文 = appuserDefaults.bool(forKey: "language")
         
         // get data from the data model
-        self.totalData = self.model.getData()
-        
+        self.totalData = self.model.getData().filter({ (data:UniversityData) -> Bool in
+            return (data.bottomReadingPercentile != nil)
+        })
+    
         // set up the search controller
         self.searchcontroller = UISearchController(searchResultsController: self.searchResultsController)
         self.tableView.tableHeaderView = self.searchcontroller.searchBar

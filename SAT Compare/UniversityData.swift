@@ -13,13 +13,15 @@ import CoreData
 class UniversityData: NSManagedObject {
     @NSManaged var universityName:String
     @NSManaged var chineseName:String
-    @NSManaged var bottomReadingPercentile:NSNumber
-    @NSManaged var bottomMathPercentile:NSNumber
-    @NSManaged var topReadingPercentile:NSNumber
-    @NSManaged var topMathPercentile:NSNumber
+    @NSManaged var bottomReadingPercentile:NSNumber?
+    @NSManaged var bottomMathPercentile:NSNumber?
+    @NSManaged var topReadingPercentile:NSNumber?
+    @NSManaged var topMathPercentile:NSNumber?
     @NSManaged var studentData:Bool
     @NSManaged var order: Int16
     @NSManaged var savedStudentSAT:String
     @NSManaged var savedStudentPercentile:String
+    @NSManaged var bottomACT:NSNumber?
+    @NSManaged var topACT:NSNumber?
 
 }

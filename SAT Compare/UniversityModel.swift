@@ -42,12 +42,14 @@ class UniversityModel: NSObject {
             // assign the value of each key value pair to the UniversityData object
             oneUniversity.universityName = jsonDictionary["name"] as! String
             oneUniversity.chineseName = jsonDictionary["中文名字"] as! String
-            oneUniversity.bottomReadingPercentile = jsonDictionary["25PercentReading"] as! NSNumber
-            oneUniversity.bottomMathPercentile = jsonDictionary["25PercentMath"] as! NSNumber
-            oneUniversity.topReadingPercentile = jsonDictionary["75PercentReading"] as! NSNumber
-            oneUniversity.topMathPercentile = jsonDictionary["75PercentMath"] as! NSNumber
+            oneUniversity.bottomReadingPercentile = jsonDictionary["25PercentReading"] as? NSNumber
+            oneUniversity.bottomMathPercentile = jsonDictionary["25PercentMath"] as? NSNumber
+            oneUniversity.topReadingPercentile = jsonDictionary["75PercentReading"] as? NSNumber
+            oneUniversity.topMathPercentile = jsonDictionary["75PercentMath"] as? NSNumber
+            // note that if there is no ACT data, oneUniversity.bottomACT = nil
+            oneUniversity.bottomACT = jsonDictionary["25PercentACT"] as? NSNumber
+            oneUniversity.topACT = jsonDictionary["75PercentACT"] as? NSNumber
             oneUniversity.studentData = false
-            
             universityDataObjects.append(oneUniversity)
         ////
         }

@@ -112,6 +112,7 @@
 		A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_UITests.swift; sourceTree = "<group>"; };
 		A589E0481D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UniversitySearchTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A58BED7E1DFE1738004317CD /* SAT_Compare 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SAT_Compare 2.xcdatamodel"; sourceTree = "<group>"; };
 		A5BFB9251D76C88D004F62AC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResultViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NavigationToMainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationToMainViewController.xib; sourceTree = "<group>"; };
@@ -678,9 +679,10 @@
 		A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A58BED7E1DFE1738004317CD /* SAT_Compare 2.xcdatamodel */,
 				A57FA1C11DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodel */,
 			);
-			currentVersion = A57FA1C11DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodel */;
+			currentVersion = A58BED7E1DFE1738004317CD /* SAT_Compare 2.xcdatamodel */;
 			path = SAT_Compare.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
