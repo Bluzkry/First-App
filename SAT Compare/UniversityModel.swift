@@ -27,7 +27,7 @@ class UniversityModel: NSObject {
         let managedContext = appDelegate.persistentContainer.viewContext
         
         // create a new data entity
-        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)
+        let studentUniversityDataEntity = NSEntityDescription.entity(forEntityName: "UniversityData", in: managedContext)//a
         
         // loop through each dictionary and assign values to our UniversityData objects
         for i in 0...(jsonObjects.count-1) {
