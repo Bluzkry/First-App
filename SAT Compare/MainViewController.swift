@@ -12,6 +12,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    // MARK
     // MARK: PROPERTIES
     
     @IBOutlet weak var universitySearchQuestion: UILabel!
@@ -38,6 +39,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    // MARK
     // MARK: VIEW LIFE CYCLE
     
     override func viewDidLoad() {
@@ -68,6 +70,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    // MARK
     // MARK: SET-UP
     
     func setTest() {
@@ -87,7 +90,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             setButtonFonts(selectedButton: SATButton, unselectedButton: ACTButton)
         }
 
-        // change app title; other titles to be changes are done be reloading setLanguage
+        // change app title; other titles to be changes are done by reloading setLanguage
         appTitle.text = "\(test!) Compare"
         setLanguage()
     }
@@ -250,6 +253,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    // MARK
     // MARK: ACTIONS AND SEGUES
     
     @IBAction func universitySearchTextField(_ sender: AnyObject) {
@@ -335,22 +339,22 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         appUserDefaults.set("SAT", forKey: "test")
         setTest()
         
-        buttonPressedTransition()
+        // add fade transition
+        buttonPressedFadeTransition()
     }
 
     @IBAction func ACTButtonPressed(_ sender: UIButton) {
         appUserDefaults.set("ACT", forKey: "test")
         setTest()
         
-        buttonPressedTransition()
+        buttonPressedFadeTransition()
     }
     
     @IBAction func englishButtonPressed(_ sender: UIButton) {
         appUserDefaults.set(false, forKey: "language")
         setLanguage()
         
-        // add fade transition
-        buttonPressedTransition()
+        buttonPressedFadeTransition()
         
         // post notification to reload the table view so that the language changes
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
@@ -360,13 +364,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         appUserDefaults.set(true, forKey: "language")
         setLanguage()
         
-        buttonPressedTransition()
+        buttonPressedFadeTransition()
         
-        // post notification to reload the table view so that the language changes
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    func buttonPressedTransition() {
+    func buttonPressedFadeTransition() {
         let languageTransition = CATransition()
         languageTransition.type = kCATransitionFade
         languageTransition.duration = 0.75

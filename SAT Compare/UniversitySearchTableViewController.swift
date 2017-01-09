@@ -10,8 +10,10 @@ import UIKit
 
 class UniversitySearchController: UITableViewController, UISearchResultsUpdating {
     
+
+    
     // MARK
-    // MARK VARIABLES
+    // MARK: PROPERTIES
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
@@ -32,8 +34,11 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     let appuserDefaults = UserDefaults.standard
     var 中文:Bool?
     
+
+    
     // MARK
-    // MARK VIEW LIFE CYCLE
+    // MARK: VIEW LIFE CYCLE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,8 +74,11 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-    // MARK TABLE SET-UP
+    
+    
+    // MARK
+    // MARK: TABLE SET-UP
+    
     // number of sections is 1
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -123,8 +131,11 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
         self.performSegue(withIdentifier: "segueToMainViewController", sender: self)
     }
     
+
+    
     // MARK
-    // MARK SEARCH
+    // MARK: SEARCH
+    
     func updateSearchResults(for searchController: UISearchController) {
     ////
         // filter through the universities
@@ -144,8 +155,11 @@ class UniversitySearchController: UITableViewController, UISearchResultsUpdating
     ////
     }
     
+    
+    
     // MARK
-    // PREPARE FOR SEGUE
+    // MARK: PREPARE FOR SEGUE
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueCancel" {
             selectedUniversity = nil
