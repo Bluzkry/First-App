@@ -10,28 +10,36 @@ import UIKit
 
 class MainViewController: UIViewController, UITextFieldDelegate {
     
-    // MARK
-    // MARK PROPERTIES
+    
+    
+    // MARK: PROPERTIES
+    
     @IBOutlet weak var universitySearchQuestion: UILabel!
     @IBOutlet weak var universitySearchBackground: UIView!
     @IBOutlet weak var universitySearchTextField: UITextField!
 
+    @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var SATBackground: UIView!
     @IBOutlet weak var studentSATQuestion: UILabel!
     @IBOutlet weak var studentSATTextField: UITextField!
     
+    @IBOutlet weak var SATButton: UIButton!
+    @IBOutlet weak var ACTButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var 中文Button: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
     
-    // necessary to save 中文 variable
+    // necessary to save 中文 and SAT/ACT variable
     let appUserDefaults = UserDefaults.standard
-    var 中文:Bool?
+    var 中文: Bool?
+    var test: String?
     
-    // MARK
-    // MARK VIEW LIFE CYCLE
+    
+    
+    // MARK: VIEW LIFE CYCLE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +52,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.SATBackground.layer.cornerRadius = 6
         self.infoButton.layer.cornerRadius = 10
         
+        setTest()
         setLanguage()
         setStudentSATTextField()
         
@@ -57,12 +66,36 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK
-    // MARK SET-UP
+    
+    
+    // MARK: SET-UP
+    
+    func setTest() {
+        // set appUserDefaults
+        test = appUserDefaults.object(forKey: "test") as! String?
+        // when the app is first loaded, we set the test to sat
+        if test == nil {
+            test = "SAT"
+            appUserDefaults.set("SAT", forKey: "test")
+        }
+        
+        // buttons
+        switch test! {
+        case "ACT":
+            setButtonFonts(selectedButton: ACTButton, unselectedButton: SATButton)
+        default:
+            setButtonFonts(selectedButton: SATButton, unselectedButton: ACTButton)
+        }
+
+        // change app title; other titles to be changes are done be reloading setLanguage
+        appTitle.text = "\(test!) Compare"
+        setLanguage()
+    }
+    
     func setLanguage() {
     ////
     ////
-        // set nsappUserDefaults
+        // set appUserDefaults
         中文 = appUserDefaults.object(forKey: "language") as! Bool?
         // when the app is first loaded, we set the language to english
         if 中文 == nil {
@@ -73,11 +106,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         switch 中文! {
         case false:
             // language buttons
-            englishButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17.0)
-            中文Button.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 15.0)
+            setButtonFonts(selectedButton: englishButton, unselectedButton: 中文Button)
         ////
             // question text
-            studentSATQuestion.text = "What is your SAT score?"
+            studentSATQuestion.text = "What is your \(test!) score?"
             universitySearchQuestion.text = "What university are you interested in?"
             // put the text for the university name (if it exists from the university search) and adjust the size
             if let existingSelectedUniversity = selectedUniversity {
@@ -110,10 +142,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     ////
     ////
         case true:
-            englishButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 17.0)
-            中文Button.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 15.0)
+            setButtonFonts(selectedButton: 中文Button, unselectedButton: englishButton)
         ////
-            studentSATQuestion.text = "  你的SAT分数："
+            studentSATQuestion.text = "  你的\(test!)分数："
             universitySearchQuestion.text = "  你对哪些大学感兴趣？"
             if let existingSelectedUniversity = selectedUniversity {
                 universitySearchTextField.text = existingSelectedUniversity.chineseName
@@ -142,6 +173,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     ////
     ////
     }
+    
+    func setButtonFonts(selectedButton: UIButton, unselectedButton: UIButton) {
+        selectedButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 20.0)
+        unselectedButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 18.0)
+    }
+    
     
     func setStudentSATTextField() {
     ////
@@ -211,8 +248,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK
-    // MARK ACTIONS AND SEGUES
+    
+    
+    // MARK: ACTIONS AND SEGUES
+    
     @IBAction func universitySearchTextField(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "segueToSearchController", sender: self)
     }
@@ -292,34 +331,47 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         studentSAT = nil
     }
     
+    @IBAction func SATButtonPressed(_ sender: UIButton) {
+        appUserDefaults.set("SAT", forKey: "test")
+        setTest()
+        
+        buttonPressedTransition()
+    }
 
-    @IBAction func englishButtonPressed(_ sender: AnyObject) {
+    @IBAction func ACTButtonPressed(_ sender: UIButton) {
+        appUserDefaults.set("ACT", forKey: "test")
+        setTest()
+        
+        buttonPressedTransition()
+    }
+    
+    @IBAction func englishButtonPressed(_ sender: UIButton) {
         appUserDefaults.set(false, forKey: "language")
         setLanguage()
         
         // add fade transition
-        let languageTransition = CATransition()
-        languageTransition.type = kCATransitionFade
-        languageTransition.duration = 0.75
-        languageTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        view.layer.add(languageTransition, forKey: nil)
+        buttonPressedTransition()
         
         // post notification to reload the table view so that the language changes
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    @IBAction func 中文ButtonPressed(_ sender: AnyObject) {
+    @IBAction func 中文ButtonPressed(_ sender: UIButton) {
         appUserDefaults.set(true, forKey: "language")
         setLanguage()
         
+        buttonPressedTransition()
+        
+        // post notification to reload the table view so that the language changes
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    func buttonPressedTransition() {
         let languageTransition = CATransition()
         languageTransition.type = kCATransitionFade
         languageTransition.duration = 0.75
         languageTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         view.layer.add(languageTransition, forKey: nil)
-        
-        // post notification to reload the table view so that the language changes
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

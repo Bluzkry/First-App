@@ -9,76 +9,27 @@
 /* Begin PBXBuildFile section */
 		A506D8811D88642F00196A6B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
 		A506D8861D88654C00196A6B /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
-		A506D8891D88654C00196A6B /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
-		A50E4C741D85C7F100328716 /* DataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50E4C701D85C7F100328716 /* DataTableViewController.xib */; };
 		A5140E641D75930A00500482 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* MainViewController.swift */; };
 		A528FD0A1D6A099B00FD012D /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
 		A528FD0C1D6A09B900FD012D /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
 		A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */ = {isa = PBXBuildFile; fileRef = A528FD0D1D6A09C100FD012D /* University Dataset.json */; };
 		A54CAE361D83417F00C4673F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CAE351D83417F00C4673F /* InfoViewController.swift */; };
 		A57FA1C21DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
-		A57FA1C31DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
-		A57FA1C41DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */; };
 		A589E0241D69E5C100DEAD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
 		A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
 		A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
 		A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
-		A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */; };
 		A589E0471D69E5C200DEAD84 /* SAT_Compare_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */; };
 		A589E0551D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
+		A594B7291E234D6C0046C689 /* SAT_Compare_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B7281E234D6C0046C689 /* SAT_Compare_Tests.swift */; };
+		A594B7741E2382560046C689 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594B7731E2382560046C689 /* MockUserDefaults.swift */; };
 		A5BFB9261D76C88D004F62AC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
 		A5EC05EA1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */; };
-		A5EC05EB1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */; };
-		A5EC05EC1DA26ED2001ACA27 /* NavigationToMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */; };
-		A5EC05ED1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */; };
-		A5EC05EE1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */; };
-		A5EC05EF1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */; };
-		A5EC05F01DA26EE1001ACA27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* MainViewController.swift */; };
-		A5EC05F11DA26EE1001ACA27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5140E631D75930A00500482 /* MainViewController.swift */; };
-		A5EC05F21DA26EE5001ACA27 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CAE351D83417F00C4673F /* InfoViewController.swift */; };
-		A5EC05F31DA26EE6001ACA27 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CAE351D83417F00C4673F /* InfoViewController.swift */; };
-		A5EC05F41DA26EF0001ACA27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
-		A5EC05F51DA26EF0001ACA27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E0271D69E5C100DEAD84 /* Main.storyboard */; };
-		A5EC05F61DA26EF4001ACA27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
-		A5EC05F71DA26EF6001ACA27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0231D69E5C100DEAD84 /* AppDelegate.swift */; };
-		A5EC05F81DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
-		A5EC05F91DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */; };
-		A5EC05FA1DA26EFE001ACA27 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
-		A5EC05FB1DA26EFF001ACA27 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB9251D76C88D004F62AC /* ResultViewController.swift */; };
-		A5EC05FC1DA26F01001ACA27 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
-		A5EC05FD1DA26F02001ACA27 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8801D88642F00196A6B /* DataTableViewController.swift */; };
-		A5EC05FE1DA26F08001ACA27 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
-		A5EC05FF1DA26F09001ACA27 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506D8841D88654C00196A6B /* DataTableViewCell.swift */; };
-		A5EC06001DA26F0C001ACA27 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
-		A5EC06011DA26F0D001ACA27 /* UniversityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD091D6A099B00FD012D /* UniversityData.swift */; };
-		A5EC06021DA26F10001ACA27 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
-		A5EC06031DA26F10001ACA27 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528FD0B1D6A09B900FD012D /* UniversityModel.swift */; };
-		A5EC06041DA26F15001ACA27 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
-		A5EC06051DA26F15001ACA27 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A506D8851D88654C00196A6B /* DataTableViewCell.xib */; };
-		A5EC06061DA26F1C001ACA27 /* University Dataset.json in Resources */ = {isa = PBXBuildFile; fileRef = A528FD0D1D6A09C100FD012D /* University Dataset.json */; };
-		A5EC06071DA26F1D001ACA27 /* University Dataset.json in Resources */ = {isa = PBXBuildFile; fileRef = A528FD0D1D6A09C100FD012D /* University Dataset.json */; };
-		A5EC06081DA26F20001ACA27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
-		A5EC06091DA26F21001ACA27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A589E02D1D69E5C200DEAD84 /* Assets.xcassets */; };
-		A5EC060A1DA26F27001ACA27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
 		A5EC060B1DA26F28001ACA27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */; };
-		A5EC060D1DA26F2C001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
-		A5EC060E1DA26F2D001ACA27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A589E0321D69E5C200DEAD84 /* Info.plist */; };
 		A5EC06131DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
-		A5EC06141DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
-		A5EC06151DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */; };
-		A5EC06161DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */; };
-		A5EC06171DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */; };
-		A5EC06181DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A589E0381D69E5C200DEAD84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A589E0181D69E5C100DEAD84 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A589E01F1D69E5C100DEAD84;
-			remoteInfo = "SAT Compare Test";
-		};
 		A589E0431D69E5C200DEAD84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A589E0181D69E5C100DEAD84 /* Project object */;
@@ -86,13 +37,18 @@
 			remoteGlobalIDString = A589E01F1D69E5C100DEAD84;
 			remoteInfo = "SAT Compare Test";
 		};
+		A594B72B1E234D6C0046C689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A589E0181D69E5C100DEAD84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A589E01F1D69E5C100DEAD84;
+			remoteInfo = "SAT Compare";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A506D8801D88642F00196A6B /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A506D8841D88654C00196A6B /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DataTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		A506D8851D88654C00196A6B /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
-		A50E4C701D85C7F100328716 /* DataTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewController.xib; sourceTree = "<group>"; };
 		A5140E631D75930A00500482 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A528FD091D6A099B00FD012D /* UniversityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityData.swift; sourceTree = "<group>"; };
 		A528FD0B1D6A09B900FD012D /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
@@ -105,30 +61,22 @@
 		A589E02D1D69E5C200DEAD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A589E0301D69E5C200DEAD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A589E0321D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compares.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_Tests.swift; sourceTree = "<group>"; };
-		A589E03D1D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A589E0461D69E5C200DEAD84 /* SAT_Compare_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_UITests.swift; sourceTree = "<group>"; };
 		A589E0481D69E5C200DEAD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UniversitySearchTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A58BED7E1DFE1738004317CD /* SAT_Compare 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SAT_Compare 2.xcdatamodel"; sourceTree = "<group>"; };
+		A594B7261E234D6B0046C689 /* SAT Compare Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SAT Compare Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A594B7281E234D6C0046C689 /* SAT_Compare_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT_Compare_Tests.swift; sourceTree = "<group>"; };
+		A594B72A1E234D6C0046C689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A594B7731E2382560046C689 /* MockUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		A5BFB9251D76C88D004F62AC /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResultViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NavigationToMainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationToMainViewController.xib; sourceTree = "<group>"; };
 		A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NavigationToDataTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationToDataTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A589E01D1D69E5C100DEAD84 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A589E0341D69E5C200DEAD84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,6 +90,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A594B7231E234D6B0046C689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				A589E0221D69E5C100DEAD84 /* SAT Compare  */,
-				A589E03A1D69E5C200DEAD84 /* SAT Compare Tests */,
+				A594B7271E234D6C0046C689 /* SAT Compare Tests */,
 				A589E0451D69E5C200DEAD84 /* SAT Compare UITests */,
 				A589E0211D69E5C100DEAD84 /* Products */,
 			);
@@ -159,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				A589E0201D69E5C100DEAD84 /* SAT Compare.app */,
-				A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */,
 				A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */,
+				A594B7261E234D6B0046C689 /* SAT Compare Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,39 +123,16 @@
 		A589E0221D69E5C100DEAD84 /* SAT Compare  */ = {
 			isa = PBXGroup;
 			children = (
-				A589E0231D69E5C100DEAD84 /* AppDelegate.swift */,
-				A589E0271D69E5C100DEAD84 /* Main.storyboard */,
-				A54CAE351D83417F00C4673F /* InfoViewController.swift */,
-				A5140E631D75930A00500482 /* MainViewController.swift */,
-				A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */,
-				A5EC05E91DA26ED1001ACA27 /* NavigationToMainViewController.xib */,
-				A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */,
-				A5BFB9251D76C88D004F62AC /* ResultViewController.swift */,
-				A506D8801D88642F00196A6B /* DataTableViewController.swift */,
-				A50E4C701D85C7F100328716 /* DataTableViewController.xib */,
-				A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */,
-				A5EC06121DA270A9001ACA27 /* NavigationToDataTableViewController.xib */,
-				A506D8841D88654C00196A6B /* DataTableViewCell.swift */,
-				A528FD091D6A099B00FD012D /* UniversityData.swift */,
-				A528FD0B1D6A09B900FD012D /* UniversityModel.swift */,
-				A506D8851D88654C00196A6B /* DataTableViewCell.xib */,
-				A528FD0D1D6A09C100FD012D /* University Dataset.json */,
-				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
-				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
-				A589E0321D69E5C200DEAD84 /* Info.plist */,
-				A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */,
+				A594B7181E2329DC0046C689 /* AppDelegate */,
+				A594B7171E2329D50046C689 /* Models */,
+				A594B7161E2329CB0046C689 /* Navigation */,
+				A594B7151E2329BE0046C689 /* Resources */,
+				A594B7141E2329B70046C689 /* Supporting Files */,
+				A594B7131E2329AB0046C689 /* View Controllers */,
+				A594B7121E2329970046C689 /* Views */,
 			);
 			name = "SAT Compare ";
 			path = "SAT Compare";
-			sourceTree = "<group>";
-		};
-		A589E03A1D69E5C200DEAD84 /* SAT Compare Tests */ = {
-			isa = PBXGroup;
-			children = (
-				A589E03B1D69E5C200DEAD84 /* SAT_Compare_Tests.swift */,
-				A589E03D1D69E5C200DEAD84 /* Info.plist */,
-			);
-			path = "SAT Compare Tests";
 			sourceTree = "<group>";
 		};
 		A589E0451D69E5C200DEAD84 /* SAT Compare UITests */ = {
@@ -210,6 +142,106 @@
 				A589E0481D69E5C200DEAD84 /* Info.plist */,
 			);
 			path = "SAT Compare UITests";
+			sourceTree = "<group>";
+		};
+		A594B7121E2329970046C689 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A589E02F1D69E5C200DEAD84 /* LaunchScreen.storyboard */,
+				A589E0271D69E5C100DEAD84 /* Main.storyboard */,
+				A506D8841D88654C00196A6B /* DataTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A594B7131E2329AB0046C689 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A54CAE351D83417F00C4673F /* InfoViewController.swift */,
+				A5140E631D75930A00500482 /* MainViewController.swift */,
+				A589E0541D69E5FD00DEAD84 /* UniversitySearchTableViewController.swift */,
+				A5BFB9251D76C88D004F62AC /* ResultViewController.swift */,
+				A506D8801D88642F00196A6B /* DataTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A594B7141E2329B70046C689 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A589E0321D69E5C200DEAD84 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A594B7151E2329BE0046C689 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A528FD0D1D6A09C100FD012D /* University Dataset.json */,
+				A589E02D1D69E5C200DEAD84 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A594B7161E2329CB0046C689 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC05E81DA26ED1001ACA27 /* NavigationToMainViewController.swift */,
+				A5EC06111DA270A9001ACA27 /* NavigationToDataTableViewController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		A594B7171E2329D50046C689 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A528FD0B1D6A09B900FD012D /* UniversityModel.swift */,
+				A528FD091D6A099B00FD012D /* UniversityData.swift */,
+				A57FA1C01DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A594B7181E2329DC0046C689 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A589E0231D69E5C100DEAD84 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A594B7271E234D6C0046C689 /* SAT Compare Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A594B7701E2382050046C689 /* Cases */,
+				A594B7711E23820E0046C689 /* Mocks */,
+				A594B7721E23821B0046C689 /* Supporting Files */,
+			);
+			path = "SAT Compare Tests";
+			sourceTree = "<group>";
+		};
+		A594B7701E2382050046C689 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				A594B7281E234D6C0046C689 /* SAT_Compare_Tests.swift */,
+			);
+			name = Cases;
+			sourceTree = "<group>";
+		};
+		A594B7711E23820E0046C689 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A594B7731E2382560046C689 /* MockUserDefaults.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
+		A594B7721E23821B0046C689 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A594B72A1E234D6C0046C689 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,24 +264,6 @@
 			productReference = A589E0201D69E5C100DEAD84 /* SAT Compare.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A589E0361D69E5C200DEAD84 /* SAT Compares */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compares" */;
-			buildPhases = (
-				A589E0331D69E5C200DEAD84 /* Sources */,
-				A589E0341D69E5C200DEAD84 /* Frameworks */,
-				A589E0351D69E5C200DEAD84 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A589E0391D69E5C200DEAD84 /* PBXTargetDependency */,
-			);
-			name = "SAT Compares";
-			productName = "SAT Compare TestTests";
-			productReference = A589E0371D69E5C200DEAD84 /* SAT Compares.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		A589E0411D69E5C200DEAD84 /* SAT Compare UITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare UITests" */;
@@ -268,13 +282,31 @@
 			productReference = A589E0421D69E5C200DEAD84 /* SAT Compare UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A594B7251E234D6B0046C689 /* SAT Compare Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A594B72D1E234D6C0046C689 /* Build configuration list for PBXNativeTarget "SAT Compare Tests" */;
+			buildPhases = (
+				A594B7221E234D6B0046C689 /* Sources */,
+				A594B7231E234D6B0046C689 /* Frameworks */,
+				A594B7241E234D6B0046C689 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A594B72C1E234D6C0046C689 /* PBXTargetDependency */,
+			);
+			name = "SAT Compare Tests";
+			productName = "SAT Compare Tests";
+			productReference = A594B7261E234D6B0046C689 /* SAT Compare Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A589E0181D69E5C100DEAD84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Alexander Zou";
 				TargetAttributes = {
@@ -283,16 +315,16 @@
 						DevelopmentTeam = K2ZM767CYM;
 						LastSwiftMigration = 0800;
 					};
-					A589E0361D69E5C200DEAD84 = {
+					A589E0411D69E5C200DEAD84 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = K2ZM767CYM;
 						LastSwiftMigration = 0800;
 						TestTargetID = A589E01F1D69E5C100DEAD84;
 					};
-					A589E0411D69E5C200DEAD84 = {
-						CreatedOnToolsVersion = 7.3.1;
+					A594B7251E234D6B0046C689 = {
+						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = K2ZM767CYM;
-						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = A589E01F1D69E5C100DEAD84;
 					};
 				};
@@ -311,8 +343,8 @@
 			projectRoot = "";
 			targets = (
 				A589E01F1D69E5C100DEAD84 /* SAT Compare */,
-				A589E0361D69E5C200DEAD84 /* SAT Compares */,
 				A589E0411D69E5C200DEAD84 /* SAT Compare UITests */,
+				A594B7251E234D6B0046C689 /* SAT Compare Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,29 +354,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5EC05ED1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */,
 				A589E0311D69E5C200DEAD84 /* LaunchScreen.storyboard in Resources */,
 				A589E02E1D69E5C200DEAD84 /* Assets.xcassets in Resources */,
-				A5EC06161DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */,
 				A589E0291D69E5C100DEAD84 /* Main.storyboard in Resources */,
 				A528FD0E1D6A09C100FD012D /* University Dataset.json in Resources */,
-				A506D8891D88654C00196A6B /* DataTableViewCell.xib in Resources */,
-				A50E4C741D85C7F100328716 /* DataTableViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A589E0351D69E5C200DEAD84 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5EC05EE1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */,
-				A5EC06041DA26F15001ACA27 /* DataTableViewCell.xib in Resources */,
-				A5EC05F41DA26EF0001ACA27 /* Main.storyboard in Resources */,
-				A5EC060A1DA26F27001ACA27 /* LaunchScreen.storyboard in Resources */,
-				A5EC06171DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */,
-				A5EC06061DA26F1C001ACA27 /* University Dataset.json in Resources */,
-				A5EC06081DA26F20001ACA27 /* Assets.xcassets in Resources */,
-				A5EC060D1DA26F2C001ACA27 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,14 +365,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5EC05EF1DA26ED2001ACA27 /* NavigationToMainViewController.xib in Resources */,
-				A5EC06051DA26F15001ACA27 /* DataTableViewCell.xib in Resources */,
-				A5EC05F51DA26EF0001ACA27 /* Main.storyboard in Resources */,
 				A5EC060B1DA26F28001ACA27 /* LaunchScreen.storyboard in Resources */,
-				A5EC06181DA270A9001ACA27 /* NavigationToDataTableViewController.xib in Resources */,
-				A5EC06071DA26F1D001ACA27 /* University Dataset.json in Resources */,
-				A5EC06091DA26F21001ACA27 /* Assets.xcassets in Resources */,
-				A5EC060E1DA26F2D001ACA27 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A594B7241E234D6B0046C689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,58 +398,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A589E0331D69E5C200DEAD84 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5EC05F01DA26EE1001ACA27 /* MainViewController.swift in Sources */,
-				A5EC05FC1DA26F01001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC06021DA26F10001ACA27 /* UniversityModel.swift in Sources */,
-				A5EC05EB1DA26ED1001ACA27 /* NavigationToMainViewController.swift in Sources */,
-				A5EC05FA1DA26EFE001ACA27 /* ResultViewController.swift in Sources */,
-				A5EC05FE1DA26F08001ACA27 /* DataTableViewCell.swift in Sources */,
-				A5EC06001DA26F0C001ACA27 /* UniversityData.swift in Sources */,
-				A5EC05F21DA26EE5001ACA27 /* InfoViewController.swift in Sources */,
-				A57FA1C31DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */,
-				A5EC05F81DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
-				A5EC05F61DA26EF4001ACA27 /* AppDelegate.swift in Sources */,
-				A589E03C1D69E5C200DEAD84 /* SAT_Compare_Tests.swift in Sources */,
-				A5EC06141DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A589E03E1D69E5C200DEAD84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5EC05F11DA26EE1001ACA27 /* MainViewController.swift in Sources */,
-				A5EC05FD1DA26F02001ACA27 /* DataTableViewController.swift in Sources */,
-				A5EC06031DA26F10001ACA27 /* UniversityModel.swift in Sources */,
-				A5EC05EC1DA26ED2001ACA27 /* NavigationToMainViewController.swift in Sources */,
-				A5EC05FB1DA26EFF001ACA27 /* ResultViewController.swift in Sources */,
-				A5EC05FF1DA26F09001ACA27 /* DataTableViewCell.swift in Sources */,
-				A5EC06011DA26F0D001ACA27 /* UniversityData.swift in Sources */,
-				A5EC05F31DA26EE6001ACA27 /* InfoViewController.swift in Sources */,
-				A57FA1C41DC5DD3D0096F7A9 /* SAT_Compare.xcdatamodeld in Sources */,
-				A5EC05F91DA26EFB001ACA27 /* UniversitySearchTableViewController.swift in Sources */,
-				A5EC05F71DA26EF6001ACA27 /* AppDelegate.swift in Sources */,
 				A589E0471D69E5C200DEAD84 /* SAT_Compare_UITests.swift in Sources */,
-				A5EC06151DA270A9001ACA27 /* NavigationToDataTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A594B7221E234D6B0046C689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A594B7741E2382560046C689 /* MockUserDefaults.swift in Sources */,
+				A594B7291E234D6C0046C689 /* SAT_Compare_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A589E0391D69E5C200DEAD84 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A589E01F1D69E5C100DEAD84 /* SAT Compare */;
-			targetProxy = A589E0381D69E5C200DEAD84 /* PBXContainerItemProxy */;
-		};
 		A589E0441D69E5C200DEAD84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A589E01F1D69E5C100DEAD84 /* SAT Compare */;
 			targetProxy = A589E0431D69E5C200DEAD84 /* PBXContainerItemProxy */;
+		};
+		A594B72C1E234D6C0046C689 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A589E01F1D69E5C100DEAD84 /* SAT Compare */;
+			targetProxy = A594B72B1E234D6C0046C689 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -557,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2ZM767CYM;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "SAT Compare/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -571,40 +562,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K2ZM767CYM;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "SAT Compare/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderZou.SATCompare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		A589E04F1D69E5C200DEAD84 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = K2ZM767CYM;
-				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
-			};
-			name = Debug;
-		};
-		A589E0501D69E5C200DEAD84 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = K2ZM767CYM;
-				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
 			};
 			name = Release;
 		};
@@ -616,8 +580,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "SAT Compare Test";
+				TEST_TARGET_NAME = "SAT Compare";
 			};
 			name = Debug;
 		};
@@ -629,8 +594,42 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SATCompare-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "SAT Compare Test";
+				TEST_TARGET_NAME = "SAT Compare";
+			};
+			name = Release;
+		};
+		A594B72E1E234D6C0046C689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = K2ZM767CYM;
+				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
+			};
+			name = Debug;
+		};
+		A594B72F1E234D6C0046C689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = K2ZM767CYM;
+				INFOPLIST_FILE = "SAT Compare Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexanderZou.SAT-Compare-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAT Compare.app/SAT Compare";
 			};
 			name = Release;
 		};
@@ -655,15 +654,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A589E04E1D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compares" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A589E04F1D69E5C200DEAD84 /* Debug */,
-				A589E0501D69E5C200DEAD84 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A589E0511D69E5C200DEAD84 /* Build configuration list for PBXNativeTarget "SAT Compare UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -672,6 +662,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A594B72D1E234D6C0046C689 /* Build configuration list for PBXNativeTarget "SAT Compare Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A594B72E1E234D6C0046C689 /* Debug */,
+				A594B72F1E234D6C0046C689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

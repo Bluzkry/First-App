@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A589E0361D69E5C200DEAD84"
-               BuildableName = "SAT Compares.xctest"
-               BlueprintName = "SAT Compares"
+               BuildableName = "SAT Compare Unit Tests.xctest"
+               BlueprintName = "SAT Compare Unit Tests"
                ReferencedContainer = "container:SAT Compare.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,6 +45,16 @@
                BlueprintIdentifier = "A589E0411D69E5C200DEAD84"
                BuildableName = "SAT Compare UITests.xctest"
                BlueprintName = "SAT Compare UITests"
+               ReferencedContainer = "container:SAT Compare.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A594B7251E234D6B0046C689"
+               BuildableName = "SAT Compare Tests.xctest"
+               BlueprintName = "SAT Compare Tests"
                ReferencedContainer = "container:SAT Compare.xcodeproj">
             </BuildableReference>
          </TestableReference>

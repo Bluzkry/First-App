@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfx-md-h5N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfx-md-h5N">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,7 +53,7 @@
         <!--Main View Controller-->
         <scene sceneID="OBw-xk-jO1">
             <objects>
-                <viewController id="ziS-gR-eeH" customClass="MainViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="ziS-gR-eeH" customClass="MainViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4mb-2I-Mtf"/>
                         <viewControllerLayoutGuide type="bottom" id="nIl-DR-GEh"/>
@@ -67,16 +67,16 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAT Compare" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAv-Jc-41K" userLabel="Title">
-                                <rect key="frame" x="78" y="96.5" width="219.5" height="40"/>
+                                <rect key="frame" x="78.5" y="97" width="219.5" height="40"/>
                                 <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="36"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-h0-mMZ" userLabel="University Stack View Background">
-                                <rect key="frame" x="46.5" y="380.5" width="282" height="73"/>
+                                <rect key="frame" x="46.5" y="381" width="282" height="73"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-Aw-VIb" userLabel="University Stack View">
-                                        <rect key="frame" x="7" y="8.5" width="268.5" height="56"/>
+                                        <rect key="frame" x="7" y="8" width="268.5" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What university are you interested in?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-4d-qlb" userLabel="University Question">
                                                 <rect key="frame" x="0.0" y="0.0" width="268.5" height="18"/>
@@ -109,10 +109,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-3U-bCw" userLabel="SAT Stack View Background">
-                                <rect key="frame" x="96.5" y="213.5" width="182" height="73"/>
+                                <rect key="frame" x="96.5" y="214" width="182" height="73"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vYI-BT-15X" userLabel="SAT Stack View">
-                                        <rect key="frame" x="4.5" y="8.5" width="173.5" height="56"/>
+                                        <rect key="frame" x="5" y="8" width="173.5" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your SAT score?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-ir-EeN" userLabel="SAT Question">
                                                 <rect key="frame" x="0.0" y="0.0" width="173.5" height="18"/>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-nP-qoe" userLabel="Submit Stack View">
-                                <rect key="frame" x="112.5" y="516" width="150" height="35"/>
+                                <rect key="frame" x="113" y="516" width="150" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usn-NC-UjQ" userLabel="Submit Button">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
@@ -190,11 +190,11 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J8U-JY-4gW" userLabel="Language Stack View">
-                                <rect key="frame" x="303" y="68" width="60" height="39"/>
+                                <rect key="frame" x="293" y="68" width="70" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-Aj-tLL">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="23"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="English">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,8 +204,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-ZM-s0j">
-                                        <rect key="frame" x="0.0" y="22" width="60" height="17"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <rect key="frame" x="0.0" y="25" width="70" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="中文">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,9 +216,37 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-3s-0wP" userLabel="Test Stack View">
+                                <rect key="frame" x="16" y="68" width="38" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wci-eG-J4K" userLabel="SAT">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="23"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="SAT">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SATButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="rVZ-CX-gVs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xum-H7-SOi" userLabel="ACT">
+                                        <rect key="frame" x="0.0" y="25" width="38" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="ACT">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ACTButtonPressed:" destination="ziS-gR-eeH" eventType="touchUpInside" id="5Wr-lu-HGR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GHA-3s-0wP" firstAttribute="top" secondItem="4mb-2I-Mtf" secondAttribute="bottom" constant="4" id="0br-iG-nTu"/>
                             <constraint firstItem="Un0-wb-fKp" firstAttribute="trailing" secondItem="pwe-7y-ZqJ" secondAttribute="trailingMargin" id="2hG-j4-BjM"/>
                             <constraint firstItem="9QI-nP-qoe" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="7bU-DZ-oid"/>
                             <constraint firstAttribute="bottom" secondItem="f0m-oj-wZM" secondAttribute="bottom" id="7ot-Vc-wap"/>
@@ -228,6 +256,7 @@
                             <constraint firstItem="f0m-oj-wZM" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leading" id="HEi-i8-hi8"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerY" secondItem="pwe-7y-ZqJ" secondAttribute="centerY" multiplier="0.75" id="Iu4-W9-5dJ"/>
                             <constraint firstItem="X3s-3U-bCw" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="LAZ-Ul-3pj"/>
+                            <constraint firstItem="GHA-3s-0wP" firstAttribute="leading" secondItem="pwe-7y-ZqJ" secondAttribute="leadingMargin" id="NQD-KI-Ugb"/>
                             <constraint firstAttribute="trailing" secondItem="J8U-JY-4gW" secondAttribute="trailing" constant="12" id="OOs-sk-uee"/>
                             <constraint firstItem="ElU-h0-mMZ" firstAttribute="centerX" secondItem="pwe-7y-ZqJ" secondAttribute="centerX" id="WyA-Lu-ohs"/>
                             <constraint firstItem="J8U-JY-4gW" firstAttribute="top" secondItem="4mb-2I-Mtf" secondAttribute="bottom" constant="4" id="d0v-px-Qat"/>
@@ -239,7 +268,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="GQd-i5-jH8"/>
                     <connections>
+                        <outlet property="ACTButton" destination="Xum-H7-SOi" id="OEE-fC-suf"/>
                         <outlet property="SATBackground" destination="X3s-3U-bCw" id="X3y-am-0dV"/>
+                        <outlet property="SATButton" destination="Wci-eG-J4K" id="0Qc-U6-Kpd"/>
+                        <outlet property="appTitle" destination="eAv-Jc-41K" id="Tga-3n-enR"/>
                         <outlet property="cancelButton" destination="PNY-8P-QEn" id="2PT-nD-gcX"/>
                         <outlet property="englishButton" destination="NMw-Aj-tLL" id="v1d-VX-m0w"/>
                         <outlet property="infoButton" destination="Un0-wb-fKp" id="Ltd-iB-B11"/>
@@ -1056,10 +1088,10 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
             </objects>
             <point key="canvasLocation" x="4014" y="271"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Uza-lE-cC1">
             <objects>
-                <tabBarController id="hfx-md-h5N" customClass="TabBarViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="hfx-md-h5N" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lVh-hO-dqY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1077,7 +1109,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
         <!--Navigation to Main View Controller-->
         <scene sceneID="KGF-FG-sba">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" customClass="NavigationToMainViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationToMainViewController" automaticallyAdjustsScrollViewInsets="NO" id="MX8-YE-azr" userLabel="Navigation to Main View Controller" customClass="NavigationToMainViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" image="Tab Main" selectedImage="Tab Main" id="I1F-5J-qet"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7Z-rm-B7K">
@@ -1176,7 +1208,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
         <!--Navigation to Data Table View Controller-->
         <scene sceneID="csi-sp-Qj4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" customClass="NavigationToDataTableViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationToDataTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ixv-6M-iYZ" userLabel="Navigation to Data Table View Controller" customClass="NavigationToDataTableViewController" customModule="SAT_Compare" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Saved Universities" image="Tab Saved" selectedImage="Tab Saved" id="CXg-PC-OfS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I93-5F-LA1">
@@ -1201,7 +1233,7 @@ SAT Compare compares an individual's SAT scores to the SAT scores of enrolled fr
         <image name="Tab Saved" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hIS-tf-tb5"/>
         <segue reference="tkD-xh-fFL"/>
-        <segue reference="CuJ-GI-HnN"/>
     </inferredMetricsTieBreakers>
 </document>
